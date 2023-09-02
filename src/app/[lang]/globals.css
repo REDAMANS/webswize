@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @apply font-bold
+}
+
+.nav__padding {
+    padding: 1rem 3rem;
+}
+
+.section__padding {
+    padding: 8rem 3rem;
+}
+
+.footer__padding {
+    padding: 0 3rem 0 3rem;
+}
+
+@media screen and (max-width: 768px) {
+    .section__padding {
+        padding: 4rem 2rem;
+    }
+
+    .nav__padding {
+        padding: 1rem 2rem;
+    }
+
+    .footer__padding {
+        padding: 0 2rem 0 2rem;
+    }
+}
+
+.login::before {
+    @apply content-[""] absolute top-0 rounded-lg z-[-1] left-0 h-full bg-blue-600 w-0 transition-[width] duration-300;
+}
+
+.login:hover::before {
+    @apply w-full
+}
+
+.login:not(:hover)::before {
+    @apply left-full;
+}
+
+.login::after {
+    @apply content-[""] absolute top-0 rounded-lg z-[-1] right-0 h-full bg-blue-600 w-full transition-[width] delay-300;
+}
+
+.login:not(:hover)::after {
+    @apply w-0 delay-0;
+}
+
+.link {
+    @apply relative
+}
+
+.link::before {
+    @apply content-[""] absolute -bottom-[.3rem] bg-[#55a4ff] left-0 h-0 w-full transition-all;    
+}
+
+.link:hover::before {
+    @apply h-1
+}
+
+.sidebar__toggle div {
+    @apply w-5 h-0.5 bg-black transition-all
+}
+
+.sidebar__toggle:hover div {
+    @apply bg-blue-600;
+}
+
+.sidebar__toggled div:nth-child(1) {
+    transform: translate(0, .4rem) rotate(45deg);
+}
+
+.sidebar__toggled div:nth-child(2) {
+    @apply w-0
+}
+
+.sidebar__toggled div:nth-child(3) {
+    transform: translate(0, -.4rem) rotate(-45deg);
+}
+
+.animate-scale {
+    animation: scale-up 0.15s linear;
+}
+
+@keyframes scale-up {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.slide-in {
+    animation: slide-in 1s ease-out;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }   
+
+    100% {
+        transform: translateY(-20%);
+        opacity: 0;
+    }
+}
+
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+.description-text {
+    @apply text-sm text-[#7E7E7E];
+}
+
+.external-link {
+    @apply text-blue-600 hover:underline;
+}

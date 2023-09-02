@@ -1,0 +1,78 @@
+{
+    "navbar": {
+        "links": [
+            {
+                "name": "Accueil",
+                "href": "/"
+            },
+            {
+                "name": "À propos",
+                "href": "/about"
+            },
+            {
+                "name": "Blog",
+                "href": "/blog"
+            },
+            {
+                "name": "Services",
+                "href": "/services"
+            }
+        ],
+        "authLinks": [
+            {
+                "name": "Se Connecter",
+                "href": "/login"
+            },
+            {
+                "name": "S'Inscrire",
+                "href": "/login"
+            }
+        ]
+    },
+    "footer": {
+        "links": [
+            "Liens",
+            "Média",
+            "Contact"
+        ]
+    },
+    "homepage": {
+        "slider": [
+            {
+                "name": "Réactif",
+                "title": "Sites web réactifs et bien organisés",
+                "description": "L'une de nos principales préoccupations est de soigner le responsive de votre site internet et de lui donner le meilleur design possible.",
+                "img": "/assets/home/slider/responsive.svg"
+            },
+            {
+                "name": "Interactif",
+                "title": "Applications web entièrement interactives",
+                "description": "Nous utilisons les meilleures bibliothèques et structures pour rendre le site Web interactif pour les utilisateurs.",
+                "img": "/assets/home/slider/interactive.svg"
+            },
+            {
+                "name": "Rapide",
+                "title": "Meilleure vitesse et performance",
+                "description": "Notre objectif principal est de fournir les meilleures performances à nos clients dans les plus brefs délais.",
+                "img": "/assets/home/slider/fast.svg"
+            }
+        ],
+        "seo": {
+            "title": "Soutien complet de l'optimisation des moteurs de recherche",
+            "description": "L'optimisation pour les moteurs de recherche est très importante pour un site web afin d'apparaître en haut de l'échelle. Nous utilisons des librairies et des packages 'SEO friendly' pour améliorer les éléments vitaux du site web, les métadonnées et d'autres facteurs qui améliorent le classement."
+        },
+        "frontEndAndbackEnd": {
+            "title": "Travaille sur le front-end et le back-end",
+            "description": "Dans la plupart des cas, les sites web ont besoin d'un front-end et d'un back-end pour être pleinement fonctionnels. Sur la base du contenu du site web, nous créons un front-end correspondant qui s'exécute sur le client, et un back-end qui s'exécute sur le serveur. Si nécessaire, nous utilisons une base de données, puis une API pour récupérer les données."
+        },
+        "security": {
+            "title": "Une navigation sécurisée et des informations d'identification sûres",
+            "description": "Nous garantissons à nos clients que la navigation sur leur site web sera entièrement sécurisée et que les informations d'identification de l'utilisateur seront préservées."
+        },
+        "workTime": {
+            "title": "Ouvert au travail à tout moment",
+            "description": "Comme nous l'avons dit, nous sommes ouverts au travail, vous pouvez visiter notre page de contact.",
+            "button": "Contactez nous"
+        }
+    }
+}

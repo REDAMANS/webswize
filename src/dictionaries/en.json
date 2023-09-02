@@ -1,0 +1,74 @@
+{
+    "navbar": {
+        "links": [
+            {
+                "name": "Home",
+                "href": "/"
+            },
+            {
+                "name": "About",
+                "href": "/about"
+            },
+            {
+                "name": "Blog",
+                "href": "/blog"
+            },
+            {
+                "name": "Services",
+                "href": "/services"
+            }
+        ],
+        "authLinks": [
+            {
+                "name": "Login",
+                "href": "/login"
+            },
+            {
+                "name": "Sign Up",
+                "href": "/login"
+            }
+        ]
+    },
+    "footer": {
+        "links": [
+            "Links",
+            "Media",
+            "Contact"
+        ]
+    },
+    "homepage": {
+        "slider": [
+            {
+                "name": "Responsive",
+                "title": "Responsive and Well-Organized web design",
+                "description": "One of our main concerns is to take care of your website's responsivness and give it the best possible design.",
+                "img": "/assets/home/slider/responsive.svg"
+            },
+            {
+                "name": "Interactive",
+                "title": "Fully interactive web applications",
+                "description": "We use the best libraries and frameworks to make the website interactive to users.",
+                "img": "/assets/home/slider/interactive.svg"
+            },
+            {
+                "name": "Fast",
+                "title": "High speed and performance",
+                "description": "Our main goal is to deliver the best performance to our customers in the least possible time.",
+                "img": "/assets/home/slider/fast.svg"
+            }
+        ],
+        "seo": {
+            "title": "Full support of search engine optimization",
+            "description": "Search engine optimization is very important for a website in order to appear at the top, we use SEO friendly libraries and packages to improve core web vitals, metadata and other factors that boost the ranking."
+        },
+        "frontEndAndbackEnd": {
+            "title": "Works on both front-end and back-end",
+            "description": "In most cases, websites require both front-end and back-end for full functionality. Based on the website's content, we make a corresponding front-end that runs on the client, and a back-end that runs on the server, if necessary, we use database and then use an API to retrieve data from it."
+        },
+        "workTime": {
+            "title": "Open to work at any time",
+            "description": "As said, we're open to work, you can visit our contact page.",
+            "button": "Contact us"
+        }
+    }
+}
