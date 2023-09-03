@@ -84,12 +84,12 @@ const HomePage = async ({ params }: { params: { lang: "en"|"en-US"|"fr"|"fr-FR" 
             <div className="flex-1 flex flex-col gap-10">
               <AOS animation="zoom-out-left">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-normal md:tracking-wider leading-8 md:leading-[3rem] lg:leading-[3.5rem]">
-                  {homepage.frontEndAndbackEnd.title}
+                  {homepage.security.title}
                 </h2>
               </AOS>
               <AOS animation="zoom-out-up">
                 <p className="description-text">
-                  {homepage.frontEndAndbackEnd.description}
+                  {homepage.security.description}
                 </p>
               </AOS>
             </div>
