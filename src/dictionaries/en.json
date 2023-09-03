@@ -69,6 +69,10 @@
             "title": "Works on both front-end and back-end",
             "description": "In most cases, websites require both front-end and back-end for full functionality. Based on the website's content, we make a corresponding front-end that runs on the client, and a back-end that runs on the server, if necessary, we use database and then use an API to retrieve data from it."
         },
+        "security": {
+            "title": "Une navigation sécurisée et des informations d'identification sûres",
+            "description": "Nous garantissons à nos clients que la navigation sur leur site web sera entièrement sécurisée et que les informations d'identification de l'utilisateur seront préservées."
+        },
         "workTime": {
             "title": "Open to work at any time",
             "description": "As said, we're open to work, you can visit our contact page.",
