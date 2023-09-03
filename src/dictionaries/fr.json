@@ -37,6 +37,10 @@
         ]
     },
     "homepage": {
+        "metadata": {
+            "title": "",
+            "description": ""
+        },
         "slider": [
             {
                 "name": "Réactif",
@@ -59,7 +63,7 @@
         ],
         "seo": {
             "title": "Soutien complet de l'optimisation des moteurs de recherche",
-            "description": "L'optimisation pour les moteurs de recherche est très importante pour un site web afin d'apparaître en haut de l'échelle. Nous utilisons des librairies et des packages 'SEO friendly' pour améliorer les éléments vitaux du site web, les métadonnées et d'autres facteurs qui améliorent le classement."
+            "description": "L'optimisation pour les moteurs de recherche est très importante pour un site web afin d'apparaître en haut de l'échelle. Nous utilisons des librairies et des packages « SEO friendly » pour améliorer les éléments vitaux du site web, les métadonnées et d'autres facteurs qui améliorent le classement."
         },
         "frontEndAndbackEnd": {
             "title": "Travaille sur le front-end et le back-end",

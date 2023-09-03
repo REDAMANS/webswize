@@ -91,7 +91,7 @@ const Slider = ({ slider, className }: {slider: {name: string, title: string, de
                     { slider.map((slide, i) =>    
                         <div key={i} className='flex flex-col flex-1 lg:flex-row items-center h-max lg:h-[500px] gap-20'>
                             <div className='flex-[1.15] w-full flex items-start flex-col gap-10'>
-                                <h1 className={`${currSlide === i ? "slideTitle" : ""} max-w-2xl text-3xl sm:text-4xl h-max md:text-6xl leading-[2.5rem] sm:leading-[3.2rem] md:leading-[5rem] tracking-wider`}>
+                                <h1 className={`${currSlide === i ? "slideTitle" : ""} max-w-2xl md:h-[313px] lg:h-[233px] text-3xl sm:text-4xl md:text-6xl leading-[2.5rem] sm:leading-[3.2rem] md:leading-[5rem] tracking-wider`}>
                                     {
                                         i === currSlide ?
                                         <TypeAnimation 

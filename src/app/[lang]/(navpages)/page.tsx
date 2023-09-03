@@ -5,7 +5,6 @@ import Link from "next/link";
 import AOS from "@/components/AOS";
 import styles from "@/components/styles/home.module.css";
 
-
 export async function generateStaticParams() {
     return [
       {
@@ -23,6 +22,14 @@ export async function generateStaticParams() {
     ]
   }
   
+export async function generateMetadata({ params }: { params: { lang: "en"|"en-US"|"fr"|"fr-FR" } }) {
+  const { homepage } = await getDictionary(params.lang);
+  return {
+    ...homepage.metadata
+  }
+}
+  
+
 const HomePage = async ({ params }: { params: { lang: "en"|"en-US"|"fr"|"fr-FR" } }) => {
 
   const { homepage } = await getDictionary(params.lang);

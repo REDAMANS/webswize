@@ -37,6 +37,10 @@
         ]
     },
     "homepage": {
+        "metadata": {
+            "title": "Home | Webswize",
+            "description": ""
+        },
         "slider": [
             {
                 "name": "Responsive",
