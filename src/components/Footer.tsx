@@ -18,7 +18,7 @@ const Footer = ({ footer, links }: { footer: {links: string[]}, links: {name: st
                         </ul>
                     </div>
                     <div className="flex flex-col items-center md:items-start gap-8">
-                        <h6 className="font-semibold">{footer.links[1]}</h6>
+                        <p className="font-semibold">{footer.links[1]}</p>
                         <ul className="flex flex-col gap-4 text-sm text-gray-700">
                             {
                                 mediaList.map((media: {name: string, icon: React.ReactNode, href: string}, index: number) => (
@@ -32,7 +32,7 @@ const Footer = ({ footer, links }: { footer: {links: string[]}, links: {name: st
                         </ul>
                     </div>
                     <div className="flex flex-col items-center md:items-start gap-8">
-                        <h6 className="font-semibold">{footer.links[2]}</h6>
+                        <p className="font-semibold">{footer.links[2]}</p>
                         <ul className="flex flex-col gap-4 text-sm text-gray-700">
                             {
                                 contactList.map((contact: {name: string, icon: React.ReactNode, href: string}, index: number) => (
