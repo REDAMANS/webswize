@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section__padding {
-    padding: 8rem 3rem;
+    padding: 8rem 3rem 3rem 3rem;
 }
 
 .footer__padding {
@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media screen and (max-width: 768px) {
     .section__padding {
-        padding: 4rem 2rem;
+        padding: 8rem 2rem 2rem 2rem;
     }
 
     .nav__padding {
@@ -151,4 +151,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .external-link {
     @apply text-blue-600 hover:underline;
+}
+
+.slow-spin {
+    animation: slow-spin 100s linear infinite;
+}
+
+@keyframes slow-spin {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

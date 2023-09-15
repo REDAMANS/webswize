@@ -17,16 +17,6 @@
                 "name": "Services",
                 "href": "/services"
             }
-        ],
-        "authLinks": [
-            {
-                "name": "Se Connecter",
-                "href": "/login"
-            },
-            {
-                "name": "S'Inscrire",
-                "href": "/login"
-            }
         ]
     },
     "footer": {
@@ -78,5 +68,23 @@
             "description": "Comme nous l'avons dit, nous sommes ouverts au travail, vous pouvez visiter notre page de contact.",
             "button": "Contactez nous"
         }
+    },
+    "aboutpage": {
+        "title": "À propos de nous",
+        "info": [
+            {
+                "title": "Qui sommes nous",
+                "text": "Webswize est un projet de développement web qui a été créé en Mai 2023 par un petit groupe de développeurs et de concepteurs, il a commencé par créer, réparer et maintenir des sites web de petites entreprises. L'idée principale du projet était d'améliorer les performances du web en Algérie, de l'interface utilisateur à l'expérience utilisateur, et d'apporter une touche de modernité au web Algérien."
+        
+            },
+            {
+                "title": "Qui sommes nous",
+                "text": "En tant que nouvelle entreprise, nous voulons commencer par gagner la confiance de nos clients, c'est pourquoi nous ne fournissons que des fonctionnalités sécurisées, nous ne nous précipitons pas pour utiliser des moyens plus faciles au prix d'une perte de crédibilité. Nous aimons également que nos clients nous fassent part de leurs commentaires afin que nous puissions améliorer notre travail. Nous fournissons de nombreuses fonctionnalités modernes et importantes pour les sites web, telles que l'optimisation pour les moteurs de recherche, une navigation sûre et rapide, une interface utilisateur belle et créative, des bases de données, des API Rest, des CTA, des blogs et des outils d'IA utiles."
+            },
+            {
+                "title": "Qui sommes nous",
+                "text": "À l'avenir, nous souhaitons élargir notre équipe en recrutant des travailleurs plus compétents, en organisant des équipes de collaboration et en créant du contenu éducatif"
+            }
+        ]
     }
 }

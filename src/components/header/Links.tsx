@@ -9,7 +9,7 @@ const Links = ({ links }: { links: {name: string, href: string}[] }) => {
         .replace("//", "/");
 
     return (
-        <ul className='hidden md:flex flex-row gap-8'>
+        <ul className='hidden md:flex flex-row gap-12'>
             {links.map((link: { name: string, href: string }, index: number ) => {
                 return (
                     <li className='link' key={index}>

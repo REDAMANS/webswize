@@ -1,9 +1,8 @@
 import Slider from "@/components/Home/Slider";
 import { getDictionary } from "@/lib/dictionaries";
 import Image from "next/image";
-import Link from "next/link";
 import AOS from "@/components/AOS";
-import styles from "@/components/styles/home.module.css";
+import ContactButton from "@/components/Home/ContactButton";
 
 export async function generateStaticParams() {
     return [
@@ -36,7 +35,7 @@ const HomePage = async ({ params }: { params: { lang: "en"|"en-US"|"fr"|"fr-FR" 
 
     return (
         <section className="flex flex-col">
-          <Slider className={styles.slider} slider={homepage.slider} />
+          <Slider slider={homepage.slider} />
           <section className="overflow-hidden flex gap-20 md:items-center flex-col-reverse md:flex-row section__padding">
             <picture className="flex-1 w-full">
               <AOS animation="fade-right">
@@ -106,11 +105,7 @@ const HomePage = async ({ params }: { params: { lang: "en"|"en-US"|"fr"|"fr-FR" 
                   <p className="description-text">
                     {homepage.workTime.description}
                   </p>
-                  <button className="text-sm font-semibold text-white border-blue-600 border-2 bg-blue-600 px-4 py-2.5 rounded-xl hover:bg-white hover:text-blue-600 transition-all" aria-label="contact-us">
-                    <Link href="/contact">
-                    {homepage.workTime.button}
-                    </Link>
-                  </button>
+                  <ContactButton text={homepage.workTime.button}/>
                 </div>
               </AOS>
             </div>

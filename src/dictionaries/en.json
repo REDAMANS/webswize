@@ -17,16 +17,6 @@
                 "name": "Services",
                 "href": "/services"
             }
-        ],
-        "authLinks": [
-            {
-                "name": "Login",
-                "href": "/login"
-            },
-            {
-                "name": "Sign Up",
-                "href": "/login"
-            }
         ]
     },
     "footer": {
@@ -78,5 +68,22 @@
             "description": "As said, we're open to work, you can visit our contact page.",
             "button": "Contact us"
         }
+    },
+    "aboutpage": {
+        "title": "About Us",
+        "info": [
+            {
+                "title": "Who we are",
+                "text": "Webswize is a web development project that was created in May 2023 by a small group of developers and designers, it started by creating, fixing, and maintaining small business websites. The main idea of the project was to improve the web performance mostly in Algeria, from user interface to user experience, and to bring a modern touch to the Algerian web."
+            },
+            {
+                "title": "Who we are",
+                "text": "As a new business, we want to start by gaining our clients' trust, this is why we only provide secure features, we don't rush into using easier ways at the cost of losing credibility. We also like our clients to give us feedback so we can know how to improve our work. We provide many important modern website features, such as search engine optimization, safe and fast navigation, beautiful and creative user interface, databases, Rest APIs, CTAs, blogs, and helpful AI tools."
+            },
+            {
+                "title": "Who we are",
+                "text": "In the future, we aim to expand our team by recruiting more competent workers, organizing collaboration teams, and creating educational content."
+            }
+        ]
     }
 }

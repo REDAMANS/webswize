@@ -1,33 +1,33 @@
-<svg width="174" height="165" viewBox="0 0 174 150" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="174" height="185" viewBox="0 0 174 150" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <style type="text/css">
     <![CDATA[
         #hand {
-            animation: float 4s linear infinite;
+            animation: switch-light 24s linear infinite;
         }
 
         .light-mode-ray {
-            animation: flip-display 16s linear infinite;
+            animation: flip-display 24s linear infinite;
         }
 
         #light-mode-circle {
-            animation: flip-display 16s linear infinite;
+            animation: flip-display 24s linear infinite;
         }
 
         #dark-mode-big,
         #dark-mode-small {
-            animation: flip-display-reverse 16s linear infinite;
+            animation: flip-display-reverse 24s linear infinite;
         }
 
         #sidebar {
-            animation: sidebar-color-flip 16s linear infinite;
+            animation: sidebar-color-flip 24s linear infinite;
         }
 
         .menu {
-            animation: menu-color-flip 16s linear infinite;
+            animation: menu-color-flip 24s linear infinite;
         }
 
         #tablet {
-            animation: tablet-color-flip 16s linear infinite;
+            animation: tablet-color-flip 24s linear infinite;
         }
 
         @keyframes tablet-color-flip {
@@ -35,16 +35,24 @@
                 fill: #ffffff;
             }
 
-            49.99% {
+            33.32% {
                 fill: #ffffff;
             }
 
-            50% {
+            33.34% {
                 fill: #2b2b2b;
             }
 
-            100% {
+            66.66% {
                 fill: #2b2b2b;
+            }
+
+            66.67% {
+                fill: #ffffff;
+            }
+
+            100% {
+                fill: #ffffff;
             }
         }
 
@@ -53,16 +61,24 @@
                 fill: #000000;
             }
 
-            49.99% {
+            33.32% {
                 fill: #000000;
             }
 
-            50% {
+            33.34% {
                 fill: #ffffff;
             }
 
-            100% {
+            66.66% {
                 fill: #ffffff;
+            }
+            
+            66.67% {
+                fill: #000000;
+            }
+
+            100% {
+                fill: #000000;
             }
         }
 
@@ -71,16 +87,24 @@
                 fill: #ededed;
             }
 
-            49.99% {
+            33.32% {
                 fill: #ededed;
             }
 
-            50% {
+            33.34% {
                 fill: #233638;
             }
 
-            100% {
+            66.66% {
                 fill: #233638;
+            }
+
+            66.67% {
+                fill: #ededed;
+            }
+
+            100% {
+                fill: #ededed;
             }
         }
 
@@ -89,16 +113,24 @@
                 opacity: 1;
             }
 
-            49.99% {
+            33.32% {
                 opacity: 1;
             }
 
-            50% {
+            33.34% {
                 opacity: 0;
             }
 
-            100% {
+            66.66% {
                 opacity: 0;
+            }
+
+            66.67% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
             }
         }
 
@@ -107,34 +139,70 @@
                 opacity: 0;
             }
 
-            49.99% {
+            33.32% {
                 opacity: 0;
             }
 
-            50% {
+            33.34% {
                 opacity: 1;
             }
 
-            100% {
+            66.66% {
                 opacity: 1;
+            }
+
+            66.67% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
             }
         }
 
-        @keyframes float {
+        @keyframes switch-light {
             0% {
-                transform: translateY(0);
+                transform: translateX(0px) translateY(120px);
             }
-            25% {
-                transform: translateY(5%);
+
+            31% {
+                transform: translateX(0px) translateY(120px);
             }
+
+            33.34% {
+                transform: translateX(0px) translateY(106px);
+            }
+
+            35.68% {
+                transform: translateX(0px) translateY(120px);
+            }
+
+            40% {
+                transform: translateX(0px) translateY(120px);
+            }
+
             50% {
-                transform: translateY(0);
+                transform: translateX(26px) translateY(120px);
             }
-            75% {
-                transform: translateY(5%);
+
+            64% {
+                transform: translateX(26px) translateY(120px);
             }
+
+            66.67% {
+                transform: translateX(26px) translateY(106px);
+            }
+
+            69% {
+                transform: translateX(26px) translateY(120px);
+            }
+
+            90% {
+                transform: translateX(26px) translateY(120px);
+            }
+
             100% {
-                transform: translateY(0);
+                transform: translateX(0px) translateY(120px);
             }
         }
     ]]>
@@ -171,7 +239,7 @@
 <rect x="126" y="90" width="31" height="10" rx="2" fill="white"/>
 <rect x="58" y="87" width="60" height="6" rx="2" fill="#DBDBDB"/>
 <rect x="58" y="97" width="48" height="6" rx="2" fill="#DBDBDB"/>
-<rect id="hand" x="126" y="93" width="40" height="56.3285" fill="url(#pattern0)"/>
+<rect id="hand"  width="40" height="56.3285" fill="url(#pattern0)"/>
 <circle id="dark-mode-big" cx="14.5" cy="105.5" r="3.5" fill="#626262"/>
 <circle id="dark-mode-small" cx="16" cy="104" r="3" fill="#EDEDED"/>
 <circle id="light-mode-circle" cx="40.5" cy="105.5" r="1.5" fill="#F9F9F9"/>

@@ -11,7 +11,7 @@ const AOS = ({ children, animation, delay }: { children: React.ReactNode, animat
     }, [])
     
     return (
-        <div className="w-full" data-aos-delay={delay} data-aos={animation}>
+        <div className="w-full" data-aos-once={true} data-aos-delay={delay} data-aos={animation}>
             {children}
         </div>
     );

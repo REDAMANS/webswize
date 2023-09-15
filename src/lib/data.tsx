@@ -44,6 +44,6 @@ export const contactList = [
     {
         name: "0555555555",
         icon: <AiOutlinePhone />,
-        href: "",
+        href: "/",
     },
 ]

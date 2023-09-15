@@ -1,11 +1,10 @@
 "use client"
 import Image from 'next/image';
-import styles from '../styles/slider.module.css';
 import { useState, useEffect } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
 
-const Slider = ({ slider, className }: {slider: {name: string, title: string, description: string, img?: string}[], className: string}) => {
+const Slider = ({ slider }: {slider: {name: string, title: string, description: string, img?: string}[] }) => {
 
     const [currSlide, setCurrSlide] = useState(0);
 
@@ -32,14 +31,14 @@ const Slider = ({ slider, className }: {slider: {name: string, title: string, de
 
     useEffect(() => {
         const fadeOut = () => {
-            const slider = document.getElementById("slider") as HTMLTableSectionElement;
+            const sliderContainer = document.getElementById("slider") as HTMLTableSectionElement;
             const mainTitle = document.querySelector(".slideTitle") as HTMLHeadingElement;
             const mainImage = document.querySelector(".slideImage") as HTMLElement;
             const mainDescription = document.querySelector(".slideDescription") as HTMLParagraphElement;
-            if(window.scrollY > slider.offsetHeight / 6) {
-                mainTitle.style.transform = `translateX(-${(window.scrollY - (slider.offsetHeight/6)) / 8}%)`;
-                mainImage.style.transform = `translateX(${(window.scrollY - (slider.offsetHeight/6)) / 8}%)`;
-                mainDescription.style.transform = `translateX(-${(window.scrollY - (slider.offsetHeight/6))/ 4}%)`;
+            if(window.scrollY > sliderContainer.offsetHeight / 6) {
+                mainTitle.style.transform = `translateX(-${(window.scrollY - (sliderContainer.offsetHeight/6)) / 8}%)`;
+                mainImage.style.transform = `translateX(${(window.scrollY - (sliderContainer.offsetHeight/6)) / 8}%)`;
+                mainDescription.style.transform = `translateX(-${(window.scrollY - (sliderContainer.offsetHeight/6))/ 4}%)`;
             }else {
                 mainTitle.style.transform = `translateX(0)`;
                 mainImage.style.transform = `translateX(0)`;
@@ -53,21 +52,12 @@ const Slider = ({ slider, className }: {slider: {name: string, title: string, de
     },[currSlide])
 
     return (
-        <section id="slider" className={className}>
-            <motion.div 
-                drag
-                dragConstraints={{
-                    top: -10,
-                    left: -10,
-                    right: 10,
-                    bottom: 10,
-                  }}
-                onMouseDown={mouseDown}
-                onMouseUp={mouseUp}
-                onMouseLeave={mouseLeave}
-                className='absolute top-80 cursor-grab -right-48 w-64 h-64 bg-[#d1fffe] rounded-full'
+        <section id="slider" className="min-h-[100vh] gap-[3rem] pt-[7rem] pb-[2rem] px-[2rem] md:px-[4rem] md:pt-[7rem] md:pb-[2rem] flex flex-col relative overflow-hidden">
+            <div
+                className='absolute slow-spin top-96 md:top-[450px] lg:top-10 -right-[20vw] w-[90vw] md:w-[50vw] rounded-full'
             >
-            </motion.div>
+                <Image className='w-full h-auto' src="/assets/home/slider/shape.svg" alt="shape" width={1000} height={1000} />
+            </div>
             <motion.div 
                 drag
                 dragConstraints={{
@@ -79,8 +69,8 @@ const Slider = ({ slider, className }: {slider: {name: string, title: string, de
                 onMouseDown={mouseDown}
                 onMouseUp={mouseUp}
                 onMouseLeave={mouseLeave}
-                className='absolute top-24 cursor-grab -left-24 w-48 h-48 bg-[#d5fee7] rounded-full'>
-            </motion.div>
+                className='absolute top-24 cursor-grab -left-24 w-48 h-48 bg-[#d5fee7] rounded-full'
+            />
             <div className='w-full flex justify-center md:justify-end'>
                 <ul className='flex flex-row items-center z-10 justify-between w-[300px] text-sm md:text-lg'>
                     {slider.map((slide,i) => <li key={i} onClick={() => updateSlide(i)} className={`cursor-pointer transition-all ${i === currSlide ? "text-[#0085D0] text-base md:text-xl font-semibold" : ""}`}>{slide.name}</li>)}
