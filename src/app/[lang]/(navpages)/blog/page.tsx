@@ -63,24 +63,26 @@ function HeroPost({
 const BlogPage = async ({ params }: {params: {lang: 'en-US'|'fr-FR'|'en'|'fr'}}) => {
   
     const allPosts = await getAllPosts(false);
-    const heroPost = allPosts[0];
-    const morePosts = allPosts.slice(1)
+    const heroPost = allPosts ? allPosts[0] : undefined;
+    const morePosts = allPosts ? allPosts.slice(1) : undefined;
 
     return (
         <section className="section__padding">
-          <div className="w-full">
-          {heroPost && (
-              <HeroPost
-                title={heroPost.title}
-                coverImage={heroPost.coverImage}
-                date={heroPost.date}
-                author={heroPost.author}
-                slug={heroPost.slug}
-                excerpt={heroPost.excerpt}
-              />
-            )}
-            <MoreStories morePosts={morePosts} />
-          </div>
+          { allPosts &&
+            <div className="w-full">
+            {heroPost && (
+                <HeroPost
+                  title={heroPost.title}
+                  coverImage={heroPost.coverImage}
+                  date={heroPost.date}
+                  author={heroPost.author}
+                  slug={heroPost.slug}
+                  excerpt={heroPost.excerpt}
+                />
+              )}
+              <MoreStories morePosts={morePosts ? morePosts : []} />
+            </div>
+          }
         </section>
     );
 }
