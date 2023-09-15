@@ -14,7 +14,7 @@ const Links = ({ links }: { links: {name: string, href: string}[] }) => {
                 return (
                     <li className='link' key={index}>
                         <Link 
-                            className={pathname === link.href? 'text-blue-500 font-semibold' : ''} 
+                            className={pathname === link.href? 'text-[#1C4CC9] font-semibold' : ''} 
                             href={link.href}
                         >
                             {link.name}

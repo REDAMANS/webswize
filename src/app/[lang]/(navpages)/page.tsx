@@ -2,7 +2,7 @@ import Slider from "@/components/Home/Slider";
 import { getDictionary } from "@/lib/dictionaries";
 import Image from "next/image";
 import AOS from "@/components/AOS";
-import ContactButton from "@/components/Home/ContactButton";
+import Link from "next/link";
 
 export async function generateStaticParams() {
     return [
@@ -105,7 +105,9 @@ const HomePage = async ({ params }: { params: { lang: "en"|"en-US"|"fr"|"fr-FR" 
                   <p className="description-text">
                     {homepage.workTime.description}
                   </p>
-                  <ContactButton text={homepage.workTime.button}/>
+                  <Link className="text-sm font-semibold text-white border-blue-600 border-2 bg-blue-600 px-4 py-2.5 rounded-xl hover:bg-white hover:text-blue-600 transition-all" aria-label="contact-us" href="/contact">
+                      {homepage.workTime.button}
+                  </Link>
                 </div>
               </AOS>
             </div>
