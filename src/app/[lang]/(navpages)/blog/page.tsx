@@ -28,14 +28,12 @@ function HeroPost({
   coverImage,
   date,
   excerpt,
-  author,
   slug,
 }: {
   title: string
   coverImage: any
   date: string
   excerpt: string
-  author: any
   slug: string
 }) {
   return (
@@ -75,7 +73,6 @@ const BlogPage = async ({ params }: {params: {lang: 'en-US'|'fr-FR'|'en'|'fr'}})
                   title={heroPost.title}
                   coverImage={heroPost.coverImage}
                   date={heroPost.date}
-                  author={heroPost.author}
                   slug={heroPost.slug}
                   excerpt={heroPost.excerpt}
                 />

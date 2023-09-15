@@ -56,7 +56,7 @@ const Slider = ({ slider }: {slider: {name: string, title: string, description: 
             <div
                 className='absolute slow-spin top-96 md:top-[450px] lg:top-10 -right-[20vw] w-[90vw] md:w-[50vw] rounded-full'
             >
-                <Image className='w-full h-auto' src="/assets/home/slider/shape.svg" alt="shape" width={1000} height={1000} />
+                <Image priority className='w-full h-auto' src="/assets/home/slider/shape.svg" alt="shape" width={1000} height={1000} />
             </div>
             <motion.div 
                 drag
