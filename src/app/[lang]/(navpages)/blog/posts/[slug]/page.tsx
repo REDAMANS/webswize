@@ -22,7 +22,9 @@ const MainPost = (post : PostProps) => {
             <div className="w-full">
                 <CoverImage title={post.title} url={post.coverImage.url} />
             </div>
-            <Markdown content={post.content} />
+            <div>
+                <Markdown content={post.content} />
+            </div>
             <div className="font-semibold text-blue-900 text-lg">
                 <DateComponent dateString={post.date} />
             </div>
