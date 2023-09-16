@@ -4,8 +4,14 @@ import Date from "@/components/Blog/date";
 import CoverImage from "@/components/Blog/cover-image";
 import MoreStories from "@/components/Blog/more-stories";
 import Link from "next/link";
+import { Metadata } from "next";
 
 export const revalidate = 3600
+
+export const metadata: Metadata = {
+  title: "Webswize | Blog",
+  description: "Discover our blog page and read our posts."
+}
 
 export async function generateStaticParams() {
     return [
@@ -22,7 +28,7 @@ export async function generateStaticParams() {
         lang: "fr-FR"
       },
     ]
-}  
+}
 
 function HeroPost({
   title,
@@ -43,7 +49,7 @@ function HeroPost({
         <CoverImage title={title} slug={slug} url={coverImage.url} />
       </div>
       <div className="md:flex-[.8] flex flex-col">
-          <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
+          <h3 className="mb-4 text-3xl lg:text-4xl leading-tight">
             <Link href={`/blog/posts/${slug}`} className="hover:underline">
               {title}
             </Link>

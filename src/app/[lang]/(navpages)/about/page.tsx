@@ -1,5 +1,10 @@
 import { getDictionary } from "@/lib/dictionaries";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Webswize | About us",
+}
 
 export async function generateStaticParams() {
     return [

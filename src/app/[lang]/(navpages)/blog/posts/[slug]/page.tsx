@@ -3,6 +3,7 @@ import CoverImage from "@/components/Blog/cover-image";
 import DateComponent from "@/components/Blog/date";
 import { Markdown, Content } from "@/components/Blog/contentful/markdown";
 import PostPreview from "@/components/Blog/post-preview";
+import { Metadata } from "next";
 
 interface PostProps {
     title: string;
@@ -11,6 +12,14 @@ interface PostProps {
     date: string;
     excerpt?: string;
     slug?: string;
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+    const { post }: { post: PostProps } = await getPostAndMorePosts(params.slug, false);
+    return {
+        title: post.title,
+        description: post.excerpt,
+    }
 }
 
 const MainPost = (post : PostProps) => {
