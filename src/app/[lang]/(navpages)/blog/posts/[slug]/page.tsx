@@ -15,15 +15,15 @@ interface PostProps {
 
 const MainPost = (post : PostProps) => {
     return (
-        <div className="flex flex-col mb-20 mainpost">
-            <h1 className="font-bold text-3xl md:text-5xl lg:text-7xl mb-10 md:mb-16">
+        <div className="flex flex-col mb-20 mainpost gap-10 md:gap-16">
+            <h1 className="font-bold text-3xl md:text-5xl lg:text-7xl">
                 {post.title}
             </h1>
-            <div className="w-full mb-10 md:mb-16">
+            <div className="w-full">
                 <CoverImage title={post.title} url={post.coverImage.url} />
             </div>
             <Markdown content={post.content} />
-            <div className="font-semibold text-blue-900 text-lg mt-10 md:mt-16">
+            <div className="font-semibold text-blue-900 text-lg">
                 <DateComponent dateString={post.date} />
             </div>
         </div>
