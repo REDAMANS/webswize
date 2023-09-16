@@ -4,7 +4,6 @@ import Date from "@/components/Blog/date";
 import CoverImage from "@/components/Blog/cover-image";
 import MoreStories from "@/components/Blog/more-stories";
 import Link from "next/link";
-import { NextResponse } from "next/server";
 
 export async function generateStaticParams() {
     return [
