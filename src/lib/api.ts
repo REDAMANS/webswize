@@ -65,7 +65,7 @@ export const getAllPosts: (isDraftMode: boolean) => Promise<any[]> = async (isDr
         `query {
             postCollection(where: { slug_exists: true }, order: date_DESC, preview: ${
                 isDraftMode ? "true" : "false"
-            }, limit: 2){
+            }, limit: 10){
                 items{
                     ${POST_GRAPHQL_FIELDS}
                 }

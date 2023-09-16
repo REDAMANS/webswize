@@ -16,7 +16,7 @@ interface PostProps {
 const MainPost = (post : PostProps) => {
     return (
         <div className="flex flex-col mb-20">
-            <h1 className="font-bold text-2xl md:text-5xl lg:text-7xl mb-10 md:mb-16">
+            <h1 className="font-bold text-3xl md:text-5xl lg:text-7xl mb-10 md:mb-16">
                 {post.title}
             </h1>
             <div className="w-full mb-10 md:mb-16">
