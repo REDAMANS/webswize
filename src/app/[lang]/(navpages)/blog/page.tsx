@@ -5,6 +5,8 @@ import CoverImage from "@/components/Blog/cover-image";
 import MoreStories from "@/components/Blog/more-stories";
 import Link from "next/link";
 
+export const revalidate = 3600
+
 export async function generateStaticParams() {
     return [
       {

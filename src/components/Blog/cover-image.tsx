@@ -18,7 +18,7 @@ const CoverImage = ({
             priority
             width={2000}
             height={1000}
-            className="shadow-sm hover:shadow-md transition-[shadow] duration-200"
+            className="h-full shadow-sm hover:shadow-md transition-[shadow] duration-200"
         />
     )
 
