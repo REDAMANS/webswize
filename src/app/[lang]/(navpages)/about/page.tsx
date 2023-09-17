@@ -2,8 +2,11 @@ import { getDictionary } from "@/lib/dictionaries";
 import Image from "next/image";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Webswize | About us",
+export async function generateMetadata({ params }: { params: { lang: "en" | "en-US" | "fr" | "fr-FR" }}): Promise<Metadata> {
+  const { aboutpage: { metadata } } = await getDictionary(params.lang);
+  return {
+    ...metadata
+  }
 }
 
 export async function generateStaticParams() {

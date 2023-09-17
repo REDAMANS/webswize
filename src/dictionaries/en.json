@@ -70,6 +70,9 @@
         }
     },
     "aboutpage": {
+        "metadata": {
+            "title": "Webswize | About Us"
+        },
         "title": "About Us",
         "info": [
             {
@@ -85,5 +88,10 @@
                 "text": "In the future, we aim to expand our team by recruiting more competent workers, organizing collaboration teams, and creating educational content."
             }
         ]
+    },
+    "blogpage": {
+        "metadata": {
+            "title": "Webswize | Blog"
+        }
     }
 }

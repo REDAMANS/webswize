@@ -15,11 +15,11 @@ const PostPreview = ({
 }) => {
 
     return(
-        <div>
+        <div className="flex flex-col max-w-md flex-1 min-w-[18rem]">
             <div className='mb-5'>
                 <CoverImage title={title} url={coverImage.url} slug={slug} />
             </div>
-            <h3 className='text-3xl mb-3 leading-snug'>
+            <h3 className='text-2xl mb-3 font-semibold leading-snug'>
                 {   slug ?
                     <Link href={`/blog/posts/${slug}`} className="hover:underline">
                         {title}
@@ -28,7 +28,7 @@ const PostPreview = ({
                     title
                 }
             </h3>
-            <div className='text-lg font-semibold text-blue-900 mb-4'>
+            <div className='text-lg font-semibold text-blue-900 mt-auto'>
                 <DateComponent dateString={date}/>
             </div>
         </div>

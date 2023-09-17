@@ -8,9 +8,11 @@ import { Metadata } from "next";
 
 export const revalidate = 3600
 
-export const metadata: Metadata = {
-  title: "Webswize | Blog",
-  description: "Discover our blog page and read our posts."
+export async function generateMetadata({ params }: { params: { lang: "en" | "en-US" | "fr" | "fr-FR" } }): Promise<Metadata> {
+  const { blogpage: { metadata } } = await getDictionary(params.lang);
+  return {
+    ...metadata
+  }
 }
 
 export async function generateStaticParams() {
@@ -57,7 +59,7 @@ function HeroPost({
           <p className="mb-4">
             {excerpt}
           </p>
-          <div className="mt-auto text-lg">
+          <div className="mt-auto font-semibold text-blue-900 text-lg">
             <Date dateString={date} />
           </div>
       </div>
