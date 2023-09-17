@@ -51,7 +51,7 @@ function HeroPost({
         <CoverImage title={title} slug={slug} url={coverImage.url} />
       </div>
       <div className="md:flex-[.8] flex flex-col">
-          <h3 className="mb-4 text-3xl lg:text-4xl leading-tight">
+          <h3 className="mb-8 text-3xl lg:text-4xl leading-tight">
             <Link href={`/blog/posts/${slug}`} className="hover:underline">
               {title}
             </Link>
