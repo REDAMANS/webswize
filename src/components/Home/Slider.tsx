@@ -97,11 +97,7 @@ const Slider = ({ slider }: {slider: {name: string, title: string, description: 
                                 </div>
                             </div>
                             <div className='w-full max-w-md lg:w-auto lg:flex-[0.85]'>
-                                {
-                                    currSlide === i ?
-                                    <Image priority className={`w-full h-auto ${currSlide === i ? "slideImage" : ""}`} src={slide.img!} width={400} height={400} alt={slide.name} />
-                                    : <div className='w-full'></div>
-                                }
+                                <Image priority className={`w-full h-auto ${currSlide === i ? "slideImage" : ""}`} src={slide.img!} width={400} height={400} alt={slide.name} />
                             </div>
                         </div>
                     )}
