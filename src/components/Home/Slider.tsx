@@ -73,7 +73,7 @@ const Slider = ({ slider }: {slider: {name: string, title: string, description: 
             />
             <div className='w-full flex justify-center md:justify-end'>
                 <ul className='flex flex-row items-center z-10 justify-between w-[300px] text-sm md:text-lg'>
-                    {slider.map((slide,i) => <li key={i} onClick={() => updateSlide(i)} className={`cursor-pointer transition-all ${i === currSlide ? "text-[#005C94] text-base md:text-xl font-semibold" : ""}`}>{slide.name}</li>)}
+                    {slider.map((slide,i) => <li key={i} onClick={() => updateSlide(i)} className={`cursor-pointer transition-all ${i === currSlide ? "text-[#1e5c67] text-base md:text-xl font-semibold" : ""}`}>{slide.name}</li>)}
                 </ul>
             </div>
             <div className='w-full overflow-hidden no-scrollbar z-10'>

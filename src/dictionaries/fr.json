@@ -45,10 +45,10 @@
                 "img": "/assets/home/slider/interactive.svg"
             },
             {
-                "name": "Rapide",
-                "title": "Meilleure vitesse et performance",
-                "description": "Notre objectif principal est de fournir les meilleures performances à nos clients dans les plus brefs délais.",
-                "img": "/assets/home/slider/fast.svg"
+                "name": "Créatif",
+                "title": "Un design créatif, modern et attrayant",
+                "description": "La création du design de votre site web est cruciale, nous nous en chargeons.",
+                "img": "/assets/home/slider/creative.svg"
             }
         ],
         "seo": {
