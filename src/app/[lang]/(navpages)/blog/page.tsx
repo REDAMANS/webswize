@@ -46,7 +46,7 @@ function HeroPost({
   slug: string
 }) {
   return (
-    <section className="mb-20 flex md:flex-row flex-col gap-10 lg:gap-20 w-full">
+    <section className="flex md:flex-row flex-col gap-10 lg:gap-20 w-full mb-36">
       <div className="md:flex-[1.2] max-w-2xl">
         <CoverImage title={title} slug={slug} url={coverImage.url} />
       </div>
