@@ -6,9 +6,9 @@ const MoreStories = ({ morePosts }: {
     return (
         <section>
             <h2 className='mb-16 text-4xl md:text-7xl font-bold tracking-tighter leading-tight'>
-                More Stories
+                More Posts
             </h2>
-            <div className="flex flex-row flex-wrap gap-10 justify-between">
+            <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
                 {morePosts.map(post => (
                     <PostPreview 
                         key={post.slug}

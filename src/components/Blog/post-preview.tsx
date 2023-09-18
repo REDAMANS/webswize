@@ -15,7 +15,7 @@ const PostPreview = ({
 }) => {
 
     return(
-        <div className="flex flex-col max-w-md flex-1 min-w-[18rem]">
+        <div className="h-full flex flex-col flex-1 min-w-[18rem]">
             <div className='mb-5'>
                 <CoverImage title={title} url={coverImage.url} slug={slug} />
             </div>

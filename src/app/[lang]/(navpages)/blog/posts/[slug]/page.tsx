@@ -4,7 +4,7 @@ import DateComponent from "@/components/Blog/date";
 import { Markdown, Content } from "@/components/Blog/contentful/markdown";
 import PostPreview from "@/components/Blog/post-preview";
 import { Metadata } from "next";
-
+import MoreStories from "@/components/Blog/more-stories";
 
 interface PostProps {
     title: string;
@@ -42,22 +42,6 @@ const MainPost = (post : PostProps) => {
     );
 }
 
-const MorePosts = ({ posts }: { posts: PostProps[] }) => {
-    return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-            { posts?.map((post, i) => (
-                <PostPreview
-                    key={i}
-                    title={post.title}
-                    coverImage={post.coverImage}
-                    date={post.date}
-                    slug={post.slug}
-                />
-            )) }
-        </div>
-    )
-}
-
 const PostPage = async ({ params }: { params: { slug: string } }) => {
 
     const { post, morePosts } = await getPostAndMorePosts(params.slug, false);
@@ -74,7 +58,7 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
                 morePosts &&
                 <div>
                     <h2 className="text-3xl md:text-5xl lg:text-5xl mb-16">More Posts</h2>
-                    <MorePosts posts={morePosts} />
+                    <MoreStories morePosts={morePosts} />
                 </div>
             }
         </section>
