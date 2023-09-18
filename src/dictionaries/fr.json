@@ -60,7 +60,7 @@
             "description": "Dans la plupart des cas, les sites web ont besoin d'un front-end et d'un back-end pour être pleinement fonctionnels. Sur la base du contenu du site web, nous créons un front-end correspondant qui s'exécute sur le client, et un back-end qui s'exécute sur le serveur. Si nécessaire, nous utilisons une base de données, puis une API pour récupérer les données."
         },
         "security": {
-            "title": "Une navigation sécurisée et des informations d'identification sûres",
+            "title": "Navigation sécurisée et des informations d'identification sûres",
             "description": "Nous garantissons à nos clients que la navigation sur leur site web sera entièrement sécurisée et que les informations d'identification de l'utilisateur seront préservées."
         },
         "workTime": {

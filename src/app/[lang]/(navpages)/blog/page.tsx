@@ -6,8 +6,6 @@ import MoreStories from "@/components/Blog/more-stories";
 import Link from "next/link";
 import { Metadata } from "next";
 
-export const revalidate = 3600
-
 export async function generateMetadata({ params }: { params: { lang: "en" | "en-US" | "fr" | "fr-FR" } }): Promise<Metadata> {
   const { blogpage: { metadata } } = await getDictionary(params.lang);
   return {

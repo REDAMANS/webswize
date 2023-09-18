@@ -77,7 +77,7 @@ const HomePage = async ({ params }: { params: { lang: "en"|"en-US"|"fr"|"fr-FR" 
           <section className="overflow-hidden flex md:gap-20 md:items-center flex-col-reverse md:flex-row section__padding">
             <picture className="flex-1 -mt-40 md:mt-0 w-full">
                 <AOS animation="flip-left">
-                  <Image src="/assets/home/safety.svg" alt="safety" className="w-full max-h-[500px] object-contain" width={300} height={300} />
+                  <Image src="/assets/home/safety.jpg" alt="safety" className="w-full max-h-[500px] object-contain" width={300} height={300} />
                 </AOS>
             </picture>
             <div className="flex-1 flex flex-col gap-10">
