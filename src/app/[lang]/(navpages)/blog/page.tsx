@@ -6,28 +6,28 @@ import MoreStories from "@/components/Blog/more-stories";
 import Link from "next/link";
 import { Metadata } from "next";
 
+export async function generateStaticParams() {
+  return [
+    {
+      lang: "en"
+    },
+    {
+      lang: "en-US"
+    },
+    {
+      lang: "fr"
+    },
+    {
+      lang: "fr-FR"
+    },
+  ]
+}
+
 export async function generateMetadata({ params }: { params: { lang: "en" | "en-US" | "fr" | "fr-FR" } }): Promise<Metadata> {
   const { blogpage: { metadata } } = await getDictionary(params.lang);
   return {
     ...metadata
   }
-}
-
-export async function generateStaticParams() {
-    return [
-      {
-        lang: "en"
-      },
-      {
-        lang: "en-US"
-      },
-      {
-        lang: "fr"
-      },
-      {
-        lang: "fr-FR"
-      },
-    ]
 }
 
 function HeroPost({
@@ -44,8 +44,8 @@ function HeroPost({
   slug: string
 }) {
   return (
-    <section className="flex md:flex-row flex-col gap-10 lg:gap-20 w-full mb-36">
-      <div className="md:flex-[1.2] max-w-2xl">
+    <section className="flex lg:flex-row flex-col gap-10 lg:gap-20 w-full mb-36">
+      <div className="lg:flex-[1.2]">
         <CoverImage title={title} slug={slug} url={coverImage.url} />
       </div>
       <div className="md:flex-[.8] flex flex-col">

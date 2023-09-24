@@ -15,10 +15,10 @@ export async function generateStaticParams() {
     ]
   }  
 
-const ServicePage = ({ params }: {params: { lang: string }}) => {
+const ServicePage = ({ params }: {params: {lang: "en" | "en-US" | "fr" | "fr-FR"}}) => {
     return (
         <section>
-            Enter
+            
         </section>
     );
 }

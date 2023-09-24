@@ -36,7 +36,7 @@
                 "name": "Responsive",
                 "title": "Responsive and Well-Organized web design",
                 "description": "One of our main concerns is to take care of your website's responsivness and give it the best possible design.",
-                "img": "/assets/home/slider/responsive.svg"
+                "img": "/assets/home/slider/responsive.png"
             },
             {
                 "name": "Interactive",
@@ -76,16 +76,23 @@
         "title": "About Us",
         "info": [
             {
-                "title": "Who we are",
-                "text": "Webswize is a web development project that was created in May 2023 by a small group of developers and designers, it started by creating, fixing, and maintaining small business websites. The main idea of the project was to improve the web performance mostly in Algeria, from user interface to user experience, and to bring a modern touch to the Algerian web."
+                "text": "Welcome to Webswize - Your Partner in Web Development Excellence!\nAt Webswize, we are more than just web developers; we are passionate creators, problem solvers, and innovators. Founded by two dedicated developers with a shared vision, we have set out to make the digital world a better place, one website at a time."
             },
             {
-                "title": "Who we are",
-                "text": "As a new business, we want to start by gaining our clients' trust, this is why we only provide secure features, we don't rush into using easier ways at the cost of losing credibility. We also like our clients to give us feedback so we can know how to improve our work. We provide many important modern website features, such as search engine optimization, safe and fast navigation, beautiful and creative user interface, databases, Rest APIs, CTAs, blogs, and helpful AI tools."
+                "title": "Our Story",
+                "text": "Our journey began with a simple idea: to combine cutting-edge technology with creative design to build websites that leave a lasting impression. With backgrounds in [mention your relevant backgrounds, e.g., software engineering, design, UX/UI], we united our skills to form a dynamic team that thrives on challenges and is committed to delivering outstanding results."
             },
             {
-                "title": "Who we are",
-                "text": "In the future, we aim to expand our team by recruiting more competent workers, organizing collaboration teams, and creating educational content."
+                "title": "Our Mission",
+                "text": "Our mission is to empower businesses and individuals by harnessing the full potential of the web. We believe that a well-crafted website can transform a mere online presence into a powerful tool for growth, communication, and success. Our clients' dreams and aspirations are at the core of everything we do."
+            },
+            {
+                "title": "What Sets Us Apart",
+                "text": "Expertise: With years of experience in web development, we bring expertise in a wide range of technologies and frameworks, ensuring that your project is in capable hands.\nCustom Solutions: We don't believe in one-size-fits-all solutions. Each project we take on is unique, and we tailor our services to meet your specific goals and needs.\nDesign Excellence: We understand the importance of aesthetics and user experience. Our design team ensures that your website not only functions flawlessly but also captivates your audience.\nClient-Centric Approach: Your satisfaction is our priority. We maintain open lines of communication, listen to your feedback, and make sure you are involved every step of the way."
+            },
+            {
+                "title": "Let's Create Together",
+                "text": "We believe in collaboration, and we're excited to embark on this journey with you. Whether you're a startup looking to establish your online presence or an established business seeking a digital transformation, we're here to make your vision a reality.\nThank you for considering [Your Company Name] as your web development partner. We look forward to working with you and crafting digital experiences that truly shine.\nReady to get started? Contact Us today to discuss your project!"
             }
         ]
     },
