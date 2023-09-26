@@ -4,8 +4,16 @@ import { useContext, useState, useRef } from "react";
 import { ConversationContext } from "@/context/ConversationContext";
 import { AiOutlinePlus, AiOutlineDelete, AiOutlineClose } from "react-icons/ai"
 
-
-const AISidebar = () => {
+const AISidebar = ({sidebar}: 
+    {
+        sidebar: {
+            myConvs: string, 
+            empty: string, 
+            buttons: {add: string, name: string, delete: string},
+            placeholder: string,
+            add: string
+        }
+    }) => {
 
     const nameRef = useRef<HTMLInputElement>(null);
 
@@ -61,9 +69,9 @@ const AISidebar = () => {
                         <button onClick={() => setNewConvWindow(false)} className="absolute top-5 right-5 text-lg">
                             <AiOutlineClose />
                         </button>
-                        <p className="text-center text-xl font-semibold">Name the new conversation</p>
-                        <input className="bg-gray-100 w-full outline-none px-3 py-3 rounded-xl" ref={nameRef} type="text" placeholder='Name e.g. "Conversation 1"' />
-                        <button className="py-3 px-8 tracking-wide text-sm rounded-xl text-white bg-blue-600" type="submit">Add</button>
+                        <p className="text-center text-xl font-semibold">{sidebar.buttons.name}</p>
+                        <input className="bg-gray-100 w-full outline-none px-3 py-3 rounded-xl" ref={nameRef} type="text" placeholder={sidebar.placeholder} />
+                        <button className="py-3 px-8 tracking-wide text-sm rounded-xl text-white bg-blue-600" type="submit">{sidebar.add}</button>
                     </form>
                 </div>
             }
@@ -71,9 +79,9 @@ const AISidebar = () => {
                 <Image priority className="h-auto" src="/assets/logo/logo.svg" alt="logo" width={80} height={80} />
                 <p className="text-3xl font-black tracking-wider">Chat<span className="text-blue-700">Bot</span></p>
             </div>
-            <p className="text-lg font-semibold">My Conversations</p>
+            <p className="text-lg font-semibold">{sidebar.myConvs}</p>
             <div className="flex-1 flex flex-col w-full overflow-y-scroll no-scrollbar">
-                {!conversations && <p className="self-center justify-self-center description-text">Nothing yet</p>}
+                {!conversations && <p className="self-center justify-self-center description-text">{sidebar.empty}</p>}
                 <ul className="h-max flex flex-col gap-5">
                     {
                         conversations && 
@@ -86,13 +94,13 @@ const AISidebar = () => {
                 </ul>  
             </div>
             <div className="flex flex-col gap-5 text-sm w-full">
-                <button aria-label="add a new conversation" onClick={() => setNewConvWindow(true)} className="flex flex-row gap-4 items-center justify-center w-full py-3 rounded-xl text-white bg-blue-600">
+                <button aria-label="add a new conversation" onClick={() => setNewConvWindow(true)} className="flex flex-row gap-4 items-center justify-center w-full p-3 rounded-xl text-white bg-blue-600">
                     <AiOutlinePlus />
-                    <p>Add new conversation</p>
+                    <p>{sidebar.buttons.add}</p>
                 </button>
-                <button aria-label="delete conversation" onClick={deleteSelectedConversation} className="flex flex-row gap-4 items-center justify-center w-full py-3 rounded-xl text-white bg-red-500">
+                <button aria-label="delete conversation" onClick={deleteSelectedConversation} className="flex flex-row gap-4 items-center justify-center w-full p-3 rounded-xl text-white bg-red-500">
                     <AiOutlineDelete />
-                    <p>Delete this conversation</p>
+                    <p>{sidebar.buttons.delete}</p>
                 </button>
             </div>
         </aside>

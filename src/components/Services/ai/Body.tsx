@@ -1,8 +1,9 @@
+"use client";
 import QuestionOrAnswer from "./QuestionOrAnswer";
 import {useEffect, useRef, useContext} from 'react'
 import { ConversationContext } from "@/context/ConversationContext";
 
-const Body = () => {
+const Body = ({body}: {body: {hiThere: string, functionality: string}}) => {
 
     const { conversations, sideBarState, updateSideBarState } = useContext(ConversationContext);
 
@@ -23,8 +24,8 @@ const Body = () => {
                 <div className="menubar__2"></div>
                 <div className="menubar__3"></div>
             </button>
-            <h1 className="text-5xl font-bold mb-4 text-center">Hi, there!</h1>
-            <p className="description-text mb-20 text-center">Ask me a question and i'll answer it</p>
+            <h1 className="text-2xl sm:text-3xl md:text-5xl px-3 sm:p-0 font-bold mb-4 text-center">{body.hiThere}</h1>
+            <p className="description-text mb-20 text-center">{body.functionality}</p>
             {
                 currConversation && 
                 <ul className="w-full flex flex-col gap-12">

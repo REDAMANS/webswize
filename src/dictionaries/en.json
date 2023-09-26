@@ -129,6 +129,24 @@
                             "link": "/chatbot"
                         }
                     ]
+                },
+                "page": {
+                    "body": { 
+                        "hiThere": "Hi, there!",
+                        "functionality": "Ask me a question and i'll answer it"
+                    },
+                    "placeholder": "What's on your mind ?",
+                    "sidebar": {
+                        "myConvs": "My Conversations",
+                        "empty": "Nothing yet",
+                        "buttons": {
+                            "add": "Add new conversation",
+                            "name": "Name the new conversation",
+                            "delete": "Delete this conversation"
+                        },
+                        "placeholder": "Name e.g. \"Conversation 1\"",
+                        "add": "Add"
+                    }
                 }
             }
         }

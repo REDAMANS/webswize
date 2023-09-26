@@ -1,10 +1,11 @@
+"use client";
 import { BiSolidNavigation } from 'react-icons/bi'
 import { generateAnswer } from '@/lib/ai'
 import { useState } from 'react'
 import { ConversationContext } from '@/context/ConversationContext'
 import { useContext } from 'react'
 
-const QuestionBar = () => {
+const QuestionBar = ({placeholder}: {placeholder: string}) => {
 
     const { updateConversations } = useContext(ConversationContext);
 
@@ -44,7 +45,7 @@ const QuestionBar = () => {
             <input 
                 autoComplete="off"
                 type="text" 
-                placeholder="What's on your mind?" 
+                placeholder={placeholder} 
                 className="h-full w-full outline-none pl-5 md:pl-10"
                 value={prompt}
                 onChange={(e) => setPrompt(e.target.value)}
