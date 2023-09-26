@@ -36,28 +36,12 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.login::before {
-    @apply content-[""] absolute top-0 rounded-lg z-[-1] left-0 h-full bg-blue-600 w-0 transition-[width] duration-300;
-}
-
-.login:hover::before {
-    @apply w-full
-}
-
-.login:not(:hover)::before {
-    @apply left-full;
-}
-
-.login::after {
-    @apply content-[""] absolute top-0 rounded-lg z-[-1] right-0 h-full bg-blue-600 w-full transition-[width] delay-300;
-}
-
-.login:not(:hover)::after {
-    @apply w-0 delay-0;
-}
-
 .link {
     @apply relative
+}
+
+.link:hover ul {
+    height: 100px;
 }
 
 .link::before {
@@ -193,4 +177,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .mainpost ul {
     @apply list-disc pl-10
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
 }

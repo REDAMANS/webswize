@@ -15,7 +15,17 @@
             },
             {
                 "name": "Services",
-                "href": "/services"
+                "href": "/services",
+                "hover": [
+                    {
+                        "name": "Service Web",
+                        "href": "web-service"
+                    },
+                    {
+                        "name": "Service IA",
+                        "href": "ai-service"
+                    }
+                ]
             }
         ]
     },
@@ -36,19 +46,19 @@
                 "name": "Réactif",
                 "title": "Sites web réactifs et bien organisés",
                 "description": "L'une de nos principales préoccupations est de soigner le responsive de votre site internet et de lui donner le meilleur design possible.",
-                "img": "/assets/home/slider/responsive.svg"
+                "img": "responsive.svg"
             },
             {
                 "name": "Interactif",
                 "title": "Applications web entièrement interactives",
                 "description": "Nous utilisons les meilleures bibliothèques et structures pour rendre le site Web interactif pour les utilisateurs.",
-                "img": "/assets/home/slider/interactive.svg"
+                "img": "interactive.svg"
             },
             {
                 "name": "Créatif",
                 "title": "Un design créatif, modern et attrayant",
                 "description": "La création du design de votre site web est cruciale, nous nous en chargeons.",
-                "img": "/assets/home/slider/creative.svg"
+                "img": "creative.svg"
             }
         ],
         "seo": {
@@ -76,29 +86,51 @@
         "title": "À propos de nous",
         "info": [
             {
-                "text": "Welcome to Webswize - Your Partner in Web Development Excellence!\nAt Webswize, we are more than just web developers; we are passionate creators, problem solvers, and innovators. Founded by two dedicated developers with a shared vision, we have set out to make the digital world a better place, one website at a time."
+                "text": "Bienvenue chez Webswize - Votre partenaire pour l'excellence du développement Web ! Chez Webswize, nous sommes plus que de simples développeurs Web ; nous sommes des créateurs passionnés, des résolveurs de problèmes et des innovateurs. Fondés par deux développeurs dévoués ayant une vision commune, nous avons entrepris de rendre le monde numérique meilleur, un site Web à la fois."
             },
             {
-                "title": "Our Story",
-                "text": "Our journey began with a simple idea: to combine cutting-edge technology with creative design to build websites that leave a lasting impression. With backgrounds in [mention your relevant backgrounds, e.g., software engineering, design, UX/UI], we united our skills to form a dynamic team that thrives on challenges and is committed to delivering outstanding results."
+                "title": "Notre histoire",
+                "text": "Notre voyage a commencé avec une idée simple : combiner une technologie de pointe avec un design créatif pour construire des sites web qui laissent une impression durable. Nous avons uni nos compétences pour former une équipe dynamique qui s'épanouit dans les défis et s'engage à fournir des résultats exceptionnels."
             },
             {
-                "title": "Our Mission",
-                "text": "Our mission is to empower businesses and individuals by harnessing the full potential of the web. We believe that a well-crafted website can transform a mere online presence into a powerful tool for growth, communication, and success. Our clients' dreams and aspirations are at the core of everything we do."
+                "title": "Notre mission",
+                "text": "Notre mission est d'aider les entreprises et les particuliers à exploiter tout le potentiel du web. Nous sommes convaincus qu'un site web bien conçu peut transformer une simple présence en ligne en un puissant outil de croissance, de communication et de réussite. Les rêves et les aspirations de nos clients sont au cœur de tout ce que nous faisons."
             },
             {
-                "title": "What Sets Us Apart",
-                "text": "Expertise: With years of experience in web development, we bring expertise in a wide range of technologies and frameworks, ensuring that your project is in capable hands.\nCustom Solutions: We don't believe in one-size-fits-all solutions. Each project we take on is unique, and we tailor our services to meet your specific goals and needs.\nDesign Excellence: We understand the importance of aesthetics and user experience. Our design team ensures that your website not only functions flawlessly but also captivates your audience.\nClient-Centric Approach: Your satisfaction is our priority. We maintain open lines of communication, listen to your feedback, and make sure you are involved every step of the way."
+                "title": "Ce qui nous distingue",
+                "text": "Expertise : Avec des années d'expérience dans le développement web, nous apportons notre expertise dans un large éventail de technologies et de cadres, garantissant que votre projet est entre de bonnes mains. Solutions personnalisées : Nous ne croyons pas aux solutions uniques. Chaque projet que nous entreprenons est unique et nous adaptons nos services pour répondre à vos objectifs et à vos besoins spécifiques : Nous comprenons l'importance de l'esthétique et de l'expérience utilisateur. Notre équipe de conception s'assure que votre site Web fonctionne parfaitement et qu'il captive votre public. Approche centrée sur le client : Votre satisfaction est notre priorité. Nous maintenons des lignes de communication ouvertes, nous écoutons vos commentaires et nous nous assurons que vous êtes impliqué à chaque étape du processus."
             },
             {
-                "title": "Let's Create Together",
-                "text": "We believe in collaboration, and we're excited to embark on this journey with you. Whether you're a startup looking to establish your online presence or an established business seeking a digital transformation, we're here to make your vision a reality.\nThank you for considering [Your Company Name] as your web development partner. We look forward to working with you and crafting digital experiences that truly shine.\nReady to get started? Contact Us today to discuss your project!"
+                "title": "Créons ensemble",
+                "text": "Nous croyons en la collaboration et nous sommes ravis d'entreprendre ce voyage avec vous. Que vous soyez une startup cherchant à établir sa présence en ligne ou une entreprise établie cherchant une transformation numérique, nous sommes là pour faire de votre vision une réalité. Nous vous remercions d'avoir choisi Webswize comme partenaire pour le développement de votre site web. Nous sommes impatients de travailler avec vous et de créer des expériences numériques qui brillent vraiment. Vous êtes prêt à commencer ? Contactez-nous dès aujourd'hui pour discuter de votre projet !"
             }
         ]
     },
     "blogpage": {
         "metadata": {
             "title": "Webswize | Blog"
+        }
+    },
+    "servicespage": {
+        "pages": {
+            "web": {
+
+            },
+            "ai": {
+                "title": "Outils IA",
+                "description": "Nous avons quelques outils d'IA utiles qui peuvent vous aider.",
+                "tools": {
+                    "buttonText": "Ouvrir",
+                    "toolList": [
+                        {
+                            "name": "AI Chatbot", 
+                            "description": "Basé sur GPT 3.5, notre chatbot génère des réponses à vos questions", 
+                            "imgUrl": "chatbot.jpg", 
+                            "link": "/chatbot"
+                        }
+                    ]
+                }
+            }
         }
     }
 }

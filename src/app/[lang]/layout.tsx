@@ -8,7 +8,7 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
-  title: 'WebsWize | Where elegance meets talent',
+  title: 'Webswize | Where elegance meets talent',
   description: 'Webswize is an ongoing project for the web development',
 }
 

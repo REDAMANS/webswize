@@ -17,6 +17,8 @@ const ScrollTop = () => {
            }
         }
 
+        handleButton();
+
         window.addEventListener("scroll", handleButton);
         return () => {
             window.removeEventListener("scroll", handleButton);

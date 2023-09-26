@@ -15,7 +15,17 @@
             },
             {
                 "name": "Services",
-                "href": "/services"
+                "href": "/services",
+                "hover": [
+                    {
+                        "name": "Web Service",
+                        "href": "web-service"
+                    },
+                    {
+                        "name": "AI Service",
+                        "href": "ai-service"
+                    }
+                ]
             }
         ]
     },
@@ -36,19 +46,19 @@
                 "name": "Responsive",
                 "title": "Responsive and Well-Organized web design",
                 "description": "One of our main concerns is to take care of your website's responsivness and give it the best possible design.",
-                "img": "/assets/home/slider/responsive.svg"
+                "img": "responsive.svg"
             },
             {
                 "name": "Interactive",
                 "title": "Fully interactive web applications",
                 "description": "We use the best libraries and frameworks to make the website interactive to users.",
-                "img": "/assets/home/slider/interactive.svg"
+                "img": "interactive.svg"
             },
             {
                 "name": "Creative",
                 "title": "Creative, modern and attractive design",
                 "description": "The creation of your website's design is crucial, we take care of that.",
-                "img": "/assets/home/slider/creative.svg"
+                "img": "creative.svg"
             }
         ],
         "seo": {
@@ -60,8 +70,8 @@
             "description": "In most cases, websites require both front-end and back-end for full functionality. Based on the website's content, we make a corresponding front-end that runs on the client, and a back-end that runs on the server, if necessary, we use database and then use an API to retrieve data from it."
         },
         "security": {
-            "title": "Une navigation sécurisée et des informations d'identification sûres",
-            "description": "Nous garantissons à nos clients que la navigation sur leur site web sera entièrement sécurisée et que les informations d'identification de l'utilisateur seront préservées."
+            "title": "Secure navigation and safe credentials",
+            "description": "We guarantee our customers that navigating on their website will be completely secure and that user information will be preserved."
         },
         "workTime": {
             "title": "Open to work at any time",
@@ -76,11 +86,11 @@
         "title": "About Us",
         "info": [
             {
-                "text": "Welcome to Webswize - Your Partner in Web Development Excellence!\nAt Webswize, we are more than just web developers; we are passionate creators, problem solvers, and innovators. Founded by two dedicated developers with a shared vision, we have set out to make the digital world a better place, one website at a time."
+                "text": "Welcome to Webswize - Your Partner in Web Development Excellence! At Webswize, we are more than just web developers; we are passionate creators, problem solvers, and innovators. Founded by two dedicated developers with a shared vision, we have set out to make the digital world a better place, one website at a time."
             },
             {
                 "title": "Our Story",
-                "text": "Our journey began with a simple idea: to combine cutting-edge technology with creative design to build websites that leave a lasting impression. With backgrounds in [mention your relevant backgrounds, e.g., software engineering, design, UX/UI], we united our skills to form a dynamic team that thrives on challenges and is committed to delivering outstanding results."
+                "text": "Our journey began with a simple idea: to combine cutting-edge technology with creative design to build websites that leave a lasting impression. We united our skills to form a dynamic team that thrives on challenges and is committed to delivering outstanding results."
             },
             {
                 "title": "Our Mission",
@@ -88,17 +98,39 @@
             },
             {
                 "title": "What Sets Us Apart",
-                "text": "Expertise: With years of experience in web development, we bring expertise in a wide range of technologies and frameworks, ensuring that your project is in capable hands.\nCustom Solutions: We don't believe in one-size-fits-all solutions. Each project we take on is unique, and we tailor our services to meet your specific goals and needs.\nDesign Excellence: We understand the importance of aesthetics and user experience. Our design team ensures that your website not only functions flawlessly but also captivates your audience.\nClient-Centric Approach: Your satisfaction is our priority. We maintain open lines of communication, listen to your feedback, and make sure you are involved every step of the way."
+                "text": "Expertise: With years of experience in web development, we bring expertise in a wide range of technologies and frameworks, ensuring that your project is in capable hands. Custom Solutions: We don't believe in one-size-fits-all solutions. Each project we take on is unique, and we tailor our services to meet your specific goals and needs. Design Excellence: We understand the importance of aesthetics and user experience. Our design team ensures that your website not only functions flawlessly but also captivates your audience. Client-Centric Approach: Your satisfaction is our priority. We maintain open lines of communication, listen to your feedback, and make sure you are involved every step of the way."
             },
             {
                 "title": "Let's Create Together",
-                "text": "We believe in collaboration, and we're excited to embark on this journey with you. Whether you're a startup looking to establish your online presence or an established business seeking a digital transformation, we're here to make your vision a reality.\nThank you for considering [Your Company Name] as your web development partner. We look forward to working with you and crafting digital experiences that truly shine.\nReady to get started? Contact Us today to discuss your project!"
+                "text": "We believe in collaboration, and we're excited to embark on this journey with you. Whether you're a startup looking to establish your online presence or an established business seeking a digital transformation, we're here to make your vision a reality. Thank you for considering Webswize as your web development partner. We look forward to working with you and crafting digital experiences that truly shine. Ready to get started? Contact Us today to discuss your project!"
             }
         ]
     },
     "blogpage": {
         "metadata": {
             "title": "Webswize | Blog"
+        }
+    },
+    "servicespage": {
+        "pages": {
+            "web": {
+
+            },
+            "ai": {
+                "title": "AI Tools",
+                "description": "We have some useful AI tools that may help you.",
+                "tools": {
+                    "buttonText": "Open",
+                    "toolList": [
+                        {
+                            "name": "AI Chatbot", 
+                            "description": "Based on GPT 3.5, our chatbot generates answers for your questions", 
+                            "imgUrl": "chatbot.jpg",
+                            "link": "/chatbot"
+                        }
+                    ]
+                }
+            }
         }
     }
 }
