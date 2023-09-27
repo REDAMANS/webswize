@@ -1,8 +1,7 @@
 "use client"
 import { useState, useRef } from 'react'
-import Image from 'next/image';
 
-const page = () => {
+const RemoveBgPage = () => {
 
     const [file, setFile] = useState<File | null>(null);
 
@@ -40,4 +39,4 @@ const page = () => {
     );
 }
 
-export default page;
+export default RemoveBgPage;
