@@ -1,6 +1,6 @@
 "use client";
 import React, { createContext, useState } from "react"
-import { IPair } from "@/lib/ai";
+import { IPair } from "@/lib/ipair";
 
 type IConversation = (
     {

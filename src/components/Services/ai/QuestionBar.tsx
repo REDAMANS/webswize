@@ -1,6 +1,5 @@
 "use client";
 import { BiSolidNavigation } from 'react-icons/bi'
-import { generateAnswer } from '@/lib/ai'
 import { useState } from 'react'
 import { ConversationContext } from '@/context/ConversationContext'
 import { useContext } from 'react'
@@ -26,8 +25,16 @@ const QuestionBar = ({placeholder}: {placeholder: string}) => {
             }) : [{ name: newPrompt, isSelected: true, conv: [{ question: newPrompt, answer: "..."}] }]
             return newConvs;
         })
-        const answer = await generateAnswer(newPrompt);
-        const answerObj = answer ? JSON.parse(answer) : {};
+        const res = await fetch("http://localhost:3000/api/chatbot", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({prompt})
+        });
+
+        const answer = await res.json();
+        const answerObj = JSON.parse(answer);
         updateConversations(prev => {
             const newConvs = prev ? prev.map(conversation => {
                 if(conversation.isSelected)return {

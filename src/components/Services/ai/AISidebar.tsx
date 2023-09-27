@@ -61,7 +61,7 @@ const AISidebar = ({sidebar}:
     }
 
     return (
-        <aside className={`${sideBarState ? "flex" : "hidden"} md:flex flex-col bg-slate-100 absolute w-screen md:w-auto z-10 md:static border-r px-6 md:px-12 py-8 h-full gap-5`}>
+        <aside className={`${sideBarState ? "flex" : "hidden"} md:flex flex-col bg-slate-100 absolute w-screen md:w-auto z-10 md:static border-r px-6 md:px-12 py-8 h-full gap-10`}>
             {
                 newConvWindow &&
                 <div className="fixed top-0 left-0 z-50 h-screen w-screen flex items-center justify-center bg-[#00000032]">

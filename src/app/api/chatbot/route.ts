@@ -1,24 +1,20 @@
-const CHATURL = 'https://open-ai21.p.rapidapi.com/conversationgpt35';
+import { NextRequest, NextResponse } from "next/server";
 
-export type IPair = {
-    question: string;
-    answer: string;
-}
-
-export const generateAnswer = async (prompt: string): Promise<string | undefined> => {
+export async function POST(req: NextRequest) {
     try {
-        const response = await fetch(CHATURL, {
+        const { prompt } = await req.json();
+        const response = await fetch('https://open-ai21.p.rapidapi.com/conversationgpt35', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-                'X-RapidAPI-Key': '3b7e13813dmshb8b4a609c6e38d4p191e81jsn42a8d19e2f8e',
+                'X-RapidAPI-Key': process.env.RAPIDAPI_KEY || "",
                 'X-RapidAPI-Host': 'open-ai21.p.rapidapi.com'
             },
             body: JSON.stringify({
                 messages: [
                     {
                         role: 'user',
-                        content: 'hello'
+                        content: prompt
                     }
                 ],
                 web_access: false,
@@ -27,7 +23,7 @@ export const generateAnswer = async (prompt: string): Promise<string | undefined
         })
 
         const answer = await response.text();
-        return answer;
+        return NextResponse.json(answer);
     }catch(err) {
         console.error(err);
     }
