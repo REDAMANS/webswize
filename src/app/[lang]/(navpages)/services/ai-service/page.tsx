@@ -26,7 +26,7 @@ const AiServicePage = async ({ params }: {params: {lang: "en" | "en-US" | "fr" |
         <section className="section__padding">
             <h1 className="text-2xl z-10 sm:text-3xl md:text-5xl mb-5">{ai.title}</h1>
             <p className="description-text mb-10">{ai.description}</p>
-            <ul className="flex flex-row">
+            <ul className="flex flex-col items-center md:items-start md:flex-row gap-10">
                 {
                     ai.tools.toolList.map((tool: { 
                         name: string,

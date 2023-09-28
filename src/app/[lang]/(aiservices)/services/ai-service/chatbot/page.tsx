@@ -23,15 +23,15 @@ export async function generateStaticParams() {
 
 const AiChatbotPage = async ({ params }: {params: {lang: "en" | "en-US" | "fr" | "fr-FR"}}) => {
 
-    const { servicespage: { pages: { ai: { page } } } } = await getDictionary(params.lang);
+    const { servicespage: { pages: { ai: { page: { chatbot } } } } } = await getDictionary(params.lang);
 
     return (
         <section className="flex flex-row h-screen">
             <ConversationProvider>
-                <AISidebar sidebar={page.sidebar} />
-                <section className="flex-1 h-full flex flex-col px-10 md:px-20 py-8">
-                    <Body body={page.body}/>
-                    <QuestionBar placeholder={page.placeholder}/>
+                <AISidebar sidebar={chatbot.sidebar} />
+                <section className="flex-1 h-full flex flex-col px-10 md:px-20 pt-28 pb-8">
+                    <Body body={chatbot.body}/>
+                    <QuestionBar placeholder={chatbot.placeholder}/>
                 </section>
             </ConversationProvider>
         </section>

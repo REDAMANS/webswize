@@ -127,25 +127,43 @@
                             "description": "Basé sur GPT 3.5, notre chatbot génère des réponses à vos questions", 
                             "imgUrl": "chatbot.jpg", 
                             "link": "/chatbot"
+                        },
+                        {
+                            "name": "Suppression de l'arrière-plan", 
+                            "description": "Un outil d'IA simple et efficace pour la suppression de l'arrière-plan", 
+                            "imgUrl": "nobg.webp",
+                            "link": "/removebg"
                         }
                     ]
                 },
                 "page" : {
-                    "body" : {
-                        "hiThere" : "Bonjour, vous êtes là !",
-                        "functionality" : "Posez-moi une question et j'y répondrai"
-                    },
-                    "placeholder" : "Qu'est-ce qui vous préoccupe ?",
-                    "sidebar" : {
-                        "myConvs" : "Mes conversations",
-                        "empty" : "Rien pour l'instant",
-                        "buttons" : {
-                            "add" : "Ajouter une conversation",
-                            "name": "Nommer la nouvelle conversation",
-                            "delete" : "Supprimer cette conversation"
+                    "chatbot": {
+                        "body" : {
+                            "hiThere" : "Bonjour, vous êtes là !",
+                            "functionality" : "Posez-moi une question et j'y répondrai"
                         },
-                        "placeholder": "Nom e.g. \"Conversation 1\"",
-                        "add": "Ajouter"
+                        "placeholder" : "Qu'est-ce qui vous préoccupe ?",
+                        "sidebar" : {
+                            "myConvs" : "Mes conversations",
+                            "empty" : "Rien pour l'instant",
+                            "buttons" : {
+                                "add" : "Ajouter une conversation",
+                                "name": "Nommer la nouvelle conversation",
+                                "delete" : "Supprimer cette conversation"
+                            },
+                            "placeholder": "Nom e.g. \"Conversation 1\"",
+                            "add": "Ajouter"
+                        }
+                    },
+                    "removebg": {
+                        "title": "Supprimer l'arrière-plan en un seul clic",
+                        "otherAiTools": "Autres outils d'IA",
+                        "removeBgSection": {
+                            "uploadLabel": "Télécharger une image ou glisser ici",
+                            "uploadButton": "Télécharger",
+                            "supportedFormats": "Formats supportés : PNG, JPG, WEBP",
+                            "downloadButton": "Télécharger"
+                        }
                     }
                 }
             }

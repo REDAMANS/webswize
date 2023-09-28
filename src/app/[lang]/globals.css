@@ -182,3 +182,14 @@ h1, h2, h3, h4, h5, h6 {
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
+
+.removebg-header {
+    font-weight: 900;
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(145deg, rgba(0,0,0,1) 40%, rgba(5,132,255,1) 100%);
+    background: -webkit-linear-gradient(145deg, rgba(0,0,0,1) 40%, rgba(5,132,255,1) 100%);
+    background: linear-gradient(145deg, rgba(0,0,0,1) 40%, rgba(5,132,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#0584ff",GradientType=1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

@@ -127,25 +127,43 @@
                             "description": "Based on GPT 3.5, our chatbot generates answers for your questions", 
                             "imgUrl": "chatbot.jpg",
                             "link": "/chatbot"
+                        },
+                        {
+                            "name": "Background Remover", 
+                            "description": "A simple and efficient AI tool for background removal", 
+                            "imgUrl": "nobg.webp",
+                            "link": "/removebg"
                         }
                     ]
                 },
                 "page": {
-                    "body": { 
-                        "hiThere": "Hi, there!",
-                        "functionality": "Ask me a question and i'll answer it"
-                    },
-                    "placeholder": "What's on your mind ?",
-                    "sidebar": {
-                        "myConvs": "My Conversations",
-                        "empty": "Nothing yet",
-                        "buttons": {
-                            "add": "Add new conversation",
-                            "name": "Name the new conversation",
-                            "delete": "Delete this conversation"
+                    "chatbot": {
+                        "body": { 
+                            "hiThere": "Hi, there!",
+                            "functionality": "Ask me a question and i'll answer it"
                         },
-                        "placeholder": "Name e.g. \"Conversation 1\"",
-                        "add": "Add"
+                        "placeholder": "What's on your mind ?",
+                        "sidebar": {
+                            "myConvs": "My Conversations",
+                            "empty": "Nothing yet",
+                            "buttons": {
+                                "add": "Add new conversation",
+                                "name": "Name the new conversation",
+                                "delete": "Delete this conversation"
+                            },
+                            "placeholder": "Name e.g. \"Conversation 1\"",
+                            "add": "Add"
+                        }
+                    },
+                    "removebg": {
+                        "title": "Remove Image Background With One Click",
+                        "otherAiTools": "Other AI tools",
+                        "removeBgSection": {
+                            "uploadLabel": "Upload an image or drag Here",
+                            "uploadButton": "Upload",
+                            "supportedFormats": "Supported formats: PNG, JPG, WEBP",
+                            "downloadButton": "Download"
+                        }
                     }
                 }
             }
