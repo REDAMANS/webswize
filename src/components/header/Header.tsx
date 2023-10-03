@@ -12,7 +12,7 @@ type Navbar = {
 const Header = ({ navbar }: { navbar: Navbar }) => {
 
     return (
-        <header className="fixed w-full top-0 backdrop-blur z-[100]">
+        <header className="fixed w-full top-0 bg-[#ffffffcc] backdrop-blur z-[100]">
                 <nav className="nav__padding border-b z-50 flex text-sm text-gray-700 items-center justify-between flex-row">
                 <div className="flex flex-row md:gap-10 lg:gap-16 items-center flex-shrink">
                     <Image priority className="h-auto" src="/assets/logo/logo.svg" alt="logo" width={80} height={80} />

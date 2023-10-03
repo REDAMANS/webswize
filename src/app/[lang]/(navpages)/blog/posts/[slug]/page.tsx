@@ -60,7 +60,6 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
             {
                 morePosts &&
                 <div>
-                    <h2 className="text-3xl md:text-5xl lg:text-5xl mb-16">More Posts</h2>
                     <MoreStories morePosts={morePosts} />
                 </div>
             }

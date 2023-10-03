@@ -1,6 +1,7 @@
 import Slider from "@/components/Services/web/Slider";
 import { getDictionary } from "@/lib/dictionaries";
 import Feature from "@/components/Services/web/Feature";
+import AOS from "@/components/AOS";
 
 export async function generateStaticParams() {
     return [
@@ -33,7 +34,9 @@ const WebServicePage = async ({ params }: {params: {lang: "en" | "en-US" | "fr" 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
                 {
                   web.features.list.map((feature: any, i: number) => 
-                    <Feature key={i} feature={feature} i={i}/>
+                  <AOS animation="zoom-in" delay={`${i*200}`}>
+                    <Feature key={i} feature={feature}/>
+                  </AOS>
                   )
                 }
               </div>
