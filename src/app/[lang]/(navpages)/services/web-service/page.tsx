@@ -34,8 +34,8 @@ const WebServicePage = async ({ params }: {params: {lang: "en" | "en-US" | "fr" 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
                 {
                   web.features.list.map((feature: any, i: number) => 
-                  <AOS animation="zoom-in" delay={`${i*200}`}>
-                    <Feature key={i} feature={feature}/>
+                  <AOS key={i} animation="zoom-in" delay={`${i*200}`}>
+                    <Feature feature={feature}/>
                   </AOS>
                   )
                 }
