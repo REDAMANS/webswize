@@ -53,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sidebar__toggle div {
-    @apply w-5 h-0.5 bg-black transition-all
+    @apply w-5 h-0.5 transition-all;
 }
 
 .sidebar__toggle:hover div {
@@ -179,6 +179,23 @@ h1, h2, h3, h4, h5, h6 {
     @apply list-disc pl-10
 }
 
+.grid-container>li>div {
+    height: 100%;
+    background: rgb(1,52,131);
+    background: -moz-linear-gradient(145deg, rgba(1,52,131,1) 0%, rgba(166,0,255,1) 100%);
+    background: -webkit-linear-gradient(145deg, rgba(1,52,131,1) 0%, rgba(166,0,255,1) 100%);
+    background: linear-gradient(145deg, rgba(1,52,131,1) 0%, rgba(166,0,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#013483",endColorstr="#a600ff",GradientType=1);
+}
+
+.grid-container>li:nth-child(3) {
+    grid-row: span 2;
+}
+
+.grid-container>li:nth-child(4) {
+    grid-column: span 2;
+}
+
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
@@ -192,4 +209,12 @@ h1, h2, h3, h4, h5, h6 {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#0584ff",GradientType=1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.feature {
+    background: rgb(105,34,255);
+    background: -moz-linear-gradient(180deg, rgba(105,34,255,1) 0%, rgba(26,0,83,1) 79%);
+    background: -webkit-linear-gradient(180deg, rgba(105,34,255,1) 0%, rgba(26,0,83,1) 79%);
+    background: linear-gradient(180deg, rgba(105,34,255,1) 0%, rgba(26,0,83,1) 79%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6922ff",endColorstr="#1a0053",GradientType=1);
 }

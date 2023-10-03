@@ -34,13 +34,15 @@ const Body = ({body}: {body: {hiThere: string, functionality: string}}) => {
                             <QuestionOrAnswer
                                 pfp="/assets/services/ai/user.svg"
                                 flexDirection="flex-row"
-                                alignSelf="self-start">
+                                alignSelf="self-start"
+                                type="question">
                                     {pair.question}
                             </QuestionOrAnswer>
                             <QuestionOrAnswer 
                                 pfp="/assets/logo/logo.svg"
                                 flexDirection="flex-row-reverse"
-                                alignSelf="self-end">
+                                alignSelf="self-end"
+                                type="answer">
                                     {pair.answer}
                             </QuestionOrAnswer>
                         </li>

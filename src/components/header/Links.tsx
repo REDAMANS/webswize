@@ -17,12 +17,12 @@ const Links = ({ links }: { links: {name: string, href: string}[] }) => {
                         {
                             link.hover ?
                             <>
-                                <Link href={link.href}>{link.name}</Link>
+                                <Link className={pathname === link.href ? `text-[#1C4CC9] font-semibold` : ""} href={link.href}>{link.name}</Link>
                                 <ul className='absolute overflow-y-hidden delay-200 whitespace-nowrap right-0 font-light top-10 transition-[height] h-0 flex-col rounded-xl shadow-lg bg-white'>
                                     {
                                         link.hover.map((l, i) =>
                                             <li key={i}>
-                                                <Link className='py-4 px-5 flex flex-row gap-10 hover:text-blue-600 transition-colors items-center justify-between' href={`${link.href}/${l.href}`}>
+                                                <Link className='py-4 px-5 flex flex-row gap-10 text-black hover:text-blue-600 transition-colors items-center justify-between' href={`${link.href}/${l.href}`}>
                                                     <p>{l.name}</p>
                                                     <BsChevronRight />
                                                 </Link>
@@ -33,7 +33,7 @@ const Links = ({ links }: { links: {name: string, href: string}[] }) => {
                             </>
                             :
                            <Link 
-                                className={pathname === link.href? 'text-[#1C4CC9] font-semibold' : ''} 
+                                className={pathname === link.href ? `text-[#1C4CC9] font-semibold` : ""} 
                                 href={link.href}
                             >
                                 {link.name}

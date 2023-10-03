@@ -23,24 +23,28 @@ const AiServicePage = async ({ params }: {params: {lang: "en" | "en-US" | "fr" |
     const { servicespage: { pages: { ai } } } = await getDictionary(params.lang);
     
     return (
-        <section className="section__padding">
-            <h1 className="text-2xl z-10 sm:text-3xl md:text-5xl mb-5">{ai.title}</h1>
-            <p className="description-text mb-10">{ai.description}</p>
-            <ul className="flex flex-col items-center md:items-start md:flex-row gap-10">
-                {
-                    ai.tools.toolList.map((tool: { 
-                        name: string,
-                        description: string,
-                        imgUrl: string,
-                        link: string,
-                        buttonText: string
-                    }, index: number) => (
-                        <ServiceBox key={index} {...tool} 
-                            buttonText={ai.tools.buttonText} 
-                        />
-                    ))
-                }
-            </ul>
+        <section className="flex flex-col gap-10">
+            <section className="section__padding pt-0">
+              <h1 className="font-black text-3xl sm:text-6xl md:text-[80px] leading-[2.5rem] sm:leading-[5rem] md:leading-[7rem] tracking-wider">
+                {ai.title}
+              </h1>
+              <p className="description-text mb-10">{ai.description}</p>
+              <ul className="flex flex-col items-center sm:items-start sm:flex-row gap-10">
+                  {
+                      ai.tools.toolList.map((tool: { 
+                          name: string,
+                          description: string,
+                          imgUrl: string,
+                          link: string,
+                          buttonText: string
+                      }, index: number) => (
+                          <ServiceBox key={index} {...tool} 
+                              buttonText={ai.tools.buttonText} 
+                          />
+                      ))
+                  }
+              </ul>
+            </section>
         </section>
     );
 }

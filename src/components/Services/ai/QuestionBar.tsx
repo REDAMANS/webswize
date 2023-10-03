@@ -25,15 +25,26 @@ const QuestionBar = ({placeholder}: {placeholder: string}) => {
             }) : [{ name: newPrompt, isSelected: true, conv: [{ question: newPrompt, answer: "..."}] }]
             return newConvs;
         })
-        const res = await fetch("http://localhost:3000/api/chatbot", {
-            method: "POST",
+        const response = await fetch('https://open-ai21.p.rapidapi.com/conversationgpt35', {
+            method: 'POST',
             headers: {
-                "Content-Type": "application/json"
+                'content-type': 'application/json',
+                'X-RapidAPI-Key': process.env.NEXT_PUBLIC_RAPIDAPI_KEY || "",
+                'X-RapidAPI-Host': 'open-ai21.p.rapidapi.com'
             },
-            body: JSON.stringify({prompt})
-        });
+            body: JSON.stringify({
+                messages: [
+                    {
+                        role: 'user',
+                        content: prompt
+                    }
+                ],
+                web_access: false,
+                stream: false
+            })
+        })
 
-        const answer = await res.json();
+        const answer = await response.text();
         const answerObj = JSON.parse(answer);
         updateConversations(prev => {
             const newConvs = prev ? prev.map(conversation => {

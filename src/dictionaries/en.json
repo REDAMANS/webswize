@@ -90,19 +90,27 @@
             },
             {
                 "title": "Our Story",
-                "text": "Our journey began with a simple idea: to combine cutting-edge technology with creative design to build websites that leave a lasting impression. We united our skills to form a dynamic team that thrives on challenges and is committed to delivering outstanding results."
+                "text": "Our journey began with a simple idea: to combine cutting-edge technology with creative design to build websites that leave a lasting impression. We united our skills to form a dynamic team that thrives on challenges and is committed to delivering outstanding results.",
+                "image": "our-history.jpg"
             },
             {
                 "title": "Our Mission",
-                "text": "Our mission is to empower businesses and individuals by harnessing the full potential of the web. We believe that a well-crafted website can transform a mere online presence into a powerful tool for growth, communication, and success. Our clients' dreams and aspirations are at the core of everything we do."
+                "text": "Our mission is to empower businesses and individuals by harnessing the full potential of the web. We believe that a well-crafted website can transform a mere online presence into a powerful tool for growth, communication, and success. Our clients' dreams and aspirations are at the core of everything we do.",
+                "image": "our-mission.jpg"
             },
             {
                 "title": "What Sets Us Apart",
-                "text": "Expertise: With years of experience in web development, we bring expertise in a wide range of technologies and frameworks, ensuring that your project is in capable hands. Custom Solutions: We don't believe in one-size-fits-all solutions. Each project we take on is unique, and we tailor our services to meet your specific goals and needs. Design Excellence: We understand the importance of aesthetics and user experience. Our design team ensures that your website not only functions flawlessly but also captivates your audience. Client-Centric Approach: Your satisfaction is our priority. We maintain open lines of communication, listen to your feedback, and make sure you are involved every step of the way."
+                "list": [
+                        "Expertise : With years of experience in web development, we bring expertise in a wide range of technologies and frameworks, ensuring that your project is in capable hands.",
+                        "Custom Solutions : We don't believe in one-size-fits-all solutions. Each project we take on is unique, and we tailor our services to meet your specific goals and needs.",
+                        "Design Excellence : We understand the importance of aesthetics and user experience. Our design team ensures that your website not only functions flawlessly but also captivates your audience.",
+                        "Client-Centric Approach : Your satisfaction is our priority. We maintain open lines of communication, listen to your feedback, and make sure you are involved every step of the way."
+                ]
             },
             {
                 "title": "Let's Create Together",
-                "text": "We believe in collaboration, and we're excited to embark on this journey with you. Whether you're a startup looking to establish your online presence or an established business seeking a digital transformation, we're here to make your vision a reality. Thank you for considering Webswize as your web development partner. We look forward to working with you and crafting digital experiences that truly shine. Ready to get started? Contact Us today to discuss your project!"
+                "text": "We believe in collaboration, and we're excited to embark on this journey with you. Whether you're a startup looking to establish your online presence or an established business seeking a digital transformation, we're here to make your vision a reality. Thank you for considering Webswize as your web development partner. We look forward to working with you and crafting digital experiences that truly shine. Ready to get started? Contact Us today to discuss your project!",
+                "image": "lets-create-together.jpg"
             }
         ]
     },
@@ -114,7 +122,53 @@
     "servicespage": {
         "pages": {
             "web": {
-
+                "slider": [
+                    {
+                        "title": "Dynamic websites",
+                        "description": "Ideal for scalability, user interactions and data organization. Includes CMS and databases.",
+                        "image": "dynamic.svg"
+                    },
+                    {
+                        "title": "Static websites",
+                        "description": "Best choice for a simpler website, faster performance, faster realization and lower cost.",
+                        "image": "static.svg"
+                    }
+                ],
+                "features": {
+                    "title": "Features",
+                    "list": [
+                        {
+                            "name": "Front end",
+                            "description": "We use frameworks such as Reactjs and Nextjs because they are developer friendly and have a large amount of helpful packages and tools.",
+                            "image": "frontend.svg"
+                        },
+                        {
+                            "name": "UI / UX design",
+                            "description": "One of the main factors of a website's ranking is it's design, we have the right tools to create beautiful and attractive user interfaces.",
+                            "image": "ui-ux.svg"
+                        },
+                        {
+                            "name": "Back end",
+                            "description": "Back end is just as important. Nodejs and Express are present to do the job if needed.",
+                            "image": "backend.svg"
+                        },
+                        {
+                            "name": "Fixing errors",
+                            "description": "In many cases, a website may develop bugs and errors, we're here to debug and fix those errors.",
+                            "image": "errors.svg"
+                        },
+                        {
+                            "name": "Online payment",
+                            "description": "Some people prefer to pay online using credit cards, we use the right tools & libraries to add online payments and verify them.",
+                            "image": "online-payment.svg"
+                        },
+                        {
+                            "name": "CMS",
+                            "description": "Website contributors might want to create, edit and delete the content of his website, Content Management System is here to help him.",
+                            "image": "cms.svg"
+                        }
+                    ]
+                }
             },
             "ai": {
                 "title": "AI Tools",
@@ -131,7 +185,7 @@
                         {
                             "name": "Background Remover", 
                             "description": "A simple and efficient AI tool for background removal", 
-                            "imgUrl": "nobg.webp",
+                            "imgUrl": "nobg.png",
                             "link": "/removebg"
                         }
                     ]

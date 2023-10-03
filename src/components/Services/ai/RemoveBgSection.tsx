@@ -8,11 +8,18 @@ const RemoveBgSection = ({ removeBgSection } : { removeBgSection: any }) => {
     const [bgImagePreview, setBgImagePreview] = useState<null | string>(null);
     const [noBgImagePreview, setNoBgImagePreview] = useState<null | string>(null);
     const [fileName, setFileName] = useState<null | string>(null);
+    const [errorMessage, setErrorMessage] = useState<null | string>(null);
 
     const submitFile = async (file: File) => {
         if(file === null)return;
+        const supportedFormats = ["png", "jpg", "webp"];
+        if(!supportedFormats.find(format => file.name.endsWith(format))) {
+            setErrorMessage(`Error: .${file.name.split(".").pop()} is not supported`);
+            return;
+        }
         try {
-            setFileName(file.name);
+            const baseName = file.name.split(".").slice(0, -1).join(".");
+            setFileName(baseName);
             setBgImagePreview(URL.createObjectURL(file));
             const formData = new FormData();
             formData.append('image_file', file);; 
@@ -27,7 +34,15 @@ const RemoveBgSection = ({ removeBgSection } : { removeBgSection: any }) => {
             }
             );
 
+            switch(response.status) {
+                case 400: return setErrorMessage("Error: Image Resolution is too big"); break;
+                case 500: return setErrorMessage("Error: Server is not responding"); break;
+                case 429: return setErrorMessage("Error: Too many requests"); break;
+                case 402: return setErrorMessage("Error: Not enough credits"); break;
+            }
+
             const imageBlob: Blob = await response.blob();
+            console.log(imageBlob);
             setNoBgImagePreview(URL.createObjectURL(imageBlob));
 
         }catch(err) {
@@ -41,7 +56,6 @@ const RemoveBgSection = ({ removeBgSection } : { removeBgSection: any }) => {
         if(e.dataTransfer.items) {
             if (e.dataTransfer.items.length > 1) return;
             else {
-                console.log("dropped file")
                 const files = e.dataTransfer.files as FileList;
                 const fileInput = document.getElementById("file-input") as HTMLInputElement;
                 fileInput.files = files;
@@ -82,6 +96,7 @@ const RemoveBgSection = ({ removeBgSection } : { removeBgSection: any }) => {
                 </label>
             </label>
             <p className='mb-20 mt-5 bg-white px-2 py-1 rounded-lg text-center'>{removeBgSection.supportedFormats}</p>
+            { errorMessage && <p className='text-red-500 mb-5'>{errorMessage}</p> }
             {
                 bgImagePreview &&
                 <div className='bg-white shadow-lg flex flex-col md:flex-row justify-center w-full gap-16 flex-wrap items-center p-8 rounded-3xl'>
@@ -90,7 +105,7 @@ const RemoveBgSection = ({ removeBgSection } : { removeBgSection: any }) => {
                             <Image className='w-full h-max' src={bgImagePreview} alt="with bg" width={300} height={300} />
                         </picture>
                         <picture className={`flex-1 border px-4 rounded-xl overflow-hidden lg:w-80 py-4 bg-gray-200 flex items-center ${noBgImagePreview ? 'bg-[url("/assets/services/ai/no-background.png")]' : ""}`}>
-                            {noBgImagePreview && <Image className='w-full h-max' src={noBgImagePreview} alt="with bg" width={300} height={300} />}
+                            {noBgImagePreview && <Image className='w-full h-max' src={noBgImagePreview} alt="without_bg" width={300} height={300} />}
                         </picture>
                     </div>
                     <div className='flex-[0.5] flex justify-end'>
@@ -101,7 +116,7 @@ const RemoveBgSection = ({ removeBgSection } : { removeBgSection: any }) => {
                             <p>{removeBgSection.downloadButton}</p>
                         </a>
                         :
-                        <div className='py-[14px] px-4 rounded-2xl bg-blue-700 text-white font-semibold flex flex-row gap-2 items-center'>
+                        <div className='cursor-pointer py-[14px] px-4 rounded-2xl bg-blue-700 text-white font-semibold flex flex-row gap-2 items-center'>
                             <BiDownload className="text-lg" />
                             <p>{removeBgSection.downloadButton}</p>
                         </div>

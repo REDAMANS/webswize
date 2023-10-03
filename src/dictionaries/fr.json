@@ -81,7 +81,7 @@
     },
     "aboutpage": {
         "metadata": {
-            "title": "Webswize | About Us"
+            "title": "Webswize | À propos de nous"
         },
         "title": "À propos de nous",
         "info": [
@@ -90,19 +90,27 @@
             },
             {
                 "title": "Notre histoire",
-                "text": "Notre voyage a commencé avec une idée simple : combiner une technologie de pointe avec un design créatif pour construire des sites web qui laissent une impression durable. Nous avons uni nos compétences pour former une équipe dynamique qui s'épanouit dans les défis et s'engage à fournir des résultats exceptionnels."
+                "text": "Notre voyage a commencé avec une idée simple : combiner une technologie de pointe avec un design créatif pour construire des sites web qui laissent une impression durable. Nous avons uni nos compétences pour former une équipe dynamique qui s'épanouit dans les défis et s'engage à fournir des résultats exceptionnels.",
+                "image": "our-history.jpg"
             },
             {
                 "title": "Notre mission",
-                "text": "Notre mission est d'aider les entreprises et les particuliers à exploiter tout le potentiel du web. Nous sommes convaincus qu'un site web bien conçu peut transformer une simple présence en ligne en un puissant outil de croissance, de communication et de réussite. Les rêves et les aspirations de nos clients sont au cœur de tout ce que nous faisons."
+                "text": "Notre mission est d'aider les entreprises et les particuliers à exploiter tout le potentiel du web. Nous sommes convaincus qu'un site web bien conçu peut transformer une simple présence en ligne en un puissant outil de croissance, de communication et de réussite. Les rêves et les aspirations de nos clients sont au cœur de tout ce que nous faisons.",
+                "image": "our-mission.jpg"
             },
             {
                 "title": "Ce qui nous distingue",
-                "text": "Expertise : Avec des années d'expérience dans le développement web, nous apportons notre expertise dans un large éventail de technologies et de cadres, garantissant que votre projet est entre de bonnes mains. Solutions personnalisées : Nous ne croyons pas aux solutions uniques. Chaque projet que nous entreprenons est unique et nous adaptons nos services pour répondre à vos objectifs et à vos besoins spécifiques : Nous comprenons l'importance de l'esthétique et de l'expérience utilisateur. Notre équipe de conception s'assure que votre site Web fonctionne parfaitement et qu'il captive votre public. Approche centrée sur le client : Votre satisfaction est notre priorité. Nous maintenons des lignes de communication ouvertes, nous écoutons vos commentaires et nous nous assurons que vous êtes impliqué à chaque étape du processus."
+                "list": [
+                    "Expertise : Avec des années d'expérience dans le développement web, nous apportons notre expertise dans un large éventail de technologies et de cadres, garantissant que votre projet est entre de bonnes mains.",
+                    "Solutions personnalisées : Nous ne croyons pas aux solutions uniques. Chaque projet que nous entreprenons est unique et nous adaptons nos services pour répondre à vos objectifs et à vos besoins spécifiques.",
+                    "Excellence en matière de conception : Nous comprenons l'importance de l'esthétique et de l'expérience utilisateur. Notre équipe de conception s'assure que votre site Web fonctionne parfaitement et qu'il captive votre public.",
+                    "Approche centrée sur le client : Votre satisfaction est notre priorité. Nous maintenons des lignes de communication ouvertes, nous écoutons vos commentaires et nous nous assurons que vous êtes impliqué à chaque étape du processus."
+                ]
             },
             {
                 "title": "Créons ensemble",
-                "text": "Nous croyons en la collaboration et nous sommes ravis d'entreprendre ce voyage avec vous. Que vous soyez une startup cherchant à établir sa présence en ligne ou une entreprise établie cherchant une transformation numérique, nous sommes là pour faire de votre vision une réalité. Nous vous remercions d'avoir choisi Webswize comme partenaire pour le développement de votre site web. Nous sommes impatients de travailler avec vous et de créer des expériences numériques qui brillent vraiment. Vous êtes prêt à commencer ? Contactez-nous dès aujourd'hui pour discuter de votre projet !"
+                "text": "Nous croyons en la collaboration et nous sommes ravis d'entreprendre ce voyage avec vous. Que vous soyez une startup cherchant à établir sa présence en ligne ou une entreprise établie cherchant une transformation numérique, nous sommes là pour faire de votre vision une réalité. Nous vous remercions d'avoir choisi Webswize comme partenaire pour le développement de votre site web. Nous sommes impatients de travailler avec vous et de créer des expériences numériques qui brillent vraiment. Vous êtes prêt à commencer ? Contactez-nous dès aujourd'hui pour discuter de votre projet !",
+                "image": "lets-create-together.jpg"
             }
         ]
     },
@@ -114,7 +122,53 @@
     "servicespage": {
         "pages": {
             "web": {
-
+                "slider": [
+                    {
+                        "title": "Sites web dynamiques",
+                        "description": "Idéal pour l'évolutivité, les interactions avec les utilisateurs et l'organisation des données. Inclut les CMS et les bases de données.",
+                        "image": "dynamic.svg"
+                    },
+                    {
+                        "title": "Sites web statiques",
+                        "description": "Meilleur choix pour un site web simple, des performances plus rapides, une réalisation rapide et un coût moins élevé.",
+                        "image": "static.svg"
+                    }
+                ],
+                "features": {
+                    "title": "Caractéristiques",
+                    "list": [
+                        {
+                            "name": "Front end",
+                            "description": "Nous utilisons des frameworks tels que Reactjs et Nextjs parce qu'ils sont conviviaux pour les développeurs et qu'ils disposent d'un grand nombre de packages et d'outils utiles.",
+                            "image": "frontend.svg"
+                        },
+                        {
+                            "name": "UI / UX design",
+                            "description": "L'un des principaux facteurs de classement d'un site web est son design. Nous disposons des outils adéquats pour créer des interfaces utilisateur belles et attrayantes.",
+                            "image": "ui-ux.svg"
+                        },
+                        {
+                            "name": "Back end",
+                            "description": "Le back-end est tout aussi important. Nodejs et Express sont présents pour faire le travail si nécessaire.",
+                            "image": "backend.svg"
+                        },
+                        {
+                            "name": "Résolution des erreurs",
+                            "description": "Dans de nombreux cas, un site web peut développer des bogues et des erreurs, nous sommes là pour déboguer et réparer ces erreurs.",
+                            "image": "errors.svg"
+                        },
+                        {
+                            "name": "Paiement en ligne",
+                            "description": "Certaines personnes préfèrent payer en ligne à l'aide de cartes de crédit. Nous utilisons les outils et les bibliothèques appropriés pour ajouter des paiements en ligne et les vérifier.",
+                            "image": "online-payment.svg"
+                        },
+                        {
+                            "name": "CMS",
+                            "description": "Les contributeurs d'un site web peuvent vouloir créer, éditer et supprimer le contenu de leur site, le système de gestion de contenu est là pour les aider.",
+                            "image": "cms.svg"
+                        }
+                    ]
+                }
             },
             "ai": {
                 "title": "Outils IA",
@@ -131,7 +185,7 @@
                         {
                             "name": "Suppression de l'arrière-plan", 
                             "description": "Un outil d'IA simple et efficace pour la suppression de l'arrière-plan", 
-                            "imgUrl": "nobg.webp",
+                            "imgUrl": "nobg.png",
                             "link": "/removebg"
                         }
                     ]

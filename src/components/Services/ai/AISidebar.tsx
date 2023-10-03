@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useContext, useState, useRef } from "react";
 import { ConversationContext } from "@/context/ConversationContext";
 import { AiOutlinePlus, AiOutlineDelete, AiOutlineClose } from "react-icons/ai"
+import AOS from "@/components/AOS";
 
 const AISidebar = ({sidebar}: 
     {
@@ -45,7 +46,7 @@ const AISidebar = ({sidebar}:
     const addNewConv = (e: React.FormEvent) => {
         e.preventDefault();
         const name = nameRef.current?.value;
-        if(!name) return;
+        if(!name || conversations?.find(conv => conv.name === name)) return;
         updateConversations(prev => {
             const newConv = {
                 name,
@@ -65,14 +66,16 @@ const AISidebar = ({sidebar}:
             {
                 newConvWindow &&
                 <div className="fixed top-0 left-0 z-50 h-screen w-screen flex items-center justify-center bg-[#00000032]">
-                    <form onClick={addNewConv} className="relative bg-white pb-10 p-14 mx-4 rounded-2xl flex flex-col gap-5 items-center justify-center">
-                        <button onClick={() => setNewConvWindow(false)} className="absolute top-5 right-5 text-lg">
-                            <AiOutlineClose />
-                        </button>
-                        <p className="text-center text-xl font-semibold">{sidebar.buttons.name}</p>
-                        <input className="bg-gray-100 w-full outline-none px-3 py-3 rounded-xl" ref={nameRef} type="text" placeholder={sidebar.placeholder} />
-                        <button className="py-3 px-8 tracking-wide text-sm rounded-xl text-white bg-blue-600" type="submit">{sidebar.add}</button>
-                    </form>
+                    <AOS className="w-max" duration={200} animation="fade-up">
+                        <form onClick={addNewConv} className="relative bg-white pb-10 p-14 mx-4 rounded-2xl flex flex-col gap-5 items-center justify-center">
+                            <button onClick={() => setNewConvWindow(false)} className="absolute top-5 right-5 text-lg">
+                                <AiOutlineClose />
+                            </button>
+                            <p className="text-center text-xl font-semibold">{sidebar.buttons.name}</p>
+                            <input className="bg-gray-100 w-full outline-none px-3 py-3 rounded-xl" ref={nameRef} type="text" placeholder={sidebar.placeholder} />
+                            <button className="py-3 px-8 tracking-wide text-sm rounded-xl text-white bg-blue-600" type="submit">{sidebar.add}</button>
+                        </form>
+                    </AOS>
                 </div>
             }
             <div className="flex flex-row items-center gap-4 mt-20 md:mt-0">
@@ -94,7 +97,7 @@ const AISidebar = ({sidebar}:
                 </ul>  
             </div>
             <div className="flex flex-col gap-5 text-sm w-full">
-                <button aria-label="add a new conversation" onClick={() => setNewConvWindow(true)} className="flex flex-row gap-4 items-center justify-center w-full p-3 rounded-xl text-white bg-blue-600">
+                <button aria-label="add a new conversation" onClick={() => setNewConvWindow(true)} className="flex flex-row gap-4 items-center justify-center w-full p-3 rounded-xl border border-blue-600">
                     <AiOutlinePlus />
                     <p>{sidebar.buttons.add}</p>
                 </button>

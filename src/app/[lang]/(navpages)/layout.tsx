@@ -2,7 +2,6 @@ import Header from "@/components/header/Header";
 import Footer from "@/components/Footer";
 import { getDictionary } from "@/lib/dictionaries";
 import ScrollTop from "@/components/ScrollTop";
-import ScrollStateBar from "@/components/ScrollStateBar";
 
 export async function generateStaticParams() {
     return [
@@ -27,7 +26,6 @@ const NavLayout = async ({ children, params } : {children: React.ReactNode, para
 
     return (
         <section className="relative w-full flex flex-col">
-            <ScrollStateBar />
             <ScrollTop />
             <Header navbar={dictionary.navbar}/>
             <main className="min-h-screen">
