@@ -65,7 +65,7 @@ function HeroPost({
   )
 }
 
-const BlogPage = async ({ params }: {params: {lang: 'en-US'|'fr-FR'|'en'|'fr'}}) => {
+const BlogPage = async () => {
   
     const allPosts = await getAllPosts(false);
     const heroPost = allPosts ? allPosts[0] : undefined;

@@ -68,14 +68,21 @@ const RemoveBgSection = ({ removeBgSection } : { removeBgSection: any }) => {
         e.preventDefault();
         e.stopPropagation();
         const box = e.target as HTMLLabelElement;
-        box.style.background = "#b5e0ff"
+        box.style.backgroundColor = "#b5e0ff"
     }
 
     const backToWhite = (e: React.DragEvent) => {
         e.preventDefault();
         e.stopPropagation();
         const box = e.target as HTMLLabelElement;
-        box.style.background = "#ffffff"
+        box.style.backgroundColor = "#ffffff"
+    }
+
+    const sameState = (e: React.DragEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const buttonLabel = e.target as HTMLLabelElement;
+        buttonLabel.style.backgroundColor = "rgb(29 78 216)";
     }
 
     return (
@@ -90,7 +97,7 @@ const RemoveBgSection = ({ removeBgSection } : { removeBgSection: any }) => {
                         if(e.target.files !== null)await submitFile(e.target.files[0]);
                     }}
                 />
-                <label htmlFor='file-input' className='cursor-pointer text-base p-4 rounded-2xl bg-blue-700 text-white font-semibold flex flex-row items-center gap-2'>
+                <label onDragEnd={sameState} onDragLeave={sameState} onDragOver={sameState} onDragEnter={sameState} onDrop={(e) => {uploadFile(e); sameState(e)}}  htmlFor='file-input' className='cursor-pointer text-base p-4 rounded-2xl bg-blue-700 hover:bg-white text-white hover:text-blue-700 border border-blue-700 transition-colors font-semibold flex flex-row items-center gap-2'>
                     <BiImageAlt className="text-lg" />
                     <p>{removeBgSection.uploadButton}</p>
                 </label>
@@ -111,7 +118,7 @@ const RemoveBgSection = ({ removeBgSection } : { removeBgSection: any }) => {
                     <div className='flex-[0.5] flex justify-end'>
                      {
                         noBgImagePreview ?
-                        <a className='py-[14px] px-4 rounded-2xl bg-blue-700 text-white font-semibold flex flex-row gap-2 items-center cursor-pointer' href={noBgImagePreview} download={`${fileName}_removedbg.png`}>
+                        <a className='py-[14px] px-4 rounded-2xl bg-blue-700 hover:bg-white text-white hover:text-blue-700 border border-blue-700 transition-colors font-semibold flex flex-row gap-2 items-center cursor-pointer' href={noBgImagePreview} download={`${fileName}_removedbg.png`}>
                             <BiDownload className="text-lg" />
                             <p>{removeBgSection.downloadButton}</p>
                         </a>
