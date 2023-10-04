@@ -16,7 +16,7 @@ const CoverImage = ({
             src={url}
             alt={`Cover image form ${title}`}
             priority
-            width={1500}
+            width={1359.72}
             height={1000}
             className="h-full shadow-md hover:shadow-lg transition-[shadow] duration-200"
         />

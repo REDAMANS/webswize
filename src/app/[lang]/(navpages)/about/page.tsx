@@ -31,7 +31,7 @@ const AboutPage = async ({ params }: {params: {lang: "en" | "en-US" | "fr" | "fr
   const { aboutpage } = await getDictionary(params.lang);
     return (
         <section className='section__padding bg-contain flex flex-col items-center justify-center overflow-hidden'>
-          <h1 className="text-center z-10 text-4xl md:text-7xl mb-10 md:mb-16">{aboutpage.title}</h1>
+          <h1 className="text-center font-black z-10 text-4xl md:text-7xl mb-10 md:mb-16">{aboutpage.title}</h1>
           <Image priority placeholder="blur" blurDataURL="/assets/about/developers-blurred.jpg" className="h-auto -mt-16 md:-mt-24 mb-12 md:mb-16 w-[120%] max-w-[120%] md:max-w-auto md:w-full" src="/assets/about/developers.jpg" alt="developers" width={800} height={444.4} />
           <section className="w-full flex flex-col items-center text-center gap-10"> 
             {aboutpage.info.map((tab: {title?: string, text: string, list?: string[], image?: string}, i: number) => (

@@ -22,8 +22,8 @@
                         "href": "web-service"
                     },
                     {
-                        "name": "Service IA",
-                        "href": "ai-service"
+                        "name": "Outils IA",
+                        "href": "ai-tools"
                     }
                 ]
             }
