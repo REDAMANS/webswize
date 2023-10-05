@@ -160,7 +160,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mainpost h3{
-    @apply text-[22px] md:text-3xl mb-[14px] mt-8;
+    @apply text-[22px] md:text-3xl mb-3 mt-8;
 }
 
 .mainpost h4{
