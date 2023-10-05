@@ -15,7 +15,7 @@ const RemoveBgPage = async ({ params }: {params: {lang: "en" | "en-US" | "fr" | 
                     <Image priority className="h-auto w-[50px] md:w-[80px]" src="/assets/logo/logo.svg" alt="logo" width={80} height={80} />
                 </div>
                 <p className="text-lg sm:text-3xl font-black text-black">Remove<span className='text-blue-600'> Background</span></p>
-                <Link className="ml-auto flex flex-row gap-4 items-center" href="/services/ai-service"><p className='hidden sm:block'>{removebg.otherAiTools}</p><BsChevronRight/></Link>
+                <Link className="ml-auto flex flex-row gap-4 items-center" href="/services/ai-tools"><p className='hidden sm:block'>{removebg.otherAiTools}</p><BsChevronRight/></Link>
             </nav>
         </header>
             <h1 className='text-3xl sm:text-4xl md:text-6xl lg:text-8xl max-w-6xl text-center removebg-header'>{removebg.title}</h1>
