@@ -9,7 +9,7 @@ const Sidebar = ({ sidebarList }: { sidebarList: any[] }) => {
         const titleList = document.querySelectorAll(".sidebar-title") as NodeListOf<HTMLLIElement>;
         window.addEventListener("scroll", () => {
             titleNodeList.forEach((title, i) => {
-                if(window.scrollY >= title.offsetTop + 96 && !title.classList.contains("text-blue-700")){
+                if(window.scrollY >= title.offsetTop - 96 && !title.classList.contains("text-blue-700")){
                     titleList.forEach((t) => 
                         t.classList.remove("text-blue-700")
                     )
