@@ -33,7 +33,7 @@ const MainPost = (post : PostProps) => {
 
     return (
         <div className="flex flex-row gap-10">
-            <div className="flex-1 flex flex-col mb-20 mainpost gap-10 md:gap-16">
+            <div className="flex-1 pt-32 flex flex-col mb-20 mainpost gap-10 md:gap-16">
                 <h1 className="font-bold text-3xl md:text-5xl lg:text-7xl">
                     {post.title}
                 </h1>
@@ -47,8 +47,8 @@ const MainPost = (post : PostProps) => {
                     <DateComponent dateString={post.date} />
                 </div>
             </div>
-            <div className="h-screen overflow-y-scroll sticky top-0 pb-8">
-                <ul className="text-[14px] text-gray-600 border-l pl-5 max-w-xs flex flex-col gap-4 h-max">
+            <div className="h-[70vh] overflow-y-scroll no-scrollbar top-32 mt-32 sticky pl-5 border-l">
+                <ul className="h-max text-[14px] text-gray-600 pb-10 max-w-xs flex flex-col gap-4">
                     {sidebarList.map((item: any, i: number) =>(
                         item.headingText?.length > 0 && 
                             <li key={i}>
@@ -66,7 +66,7 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
     const { post, morePosts } = await getPostAndMorePosts(params.slug, false);
 
     return (
-        <section className="section__padding">
+        <section className="px-12 pb-28">
             <MainPost 
                 title={post.title} 
                 coverImage={post.coverImage} 
