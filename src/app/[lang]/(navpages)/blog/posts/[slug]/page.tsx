@@ -50,7 +50,7 @@ const MainPost = (post : PostProps) => {
             <div className="h-screen overflow-y-scroll sticky top-0 pt-32 pb-8">
                 <ul className="text-[14px] text-gray-600 border-l pl-5 max-w-xs flex flex-col gap-4 h-max">
                     {sidebarList.map((item: any, i: number) =>(
-                        item.headingText?.length &&
+                        item.headingText?.length > 0 && 
                             <li key={i}>
                                 <a href={`#${item.headingId}`} className={`sidebar-heading-${item.headingRange} hover:text-blue-700`}>{item.headingText}</a>
                             </li>
