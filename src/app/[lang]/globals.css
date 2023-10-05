@@ -218,3 +218,19 @@ h1, h2, h3, h4, h5, h6 {
     background: linear-gradient(180deg, rgba(105,34,255,1) 0%, rgba(26,0,83,1) 79%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6922ff",endColorstr="#1a0053",GradientType=1);
 }
+
+.sidebar-heading-3 {
+    padding-left: 0;
+}
+
+.sidebar-heading-4 {
+    padding-left: 6px;
+}
+
+.sidebar-heading-5 {
+    padding-left: 12px;
+}
+
+.sidebar-heading-6 {
+    padding-left: 18px;
+}

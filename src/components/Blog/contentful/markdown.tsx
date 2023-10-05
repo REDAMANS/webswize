@@ -35,6 +35,46 @@ function RichTextAsset({
     return null;
 }
 
+function Heading3({ children }: { children: React.ReactNode }) {
+    const id = children?.toString().toLowerCase().replace(/ /g, "-");
+    return (
+        <div className="relative">
+            <h3>{ children }</h3>
+            <a className="absolute -top-28" id={id}></a> 
+        </div>
+    )
+}
+
+function Heading4({ children }: { children: React.ReactNode }) {
+    const id = children?.toString().toLowerCase().replace(/ /g, "-");
+    return (
+        <div className="relative">
+            <h4>{ children }</h4>
+            <a className="absolute -top-28" id={id}></a> 
+        </div>
+    )
+}
+
+function Heading5({ children }: { children: React.ReactNode }) {
+    const id = children?.toString().toLowerCase().replace(/ /g, "-");
+    return (
+        <div className="relative">
+            <h5>{ children }</h5>
+            <a className="absolute -top-28" id={id}></a> 
+        </div>
+    )
+}
+
+function Heading6({ children }: { children: React.ReactNode }) {
+    const id = children?.toString().toLowerCase().replace(/ /g, "-");
+    return (
+        <div className="relative">
+            <h6>{ children }</h6>
+            <a className="absolute -top-28" id={id}></a> 
+        </div>
+    )
+}
+
 export function Markdown({ content }: { content: Content }) {
     return documentToReactComponents(content.json, {
         renderNode: {
@@ -43,6 +83,18 @@ export function Markdown({ content }: { content: Content }) {
                     id={node.data.target.sys.id}
                     assets={content.links.assets.block}
                 />
+            ),
+            [BLOCKS.HEADING_3]: (node: any) => (
+                <Heading3>{node.content[0].value.replace(/\r|\n/g, "")}</Heading3>
+            ),
+            [BLOCKS.HEADING_4]: (node: any) => (
+                <Heading4>{node.content[0].value.replace(/\r|\n/g, "")}</Heading4>
+            ),
+            [BLOCKS.HEADING_5]: (node: any) => (
+                <Heading5>{node.content[0].value.replace(/\r|\n/g, "")}</Heading5>
+            ),
+            [BLOCKS.HEADING_6]: (node: any) => (
+                <Heading6>{node.content[0].value.replace(/\r|\n/g, "")}</Heading6>
             )
         }
     })
