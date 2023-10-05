@@ -30,7 +30,7 @@ function RichTextAsset({
 }) {
     const asset = assets?.find(asset => asset.sys.id === id);
     if(asset?.url) {
-        return <Image className="static" src={asset.url} layout="fill" alt={asset.description} />;
+        return <Image src={asset.url} alt={asset.description} />;
     }
     return null;
 }
@@ -79,10 +79,12 @@ export function Markdown({ content }: { content: Content }) {
     return documentToReactComponents(content.json, {
         renderNode: {
             [BLOCKS.EMBEDDED_ASSET]: (node: any) => (
-                <RichTextAsset
-                    id={node.data.target.sys.id}
-                    assets={content.links.assets.block}
-                />
+                <div className="h-max w-full">
+                    <RichTextAsset
+                        id={node.data.target.sys.id}
+                        assets={content.links.assets.block}
+                    />
+                </div>
             ),
             [BLOCKS.HEADING_3]: (node: any) => (
                 <Heading3>{node.content[0].value.replace(/\r|\n/g, "")}</Heading3>
