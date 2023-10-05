@@ -38,7 +38,7 @@ function RichTextAsset({
 function Heading3({ children }: { children: React.ReactNode }) {
     const id = children?.toString().toLowerCase().replace(/ /g, "-");
     return (
-        <div className="relative">
+        <div className="relative blog-title">
             <h3>{ children }</h3>
             <a className="absolute -top-28" id={id}></a> 
         </div>
@@ -48,7 +48,7 @@ function Heading3({ children }: { children: React.ReactNode }) {
 function Heading4({ children }: { children: React.ReactNode }) {
     const id = children?.toString().toLowerCase().replace(/ /g, "-");
     return (
-        <div className="relative">
+        <div className="relative blog-title">
             <h4>{ children }</h4>
             <a className="absolute -top-28" id={id}></a> 
         </div>
@@ -58,7 +58,7 @@ function Heading4({ children }: { children: React.ReactNode }) {
 function Heading5({ children }: { children: React.ReactNode }) {
     const id = children?.toString().toLowerCase().replace(/ /g, "-");
     return (
-        <div className="relative">
+        <div className="relative blog-title">
             <h5>{ children }</h5>
             <a className="absolute -top-28" id={id}></a> 
         </div>
@@ -68,7 +68,7 @@ function Heading5({ children }: { children: React.ReactNode }) {
 function Heading6({ children }: { children: React.ReactNode }) {
     const id = children?.toString().toLowerCase().replace(/ /g, "-");
     return (
-        <div className="relative">
+        <div className="relative blog-title">
             <h6>{ children }</h6>
             <a className="absolute -top-28" id={id}></a> 
         </div>
