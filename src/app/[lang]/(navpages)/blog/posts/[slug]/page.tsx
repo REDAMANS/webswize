@@ -48,7 +48,7 @@ const MainPost = (post : PostProps) => {
                     <DateComponent dateString={post.date} />
                 </div>
             </div>
-            <div className="hidden md:block max-h-[70vh] h-full overflow-y-scroll no-scrollbar top-32 mt-32 sticky pl-5 border-l">
+            <div className="hidden lg:block max-h-[70vh] h-full overflow-y-scroll no-scrollbar top-32 mt-32 sticky pl-5 border-l">
                 <Sidebar sidebarList={sidebarList} />
             </div>
         </div>
