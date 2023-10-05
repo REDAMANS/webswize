@@ -4,6 +4,7 @@ import DateComponent from "@/components/Blog/date";
 import { Markdown, Content } from "@/components/Blog/contentful/markdown";
 import { Metadata } from "next";
 import MoreStories from "@/components/Blog/more-stories";
+import Sidebar from "@/components/Blog/Sidebar";
 
 interface PostProps {
     title: string;
@@ -47,15 +48,8 @@ const MainPost = (post : PostProps) => {
                     <DateComponent dateString={post.date} />
                 </div>
             </div>
-            <div className="h-[70vh] overflow-y-scroll no-scrollbar top-32 mt-32 sticky pl-5 border-l">
-                <ul className="h-max text-[14px] text-gray-600 pb-10 max-w-xs flex flex-col gap-4">
-                    {sidebarList.map((item: any, i: number) =>(
-                        item.headingText?.length > 0 && 
-                            <li key={i}>
-                                <a href={`#${item.headingId}`} className={`sidebar-heading-${item.headingRange} hover:text-blue-700`}>{item.headingText}</a>
-                            </li>
-                    ))}
-                </ul>
+            <div className="max-h-[70vh] h-full overflow-y-scroll no-scrollbar top-32 mt-32 sticky pl-5 border-l">
+                <Sidebar sidebarList={sidebarList} />
             </div>
         </div>
     );
