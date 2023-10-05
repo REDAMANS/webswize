@@ -47,13 +47,15 @@ const MainPost = (post : PostProps) => {
                     <DateComponent dateString={post.date} />
                 </div>
             </div>
-            <ul className="text-[14px] text-gray-600 border-l pl-5 max-w-xs flex flex-col gap-4 h-max sticky top-32">
-                {sidebarList.map((item: any, i: number) =>(
-                    <li key={i}>
-                        <a href={`#${item.headingId}`} className={`sidebar-heading-${item.headingRange} hover:text-blue-700`}>{item.headingText}</a>
-                    </li>
-                ))}
-            </ul>
+            <div className="h-full overflow-y-scroll">
+                <ul className="text-[14px] text-gray-600 border-l pl-5 max-w-xs flex flex-col gap-4 h-max sticky top-32">
+                    {sidebarList.map((item: any, i: number) =>(
+                        <li key={i}>
+                            <a href={`#${item.headingId}`} className={`sidebar-heading-${item.headingRange} hover:text-blue-700`}>{item.headingText}</a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 }
