@@ -158,9 +158,9 @@
                             "image": "errors.svg"
                         },
                         {
-                            "name": "Paiement en ligne",
-                            "description": "Certaines personnes préfèrent payer en ligne à l'aide de cartes de crédit. Nous utilisons les outils et les bibliothèques appropriés pour ajouter des paiements en ligne et les vérifier.",
-                            "image": "online-payment.svg"
+                            "name": "Creativité",
+                            "description": "La créativité est une compétence importante dans presque toutes les professions. En général, la créativité favorise la résolution des problèmes, encourage un environnement de travail positif et aide les gens à s'adapter au changement.",
+                            "image": "creativity.svg"
                         },
                         {
                             "name": "CMS",
