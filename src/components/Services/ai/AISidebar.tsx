@@ -96,7 +96,7 @@ const AISidebar = ({sidebar}:
                 {(!conversations || !conversations?.length) && <p className="self-center justify-self-center description-text">{sidebar.empty}</p>}
                 <ul className="h-max flex flex-col gap-5">
                     {
-                        conversations && conversations.length > 0 &&
+                        conversations &&
                         conversations.map((conversation, i) => (
                             <li onClick={() => changeConversations(i)} className={`${conversation.isSelected ? "bg-slate-200" : ""} cursor-pointer px-4 py-3 rounded-xl`} key={i}>
                                 <div className="w-full overflow-hidden">
