@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useContext, useState, useRef } from "react";
+import { useContext, useState, useRef, useEffect } from "react";
 import { ConversationContext } from "@/context/ConversationContext";
 import { AiOutlinePlus, AiOutlineDelete, AiOutlineClose } from "react-icons/ai"
 import AOS from "@/components/AOS";
@@ -61,8 +61,17 @@ const AISidebar = ({sidebar}:
         setNewConvWindow(false);
     }
 
+    useEffect(() => {
+        const savedConvs = JSON.parse(localStorage.getItem('conversations') || "[]");
+        if(savedConvs)updateConversations(savedConvs);
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem('conversations', JSON.stringify(conversations));
+    }, [updateConversations])
+
     return (
-        <aside className={`${sideBarState ? "flex" : "hidden"} md:flex flex-col bg-slate-100 absolute w-screen md:w-auto z-10 md:static border-r px-6 md:px-12 py-8 h-full gap-10`}>
+        <aside className={`${sideBarState ? "flex" : "hidden"} md:flex flex-col bg-slate-100 absolute w-screen md:w-[350px] z-10 md:static border-r px-6 md:px-12 py-8 h-full gap-10`}>
             {
                 newConvWindow &&
                 <div className="fixed top-0 left-0 z-50 h-screen w-screen flex items-center justify-center bg-[#00000032]">
@@ -89,8 +98,10 @@ const AISidebar = ({sidebar}:
                     {
                         conversations && 
                         conversations.map((conversation, i) => (
-                            <li onClick={() => changeConversations(i)} className={`${conversation.isSelected ? "bg-slate-200" : ""} cursor-pointer px-4 py-3 rounded-xl overflow-hidden`} key={i}>
-                                <p className="whitespace-nowrap">{conversation.name}</p>
+                            <li onClick={() => changeConversations(i)} className={`${conversation.isSelected ? "bg-slate-200" : ""} cursor-pointer px-4 py-3 rounded-xl`} key={i}>
+                                <div className="w-full overflow-hidden">
+                                    <p className="whitespace-nowrap">{conversation.name}</p>
+                                </div>
                             </li>
                         ))
                     }

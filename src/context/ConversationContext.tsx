@@ -20,6 +20,7 @@ export const ConversationContext = createContext({
 
 const ConversationProvider = ({ children }: { children: React.ReactNode[]}) => {
 
+
     const [conversations, setConversations] = useState<IConversation>(null);
     const [sideBarState, setSidebarState] = useState<boolean>(false);
 
