@@ -93,7 +93,7 @@ const AISidebar = ({sidebar}:
             </div>
             <p className="text-lg font-semibold">{sidebar.myConvs}</p>
             <div className="flex-1 flex flex-col w-full overflow-y-scroll no-scrollbar">
-                {!conversations && <p className="self-center justify-self-center description-text">{sidebar.empty}</p>}
+                {(!conversations || !conversations?.length) && <p className="self-center justify-self-center description-text">{sidebar.empty}</p>}
                 <ul className="h-max flex flex-col gap-5">
                     {
                         conversations && conversations.length > 0 &&
