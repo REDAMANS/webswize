@@ -1,4 +1,8 @@
 import Image from "next/image";
+import Markdown from "react-markdown"
+import remarkGfm from "remark-gfm";
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import { a11yLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const ChatFallBack = () => {
     return (
@@ -9,7 +13,6 @@ const ChatFallBack = () => {
         </div>
     )
 }
-
 const QuestionOrAnswer = ({ children, flexDirection, alignSelf, pfp, type }: 
     { 
         children: React.ReactNode,
@@ -18,6 +21,7 @@ const QuestionOrAnswer = ({ children, flexDirection, alignSelf, pfp, type }:
         pfp: string,
         type: "question" | "answer"
     }) => {
+
     return (
         <div className={`flex flex-col gap-5 ${flexDirection} ${alignSelf}`}>
             <div className={`${alignSelf} flex-shrink-0 flex items-center justify-center overflow-hidden h-10 w-10 rounded-full border`}>
@@ -28,9 +32,33 @@ const QuestionOrAnswer = ({ children, flexDirection, alignSelf, pfp, type }:
                     ? 
                     <ChatFallBack />
                     : 
-                    <p className="p-4 rounded-2xl bg-gray-100 max-w-2xl">
-                    {children}
-                    </p>
+
+                    <Markdown
+                        className="max-w-2xl p-4 rounded-2xl bg-gray-100"
+                        remarkPlugins={[remarkGfm]}
+                        components={{
+                            p(props) {
+                                const {node, children, ...rest} = props;
+                                return <div {...rest}>{children}</div>
+                            },
+                            code(props) {
+                                const {children, className, node, ...rest} = props;
+                                return (
+                                <SyntaxHighlighter
+                                    style={a11yLight}
+                                    wrapLongLines={true}
+                                    customStyle={{
+                                        borderRadius: ".5rem"
+                                    }}
+                                >
+                                    {children?.toString() || ""}
+                                </SyntaxHighlighter>)
+                            }
+                        }}
+                    >
+                        {children?.toString()}
+                    </Markdown>
+
                 }
         </div>
     );

@@ -136,6 +136,7 @@
                 ],
                 "features": {
                     "title": "Features",
+                    "tap": "tap to read more",
                     "list": [
                         {
                             "name": "Front end",
@@ -187,6 +188,12 @@
                             "description": "A simple and efficient AI tool for background removal", 
                             "imgUrl": "nobg.png",
                             "link": "/removebg"
+                        },
+                        {
+                            "name": "Image Generator",
+                            "description": "Converts text prompts into AI generated images",
+                            "imgUrl": "image-generator.svg",
+                            "link": "/image-generator"
                         }
                     ]
                 },
@@ -217,6 +224,15 @@
                             "uploadButton": "Upload",
                             "supportedFormats": "Supported formats: PNG, JPG, WEBP",
                             "downloadButton": "Download"
+                        }
+                    },
+                    "imageGenerator": {
+                        "title": "Generate Beautiful images with one click",
+                        "otherAiTools": "Other AI tools",
+                        "generateImageSection": {
+                            "promptLabel": "Be creative (E.g. Husky in the snow)",
+                            "generateButton": "Generate",
+                            "saveButton": "Save Image"
                         }
                     }
                 }

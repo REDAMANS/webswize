@@ -136,6 +136,7 @@
                 ],
                 "features": {
                     "title": "Caractéristiques",
+                    "tap": "tapez pour lire",
                     "list": [
                         {
                             "name": "Front end",
@@ -187,6 +188,12 @@
                             "description": "Un outil d'IA simple et efficace pour la suppression de l'arrière-plan", 
                             "imgUrl": "nobg.png",
                             "link": "/removebg"
+                        },
+                        {
+                            "name": "Générateur d'images",
+                            "description": "Convertit les invites textuelles en images générées par l'IA",
+                            "imgUrl": "image-generator.svg",
+                            "link": "/image-generator"
                         }
                     ]
                 },
@@ -218,7 +225,17 @@
                             "supportedFormats": "Formats supportés : PNG, JPG, WEBP",
                             "downloadButton": "Télécharger"
                         }
+                    },
+                    "imageGenerator" : {
+                        "title" : "Générer de belles images en un clic",
+                        "otherAiTools" : "Autres outils d'IA",
+                        "generateImageSection" : {
+                            "promptLabel" : "Soyez créatif (par exemple, Husky dans la neige)",
+                            "generateButton" : "Générer",
+                            "saveButton" : "Enregistrer l'image"
+                        }
                     }
+
                 }
             }
         }

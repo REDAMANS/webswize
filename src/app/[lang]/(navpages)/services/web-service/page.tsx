@@ -1,6 +1,8 @@
 import Slider from "@/components/Services/web/Slider";
 import { getDictionary } from "@/lib/dictionaries";
-import Feature from "@/components/Services/web/Feature";
+import FeatureGrid from "@/components/Services/web/FeatureGrid";
+import ContactForm from "@/components/Services/web/ContactForm";
+
 export async function generateStaticParams() {
     return [
       {
@@ -29,14 +31,9 @@ const WebServicePage = async ({ params }: {params: {lang: "en" | "en-US" | "fr" 
               <h2 className="text-3xl sm:text-4xl md:text-[56px] leading-[2.5rem] sm:leading-[3.2rem] md:leading-[5rem] tracking-wider">
                 {web.features.title}
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
-                {
-                  web.features.list.map((feature: any, i: number) => 
-                    <Feature key={i} feature={feature}/>
-                  )
-                }
-              </div>
+              <FeatureGrid tap={web.features.tap} list={web.features.list} />
             </section>
+            <ContactForm />
         </section>
     );
 }

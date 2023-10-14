@@ -1,8 +1,7 @@
 "use client";
 import { BiSolidNavigation } from 'react-icons/bi'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { ConversationContext } from '@/context/ConversationContext'
-import { useContext } from 'react'
 
 const QuestionBar = ({placeholder}: {placeholder: string}) => {
 
@@ -25,32 +24,24 @@ const QuestionBar = ({placeholder}: {placeholder: string}) => {
             }) : [{ name: newPrompt, isSelected: true, conv: [{ question: newPrompt, answer: "..."}] }]
             return newConvs;
         })
-        const response = await fetch('https://open-ai21.p.rapidapi.com/conversationgpt35', {
+        const response = await fetch(`${
+            process.env.NEXT_PUBLIC_NODE_ENV === 'development' ?
+            "http://localhost:3000/api/chatbot"
+            : "https://webswize.vercel.app/api/chatbot"
+        }`, {
             method: 'POST',
             headers: {
-                'content-type': 'application/json',
-                'X-RapidAPI-Key': process.env.NEXT_PUBLIC_RAPIDAPI_KEY || "",
-                'X-RapidAPI-Host': 'open-ai21.p.rapidapi.com'
+                "content-type": "application/json"
             },
-            body: JSON.stringify({
-                messages: [
-                    {
-                        role: 'user',
-                        content: prompt
-                    }
-                ],
-                web_access: false,
-                stream: false
-            })
+            body: JSON.stringify({ message: newPrompt })
         })
 
-        const answer = await response.text();
-        const answerObj = JSON.parse(answer);
+        const { data: { conversation: { output } } } = await response.json();
         updateConversations(prev => {
             const newConvs = prev ? prev.map(conversation => {
                 if(conversation.isSelected)return {
                     ...conversation,
-                    conv: conversation.conv.map(pair => pair.question === prompt ? {...pair, answer: answerObj.BOT} : pair)
+                    conv: conversation.conv.map(pair => pair.question === prompt ? {...pair, answer: output} : pair)
                 }
                 return conversation
             }) : prev

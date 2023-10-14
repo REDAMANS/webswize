@@ -6,6 +6,14 @@
     scroll-behavior: smooth;
 }
 
+input {
+    min-width: 0;
+}
+
+textarea {
+    min-width: 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
     @apply font-bold
 }
@@ -53,7 +61,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sidebar__toggle div {
-    @apply w-5 h-0.5 transition-all;
+    @apply w-5 h-0.5 bg-black transition-all;
 }
 
 .sidebar__toggle:hover div {
@@ -235,3 +243,38 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 36px;
 }
 
+.ai-image-container:hover .ai-image {
+    @apply md:brightness-50
+}
+
+.ai-image-container:hover div {
+    @apply hidden md:flex;
+}
+
+.slide-left {
+    animation: slide-left 1s cubic-bezier(0,.38,.13,.99);
+}
+
+.slide-right {
+    animation: slide-right cubic-bezier(0,.38,.13,.99);
+}
+
+@keyframes slide-right {
+    0% {
+        transform: translateX(-150%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(150%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
