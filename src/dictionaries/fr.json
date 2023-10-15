@@ -169,6 +169,16 @@
                             "image": "cms.svg"
                         }
                     ]
+                },
+                "contactForm": {
+                    "title": "Contactez-Nous",
+                    "form": {
+                            "familyName": "Nom",
+                            "name": "Prénom",
+                            "email": "Email",
+                            "comment": "Cher client, Qu'est ce que vous voulez comme service ?",
+                            "submit": "Envoyer"
+                    } 
                 }
             },
             "ai": {

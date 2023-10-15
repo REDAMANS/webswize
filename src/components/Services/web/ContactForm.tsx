@@ -2,7 +2,6 @@
 import Image from "next/image";
 import ContactButtons from "./ContactButtons";
 import { useState } from "react";
-import AOS from "@/components/AOS";
 import { BsCheckLg, BsXLg } from "react-icons/bs"
 import { ImSpinner2 } from 'react-icons/im'
 
@@ -11,7 +10,7 @@ interface IEmailMessage {
     message: string | null;
 }
 
-const ContactForm = () => {
+const ContactForm = ({ contactForm }: { contactForm: any }) => {
 
     const [emailSent, setEmailSent] = useState<IEmailMessage>({
         success: null,
@@ -98,30 +97,30 @@ const ContactForm = () => {
                         <input
                             type="text"
                             id="family-name"
-                            placeholder="Nom" 
+                            placeholder={contactForm.familyName}
                             className="flex-1 px-4 py-3 outline-none min-w-0 w-full rounded-xl bg-white"
                         />
                         <input
                             type="text"
                             id="name"
-                            placeholder="Prénom" 
+                            placeholder={contactForm.name}
                             className="flex-1 px-4 py-3 outline-none min-w-0 w-full rounded-xl bg-white"
                         />
                     </div>
                     <input 
                         type="email"
                         id="email"
-                        placeholder="Email"
+                        placeholder={contactForm.email}
                         className="px-4 py-3 outline-none min-w-0 w-full rounded-xl bg-white"
                     />
                     <textarea
                         id="comment"
                         className="flex-1 min-h-[170px] px-4 py-3 outline-none min-w-0 w-full rounded-xl bg-white resize-none"
-                        placeholder="Cher client, Qu'est ce que vous voulez comme service"
+                        placeholder={contactForm.comment}
                     />
                     <input
                         type="submit"
-                        value="Envoyer"
+                        value={contactForm.submit}
                         className="px-4 py-3 w-full min-w-0 cursor-pointer rounded-xl outline-none bg-violet-800 text-white"
                     /> 
                 </form>

@@ -33,7 +33,7 @@ const WebServicePage = async ({ params }: {params: {lang: "en" | "en-US" | "fr" 
               </h2>
               <FeatureGrid tap={web.features.tap} list={web.features.list} />
             </section>
-            <ContactForm />
+            <ContactForm contactForm={web.contactForm}/>
         </section>
     );
 }
