@@ -97,30 +97,30 @@ const ContactForm = ({ contactForm }: { contactForm: any }) => {
                         <input
                             type="text"
                             id="family-name"
-                            placeholder={contactForm.familyName}
+                            placeholder={contactForm.form.familyName}
                             className="flex-1 px-4 py-3 outline-none min-w-0 w-full rounded-xl bg-white"
                         />
                         <input
                             type="text"
                             id="name"
-                            placeholder={contactForm.name}
+                            placeholder={contactForm.form.name}
                             className="flex-1 px-4 py-3 outline-none min-w-0 w-full rounded-xl bg-white"
                         />
                     </div>
                     <input 
                         type="email"
                         id="email"
-                        placeholder={contactForm.email}
+                        placeholder={contactForm.form.email}
                         className="px-4 py-3 outline-none min-w-0 w-full rounded-xl bg-white"
                     />
                     <textarea
                         id="comment"
                         className="flex-1 min-h-[170px] px-4 py-3 outline-none min-w-0 w-full rounded-xl bg-white resize-none"
-                        placeholder={contactForm.comment}
+                        placeholder={contactForm.form.comment}
                     />
                     <input
                         type="submit"
-                        value={contactForm.submit}
+                        value={contactForm.form.submit}
                         className="px-4 py-3 w-full min-w-0 cursor-pointer rounded-xl outline-none bg-violet-800 text-white"
                     /> 
                 </form>
