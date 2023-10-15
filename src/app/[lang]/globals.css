@@ -112,6 +112,10 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+.fade-in {
+    animation: fade-in 200ms ease-out;
+}
+
 @keyframes fade-out {
     0% {
         transform: translateY(0);

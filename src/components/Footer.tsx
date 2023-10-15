@@ -46,9 +46,9 @@ const Footer = ({ footer, links }: { footer: {links: string[]}, links: {name: st
                         </ul>
                     </div>
                 </div>
-                <Image className="flex-[.5] max-w-[200px]" src="/assets/logo/logo.svg" alt="logo" width={200} height={200} />
+                <Image className="flex-[.5] max-w-[200px] w-full h-auto" src="/assets/logo/logo.svg" alt="logo" width={200} height={200} />
             </section>
-            <p className="py-3 text-sm border-t">&copy;2023 Webswize. All Rights Reserved</p>
+            <p className="py-6 text-sm border-t">&copy;2023 Webswize. All Rights Reserved</p>
         </footer>
     );
 }
