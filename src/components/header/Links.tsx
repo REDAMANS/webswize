@@ -29,7 +29,7 @@ const Links = ({ links }: { links: {name: string, href: string}[] }) => {
         <ul className='hidden md:flex flex-row gap-12'>
             {links.map((link: { name: string, href: string, hover?: {name: string, href: string}[] }, index: number ) => {
                 return (
-                    <li className="relative" key={index}>
+                    <li className="relative link" key={index}>
                         {
                             link.hover ?
                             <>
