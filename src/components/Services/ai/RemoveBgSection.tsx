@@ -118,7 +118,7 @@ const RemoveBgSection = ({ removeBgSection } : { removeBgSection: any }) => {
 
     return (
         <form id="form" className='w-full flex flex-col items-center justify-center'>
-            <label onDragEnd={backToWhite} onDragLeave={backToWhite} onDragOver={backToBlue} onDragEnter={backToBlue} onDrop={(e) => {uploadFile(e); backToWhite(e);}} className='cursor-pointer transition-colors bg-[#ffffff] shadow-lg border-4 border-dashed rounded-3xl h-80 w-full max-w-md flex flex-col justify-center items-center gap-10 px-16 text-center text-gray-500 text-xl md:text-3xl font-semibold' htmlFor='file-input'>
+            <label onDragEnd={backToWhite} onDragLeave={backToWhite} onDragOver={backToBlue} onDragEnter={backToBlue} onDrop={(e) => {uploadFile(e); backToWhite(e);}} className='cursor-pointer bg-[#ffffff] shadow-sm hover:shadow-lg border-4 border-dashed rounded-3xl h-80 w-full max-w-md flex flex-col justify-center items-center gap-10 px-16 text-center text-gray-500 text-xl md:text-3xl font-semibold drop-field' htmlFor='file-input'>
                 {removeBgSection.uploadLabel}
                 <input
                     multiple 
@@ -129,7 +129,7 @@ const RemoveBgSection = ({ removeBgSection } : { removeBgSection: any }) => {
                         if(e.target.files !== null) submitFile(e.target.files);
                     }}
                 />
-                <label onDragEnd={sameColor} onDragLeave={sameColor} onDragOver={sameColor} onDragEnter={sameColor} onDrop={(e) => {uploadFile(e); sameColor(e)}}  htmlFor='file-input' className='cursor-pointer text-base p-4 rounded-2xl bg-blue-700 hover:bg-white text-white hover:text-blue-700 border border-blue-700 transition-colors font-semibold flex flex-row items-center gap-2'>
+                <label onDragEnd={sameColor} onDragLeave={sameColor} onDragOver={sameColor} onDragEnter={sameColor} onDrop={(e) => {uploadFile(e); sameColor(e)}}  htmlFor='file-input' className='cursor-pointer text-base p-4 rounded-2xl bg-blue-700 text-white transition-colors font-semibold flex flex-row items-center gap-2'>
                     <BiImageAlt className="text-lg" />
                     <p>{removeBgSection.uploadButton}</p>
                 </label>

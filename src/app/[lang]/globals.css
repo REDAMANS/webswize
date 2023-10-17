@@ -44,10 +44,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.link {
-    @apply relative
-}
-
 .link:hover ul {
     height: 100px;
 }
@@ -78,20 +74,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .sidebar__toggled div:nth-child(3) {
     transform: translate(0, -.4rem) rotate(-45deg);
-}
-
-.animate-scale {
-    animation: scale-up 0.15s linear;
-}
-
-@keyframes scale-up {
-    0% {
-        transform: scale(0);
-    }
-
-    100% {
-        transform: scale(1);
-    }
 }
 
 .slide-in {
@@ -281,4 +263,8 @@ h1, h2, h3, h4, h5, h6 {
     100% {
         transform: translateX(0);
     }
+}
+
+.drop-field {
+    transition: box-shadow .3s, background-color .3s, color .3s;
 }

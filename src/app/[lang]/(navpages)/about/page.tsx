@@ -36,8 +36,12 @@ const AboutPage = async ({ params }: {params: {lang: "en" | "en-US" | "fr" | "fr
           <section className="w-full flex flex-col items-center text-center gap-10"> 
             {aboutpage.info.map((tab: {title?: string, text: string, list?: string[], image?: string}, i: number) => (
                 tab.image ?
-                <div key={i} className={`flex flex-col ${i % 2 ? "lg:flex-row" : "lg:flex-row-reverse" } items-center gap-10 mb-20 text-left`}>
-                  <div className="flex-1 flex flex-col gap-8 md:gap-16">
+                <div key={i} className={`flex flex-col relative ${i % 2 ? "lg:flex-row" : "lg:flex-row-reverse" } items-center gap-10 mb-20 text-left`}>
+                  { i === 1 ? <Image className="h-auto slow-spin w-60 z-10 opacity-50 absolute top-0 left-0" src="/assets/random-shapes/orange.svg" alt="deformed ellipse" width={500} height={500} /> 
+                    : i === 2 ? <Image className="h-auto slow-spin w-80 z-10 opacity-50 absolute top-0 right-0" src="/assets/random-shapes/violet.svg" alt="deformed ellipse" width={500} height={500} />
+                    : i === 4 && <Image className="h-auto slow-spin w-80 z-10 opacity-75 absolute top-0 right-10" src="/assets/random-shapes/seablue.svg" alt="deformed ellipse" width={500} height={500} />
+                  }
+                  <div className="flex-1 z-20 flex flex-col gap-8 md:gap-16">
                     {
                       tab.title && <h2 className="self-center text-center lg:text-start lg:self-start text-3xl sm:text-4xl md:text-6xl">{tab.title}</h2>
                     }

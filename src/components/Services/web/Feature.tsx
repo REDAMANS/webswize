@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { BiX } from "react-icons/bi";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRef } from "react";
 
 const Feature = ({ tap, featureList, feature, selectedCard, setSelectedCard, id }: 
     { 
@@ -13,12 +14,14 @@ const Feature = ({ tap, featureList, feature, selectedCard, setSelectedCard, id 
         tap: string
     }) => {
 
+        const cardRef = useRef<HTMLDivElement>(null);
+
         const selectedFeature = featureList[Number(selectedCard)];
         return (
             <>
             <AnimatePresence>
                     {selectedCard &&
-                        <motion.div layoutId={selectedCard} className="fixed z-[1000] top-20 flex flex-col items-center h-max p-10 rounded-3xl feature text-white text-center w-[90vw] md:w-max max-w-xl">
+                        <motion.div ref={cardRef} layoutId={selectedCard} className={`fixed top-32 z-[1000] flex flex-col items-center h-max p-10 rounded-3xl feature text-white text-center w-[90vw] md:w-max max-w-xl`}>
                             <Image className="w-full max-w-[300px] h-auto mb-5" src={`/assets/services/web/features/${selectedFeature.image}`} alt={selectedFeature.name} width={120} height={80} />
                             <h3 className="font-semibold mb-6 text-2xl sm:text-4xl">{selectedFeature.name}</h3>
                             <p className="text-sm mt-auto">{selectedFeature.description}</p>

@@ -29,7 +29,7 @@ const AiChatbotPage = async ({ params }: {params: {lang: "en" | "en-US" | "fr" |
         <section className="flex flex-row h-screen">
             <ConversationProvider>
                 <AISidebar sidebar={chatbot.sidebar} />
-                <section className="flex-1 h-full flex flex-col px-10 md:px-20 pt-28 pb-8">
+                <section className="flex-1 h-screen flex flex-col px-10 md:px-20 pt-28 pb-8">
                     <Body body={chatbot.body}/>
                     <QuestionBar placeholder={chatbot.placeholder}/>
                 </section>
