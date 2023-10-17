@@ -38,7 +38,7 @@ const Links = ({ links }: { links: {name: string, href: string}[] }) => {
                                     {
                                         link.hover.map((l, i) =>
                                             <li key={i}>
-                                                <Link className='py-4 px-5 flex flex-row gap-10 text-black hover:text-blue-600 transition-colors items-center justify-between' href={`${link.href}/${l.href}`}>
+                                                <Link onClick={() => handleClick(true)} className='py-4 px-5 flex flex-row gap-10 text-black hover:text-blue-600 transition-colors items-center justify-between' href={`${link.href}/${l.href}`}>
                                                     <p>{l.name}</p>
                                                     <BsChevronRight />
                                                 </Link>
