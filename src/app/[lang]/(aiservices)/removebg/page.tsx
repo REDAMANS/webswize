@@ -4,6 +4,23 @@ import Link from 'next/link';
 import { BsChevronRight } from 'react-icons/bs';
 import { getDictionary } from '@/lib/dictionaries';
 
+export async function generateStaticParams() {
+    return [
+      {
+        lang: "en"
+      },
+      {
+        lang: "en-US"
+      },
+      {
+        lang: "fr"
+      },
+      {
+        lang: "fr-FR"
+      },
+    ]
+  }  
+
 const RemoveBgPage = async ({ params }: {params: {lang: "en" | "en-US" | "fr" | "fr-FR"}}) => {
     const { servicespage: { pages: { ai: { page: { removebg } } } } } = await getDictionary(params.lang);
 

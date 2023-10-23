@@ -15,17 +15,17 @@ const ContactButtons = () => {
                     </div>
                 </button>
                 <ul className={`${open ? "h-[252px] translate-y-1" : "h-0 -translate-y-5"} gap-1 transition-all duration-300 overflow-hidden flex flex-col text-5xl text-violet-400`}>
-                    <Link target='_blank' href={process.env.NEXT_PUBLIC_FACEBOOK_LINK || "/"}>
+                    <Link target='_blank' href="https://www.facebook.com/profile.php?id=61550481872811">
                         <li className='p-4 rounded-2xl bg-white'>
                             <BiLogoFacebookSquare/>
                         </li>
                     </Link>
-                    <Link target='_blank' href={process.env.NEXT_PUBLIC_INSTAGRAM_LINK || "/"}>
+                    <Link target='_blank' href="https://www.instagram.com/webswize/">
                         <li className='p-4 rounded-2xl bg-white'>
                             <BiLogoInstagramAlt/>
                         </li>
                     </Link>
-                    <Link target='_blank' href={process.env.NEXT_PUBLIC_TWITTER_LINK || "/"}>
+                    <Link target='_blank' href="">
                         <li className='p-4 rounded-2xl bg-white'>
                             <BiLogoTwitter/>
                         </li>

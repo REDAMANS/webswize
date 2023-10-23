@@ -44,6 +44,22 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+.custom-button::before {
+    @apply content-[""] z-[-.5] bg-white absolute top-0 rounded-sm left-0 h-full w-0 transition-[width] duration-200;
+}
+
+.custom-button:hover::before {
+    @apply w-full
+}
+
+.custom-button:not(:hover)::before {
+    @apply right-0 left-auto;
+}
+
+.link {
+    @apply relative;
+}
+
 .link:hover {
     @apply text-blue-700
 }
@@ -267,4 +283,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .drop-field {
     transition: box-shadow .3s, background-color .3s, color .3s;
+}
+
+.credentials-input {
+    /* transition: box-shadow .2s;
+    box-shadow: inset 0px 0px 4px rgb(212, 212, 212); */
+    border: 1px solid rgb(209, 209, 209);
 }

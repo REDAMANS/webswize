@@ -13,6 +13,7 @@
     "@contentful/rich-text-react-renderer": "^15.17.2",
     "@contentful/rich-text-types": "^16.3.0",
     "@formatjs/intl-localematcher": "^0.4.0",
+    "@prisma/client": "^5.4.2",
     "@types/aos": "^3.0.4",
     "@types/negotiator": "^0.6.1",
     "@types/node": "20.5.1",
@@ -21,6 +22,7 @@
     "@types/react-dom": "18.2.7",
     "aos": "^2.3.4",
     "autoprefixer": "10.4.15",
+    "bcrypt": "^5.1.1",
     "contentful-cli": "^2.8.10",
     "contentful-import": "^9.0.15",
     "date-fns": "^2.30.0",
@@ -30,6 +32,7 @@
     "highlight.js": "^11.8.0",
     "negotiator": "^0.6.3",
     "next": "13.4.19",
+    "next-auth": "^4.24.3",
     "nodemailer": "^6.9.6",
     "postcss": "8.4.28",
     "react": "18.2.0",
@@ -45,6 +48,8 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "@types/react-syntax-highlighter": "^15.5.7"
+    "@types/bcrypt": "^5.0.1",
+    "@types/react-syntax-highlighter": "^15.5.7",
+    "prisma": "^5.4.2"
   }
 }

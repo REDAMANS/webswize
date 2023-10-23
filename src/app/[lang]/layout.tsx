@@ -9,9 +9,9 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: 'Webswize | Where elegance meets beauty',
-  description: 'Webswize is an ongoing project for the web development',
+  description: 'Webswize is a web development community that provides a variety of services such as frontend development and some helpful ai tools',
   openGraph: {
-    images: "/assets/og/opengraph-image.png"
+    title: "Webswize | Where elegance meets beauty"
   }
 }
 

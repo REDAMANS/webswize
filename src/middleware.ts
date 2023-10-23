@@ -24,7 +24,6 @@ export function middleware(request: NextRequest) {
             new URL(`/${locale}/${pathname}`, request.url)
         );
     }
-
 }
 
 export const config = {

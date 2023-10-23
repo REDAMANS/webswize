@@ -27,7 +27,8 @@
                     }
                 ]
             }
-        ]
+        ],
+        "auth": ["Se Connecter", "S'Inscrire"]
     },
     "footer": {
         "links": [
@@ -81,7 +82,8 @@
     },
     "aboutpage": {
         "metadata": {
-            "title": "Webswize | À propos de nous"
+            "title": "Webswize | À propos de nous",
+            "description": "Bienvenue chez Webswize, Votre partenaire pour l'excellence du développement Web ! Chez Webswize, nous sommes plus que de simples développeurs Web ; nous sommes des créateurs passionnés, des résolveurs de problèmes et des innovateurs. Fondés par deux développeurs dévoués ayant une vision commune, nous avons entrepris de rendre le monde numérique meilleur, un site Web à la fois."
         },
         "title": "À propos de nous",
         "info": [
@@ -116,10 +118,15 @@
     },
     "blogpage": {
         "metadata": {
-            "title": "Webswize | Blog"
+            "title": "Webswize | Blog",
+            "description": "Nous avons publié quelques articles intéressants que vous pouvez lire pour comprendre ce que nous utilisons dans notre travail.."
         }
     },
     "servicespage": {
+        "metadata": {
+            "title": "Webswize | Nos services",
+            "description": "Découvrez nos services web ainsi que d'autres outils AI qui pourraient vous être utiles."
+        },
         "pages": {
             "web": {
                 "slider": [
@@ -249,5 +256,15 @@
                 }
             }
         }
+    },
+    "authPages": {
+        "emailPlaceholder": "Email",
+        "usernamePlaceholder": "Nom d'utilisateur",
+        "passwordPlaceholder": "Mot de passe",
+        "signInPhrase": "Se connecter avec",
+        "signInButton": "Connecter",
+        "signupButton": "Inscrire",
+        "signUpBackupText": "Vous n'avez pas un compte? S'inscrire",
+        "signInBackupText": "Vous aves déjà un compte? Se connecter"
     }
 }

@@ -36,24 +36,28 @@ const RemoveBgSection = ({ removeBgSection } : { removeBgSection: any }) => {
                 formData.append('image_file', file);
                 window.scrollTo({top: document.body.scrollHeight})
                 
-                const response = await fetch("https://clipdrop-api.co/remove-background/v1",
-                { 
+                const response = await fetch(`${
+                    process.env.NEXT_PUBLIC_NODE_ENV === 'development' ?
+                    "http://localhost:3000/api/remove-bg"
+                    : "https://webswize.vercel.app/api/remove-bg"
+                }`,{ 
                     method: "POST", 
                     headers: { 
-                            'x-api-key': process.env.NEXT_PUBLIC_REMOVEBG_API_KEY || "",
+                            "content-type": "application/json"
                         }, 
-                        body: formData 
+                        body: JSON.stringify({ formData }) 
                     }
                 );
+
+                const { status, imageBlob } = await response.json();
                     
-                switch(response.status) {
+                switch(status) {
                     case 400: return setErrorMessage("Error: Image Resolution is too big"); break;
                     case 500: return setErrorMessage("Error: Server is not responding"); break;
                     case 429: return setErrorMessage("Error: Too many requests"); break;
                     case 402: return setErrorMessage("Error: Not enough credits"); break;
                 }
     
-                const imageBlob: Blob = await response.blob();
                 setImageList(prevImageList => {
                     if(prevImageList?.length) {
                         const newImageList = prevImageList.map(image => {

@@ -46,7 +46,9 @@ const Footer = ({ footer, links }: { footer: {links: string[]}, links: {name: st
                         </ul>
                     </div>
                 </div>
-                <Image className="flex-[.5] max-w-[200px] w-full h-auto" src="/assets/logo/logo.svg" alt="logo" width={200} height={200} />
+                <div className="flex flex-col gap-8 items-center">
+                    <Image className="flex-[.5] max-w-[200px] w-full h-auto" src="/assets/logo/logo.svg" alt="logo" width={200} height={200} />
+                </div>
             </section>
             <p className="py-6 text-sm border-t">&copy;2023 Webswize. All Rights Reserved</p>
         </footer>

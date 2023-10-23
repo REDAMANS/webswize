@@ -3,7 +3,14 @@ import QuestionOrAnswer from "./QuestionOrAnswer";
 import {useEffect, useRef, useContext} from 'react'
 import { ConversationContext } from "@/context/ConversationContext";
 
-const Body = ({body}: {body: {hiThere: string, functionality: string}}) => {
+const Body = ({userImage, body}: 
+    {
+        userImage: string | null,
+        body: {
+            hiThere: string, 
+            functionality: string
+        }
+    }) => {
 
     const { conversations, sideBarState, updateSideBarState } = useContext(ConversationContext);
 
@@ -32,7 +39,7 @@ const Body = ({body}: {body: {hiThere: string, functionality: string}}) => {
                     {currConversation.conv.map((pair, i) => (
                         <li key={i} className="flex flex-col gap-8">
                             <QuestionOrAnswer
-                                pfp="/assets/services/ai/user.svg"
+                                pfp={userImage ? userImage : "/assets/user.svg"}
                                 flexDirection="flex-row"
                                 alignSelf="self-start"
                                 type="question">

@@ -3,6 +3,30 @@ import Image from "next/image";
 import Link from "next/link";
 import { BsChevronRight } from "react-icons/bs";
 import { getDictionary } from "@/lib/dictionaries";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Webswize | Text to Image",
+    description: "A useful ai tool that allows you to convert a portion of text into a beautiful ai generated image",
+    keywords: "text2image, text2image ai,pixray-text2image,text2image generator,text2image api,pixray/text2image,text2image not found,multilingual text2image,ai text2image,stable diffusion text2image,custom diffusion text2image generator,text2image online,text2image google,text2image gan,text2image genertor,ai image generator,free ai image generator,ai image generator free,ai image generator from text,image generator ai,image generator,dall-e image generator,best ai image generator,dall e image generator,text to image generator,bing ai image generator,random image generator,image generator from text,craiyon ai image generator,ai image generator from image,openai image generator,novel ai image generator,ai image generator online,dall e mini ai image generator,dalle image generator,ai image generator from text free,ai image generator dall e,nsfw ai image generator,best free ai image generator,dall e ai image generator,ai image generator dall e mini,bing image generator,chat gpt image generator,ai text to image generator,google ai image generator,fotor ai image generator,chatgpt image generator,ai text-to-image generator,best ai image generator free,dall e mini image generator,dall-e ai image generator,canva ai image generator,free image generator,free ai image generator from text,ai image generator nsfw,deep ai image generator,text-to-image generator,midjourney ai image generator,online ai image generator,dolly image generator,text-to-image generator ai,text on image generator,anime ai image generator,ai image generator discord,midjourney image generator,open source ai image generator"
+}
+
+export async function generateStaticParams() {
+    return [
+      {
+        lang: "en"
+      },
+      {
+        lang: "en-US"
+      },
+      {
+        lang: "fr"
+      },
+      {
+        lang: "fr-FR"
+      },
+    ]
+  }  
 
 const ImageGeneratorPage = async ({ params }: {params: {lang: "en" | "en-US" | "fr" | "fr-FR"}}) => {
 
