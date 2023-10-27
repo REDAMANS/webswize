@@ -24,11 +24,7 @@ const QuestionBar = ({placeholder}: {placeholder: string}) => {
             }) : [{ name: newPrompt, isSelected: true, conv: [{ question: newPrompt, answer: "..."}] }]
             return newConvs;
         })
-        const response = await fetch(`${
-            process.env.NEXT_PUBLIC_NODE_ENV === 'development' ?
-            "http://localhost:3000/api/chatbot"
-            : "https://webswize.vercel.app/api/chatbot"
-        }`, {
+        const response = await fetch("/api/chatbot", {
             method: 'POST',
             headers: {
                 "content-type": "application/json"

@@ -28,7 +28,11 @@
                 ]
             }
         ],
-        "auth": ["Se Connecter", "S'Inscrire"]
+        "auth": [
+                "Se Connecter",
+                "S'Inscrire",
+                "Déconnexion"
+        ]
     },
     "footer": {
         "links": [

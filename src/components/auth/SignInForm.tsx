@@ -4,28 +4,23 @@ import { useState } from "react";
 import { BiUser, BiLockAlt } from "react-icons/bi"
 import { signIn } from "next-auth/react";
 import { motion } from "framer-motion";
-import { useSearchParams } from "next/navigation";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
-const SignInForm = ({ placeholders }: { placeholders: any }) => {
+const SignInForm = ({ placeholders, csrfToken }: { placeholders: any, csrfToken: string }) => {
 
     const [isVisiblePassword, setIsVisiblePassword] = useState<boolean>(false);
 
-    const searchParams = useSearchParams();
-    const callbackUrl = searchParams.get("callbackUrl") as string;
-
-    const loginUser = async (e: React.FormEvent) => {
-        e.preventDefault();
-        const form = e.target as HTMLFormElement;
-        const formData = new FormData(form)
-        const username = formData.get("username")?.toString();
-        const password = formData.get("password")?.toString();
-        await signIn("credentials", {
-            callbackUrl,
-            username,
-            password
-        });
-    }
+    // const loginUser = async (e: React.FormEvent) => {
+    //     e.preventDefault();
+    //     const form = e.target as HTMLFormElement;
+    //     const formData = new FormData(form)
+    //     const username = formData.get("username")?.toString();
+    //     const password = formData.get("password")?.toString();
+    //     await signIn("credentials", {
+    //         username,
+    //         password
+    //     });
+    // }
 
     const handleFocusStart = () => {
         const visibility = document.getElementById("visibility") as HTMLDivElement;
@@ -40,7 +35,8 @@ const SignInForm = ({ placeholders }: { placeholders: any }) => {
     }
 
     return (
-        <form onSubmit={loginUser} className="w-full flex flex-col gap-4">
+        <form method="post" action="/api/auth/callback/credentials" className="w-full flex flex-col gap-4">
+                    <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
                     <div className="flex flex-row items-center px-4 py-3 rounded-xl credentials-input gap-4 w-full">
                         <label htmlFor="username" className="text-gray-400"><BiUser /></label>
                         <input id="username" name="username" className="w-full outline-none" type="text" placeholder={placeholders.usernamePlaceholder}/>

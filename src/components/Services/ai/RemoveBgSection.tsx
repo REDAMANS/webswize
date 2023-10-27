@@ -34,30 +34,19 @@ const RemoveBgSection = ({ removeBgSection } : { removeBgSection: any }) => {
                 
                 const formData = new FormData();
                 formData.append('image_file', file);
-                window.scrollTo({top: document.body.scrollHeight})
                 
-                const response = await fetch(`${
-                    process.env.NEXT_PUBLIC_NODE_ENV === 'development' ?
-                    "http://localhost:3000/api/remove-bg"
-                    : "https://webswize.vercel.app/api/remove-bg"
-                }`,{ 
-                    method: "POST", 
-                    headers: { 
-                            "content-type": "application/json"
-                        }, 
-                        body: JSON.stringify({ formData }) 
+                const response = await fetch("/api/remove-bg",
+                    {
+                        method: "POST",
+                        body: formData 
                     }
                 );
 
-                const { status, imageBlob } = await response.json();
-                    
-                switch(status) {
-                    case 400: return setErrorMessage("Error: Image Resolution is too big"); break;
-                    case 500: return setErrorMessage("Error: Server is not responding"); break;
-                    case 429: return setErrorMessage("Error: Too many requests"); break;
-                    case 402: return setErrorMessage("Error: Not enough credits"); break;
-                }
-    
+                console.log(response.status)
+                
+                const imageBlob = await response.blob();
+                window.scrollTo({top: document.body.scrollHeight})
+                
                 setImageList(prevImageList => {
                     if(prevImageList?.length) {
                         const newImageList = prevImageList.map(image => {
@@ -149,11 +138,11 @@ const RemoveBgSection = ({ removeBgSection } : { removeBgSection: any }) => {
                                 <BiX />
                             </div>
                             <div className='flex-[1.5] lg:h-96 flex flex-col md:flex-row gap-10'>
-                                <picture className="flex-1 border px-4 rounded-xl overflow-hidden lg:w-80 py-4 bg-gray-200 flex items-center">
-                                    <Image className='w-full h-max' src={image.bgImagePreview} alt="with bg" width={300} height={300} />
+                                <picture className="flex-1 aspect-square border px-4 rounded-xl overflow-hidden lg:w-80 py-4 bg-gray-200 flex items-center">
+                                    <Image className='w-auto h-full' src={image.bgImagePreview} alt="with bg" width={300} height={300} />
                                 </picture>
-                                <picture className={`flex-1 border px-4 rounded-xl overflow-hidden lg:w-80 py-4 bg-gray-200 flex items-center ${image.noBgImagePreview ? 'bg-[url("/assets/services/ai/no-background.png")]' : ""}`}>
-                                    {image.noBgImagePreview && <Image className='w-full h-max' src={image.noBgImagePreview} alt="without_bg" width={300} height={300} />}
+                                <picture className={`flex-1 aspect-square border px-4 rounded-xl overflow-hidden lg:w-80 py-4 bg-gray-200 flex items-center ${image.noBgImagePreview ? 'bg-[url("/assets/services/ai/no-background.png")]' : ""}`}>
+                                    {image.noBgImagePreview && <Image className='w-auto h-full' src={image.noBgImagePreview} alt="without_bg" width={300} height={300} />}
                                 </picture>
                             </div>
                             <div className='flex-[0.5] flex justify-end'>

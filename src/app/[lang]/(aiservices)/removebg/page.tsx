@@ -3,6 +3,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BsChevronRight } from 'react-icons/bs';
 import { getDictionary } from '@/lib/dictionaries';
+import options from "@/app/api/auth/[...nextauth]/options";
+import { getServerSession, Session } from "next-auth";
+import { redirect } from "next/navigation";
+
 
 export async function generateStaticParams() {
     return [
@@ -23,6 +27,12 @@ export async function generateStaticParams() {
 
 const RemoveBgPage = async ({ params }: {params: {lang: "en" | "en-US" | "fr" | "fr-FR"}}) => {
     const { servicespage: { pages: { ai: { page: { removebg } } } } } = await getDictionary(params.lang);
+
+    const session: Session | null = await getServerSession(options);
+
+    if(!session) {
+        redirect("http://localhost:3000/api/auth/signin?callbackUrl=/removebg");
+    }
 
     return (
         <section className="relative px-10 py-32 flex flex-col items-center justify-center min-h-screen w-full gap-20 bg-gray-100">

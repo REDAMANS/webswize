@@ -29,7 +29,7 @@ const AiServicePage = async ({ params }: {params: {lang: "en" | "en-US" | "fr" |
                 {ai.title}
               </h1>
               <p className="description-text mb-10">{ai.description}</p>
-              <ul className="flex flex-col items-center sm:items-start sm:flex-row gap-10">
+              <ul className="flex flex-col flex-wrap justify-between items-center sm:items-start sm:flex-row gap-10">
                   {
                       ai.tools.toolList.map((tool: { 
                           name: string,

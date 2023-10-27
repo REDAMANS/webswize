@@ -28,7 +28,11 @@
                 ]
             }
         ],
-        "auth": ["Sign in", "Sign up"]
+        "auth": [
+            "Sign in",
+            "Sign up",
+            "Sign out"
+        ]
     },
     "footer": {
         "links": [

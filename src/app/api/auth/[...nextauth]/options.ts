@@ -37,12 +37,34 @@ const options: NextAuthOptions = {
                     id: user.id,
                     name: user.name,
                     email: user.email,
+                    image: user.image
                 };
             }
         })
     ],
     pages: {
         signIn: "/signin",
+    },
+    callbacks: {
+        async signIn({ user, account, profile, email, credentials }) {
+            if(account?.provider) {
+                const isInDatabase = await prisma.user.findUnique({
+                    where: {
+                        name: user.name as string,
+                    }
+                });
+                if(!isInDatabase){
+                    const newUser = await prisma.user.create({
+                        data: {
+                            name: user.name as string,
+                            email: user.email as string,
+                            image: user.image as string,
+                        }
+                    })
+                }
+            }
+            return true
+        }
     }
 }
 

@@ -61,21 +61,19 @@ const SignUpForm = ({ placeholders }: { placeholders: any }) => {
                 <label htmlFor="email" className="text-gray-400"><BiLogoGmail /></label>
                 <input autoComplete="off" id="email" name="email" className="w-full outline-none" type="email" placeholder={placeholders.emailPlaceholder}/>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4">
-                <div className="flex flex-row items-center px-4 py-3 rounded-xl credentials-input gap-4 w-full">
-                    <label htmlFor="username" className="text-gray-400"><BiUser /></label>
-                    <input autoComplete="off" id="username" name="username" className="w-full outline-none" type="text" placeholder={placeholders.usernamePlaceholder}/>
-                </div>
-                <div className="flex flex-row items-center px-4 py-3 rounded-xl credentials-input gap-4 w-full">
+            <div className="flex flex-row items-center px-4 py-3 rounded-xl credentials-input gap-4 w-full">
+                <label htmlFor="username" className="text-gray-400"><BiUser /></label>
+                <input autoComplete="off" id="username" name="username" className="w-full outline-none" type="text" placeholder={placeholders.usernamePlaceholder}/>
+            </div>
+            <div className="relative flex flex-row items-center px-4 py-3 rounded-xl credentials-input gap-4 w-full">
                 <label onClick={() => setIsVisiblePassword(!isVisiblePassword)} htmlFor="password" id="visibility" className="absolute right-3 transition-[opacity] opacity-0 cursor-pointer">
-                        { isVisiblePassword ?
-                            <AiOutlineEyeInvisible />    
-                            : <AiOutlineEye />
-                        }
-                        </label>
-                        <label htmlFor="password" className="text-gray-400"><BiLockAlt /></label>
-                        <input onBlur={handleFocusEnd} onFocus={handleFocusStart} id="password" name="password" className="w-full outline-none" type={isVisiblePassword ? "text": "password"} placeholder={placeholders.passwordPlaceholder}/>
-                </div>
+                    { isVisiblePassword ?
+                        <AiOutlineEyeInvisible />    
+                        : <AiOutlineEye />
+                    }
+                </label>
+                <label htmlFor="password" className="text-gray-400"><BiLockAlt /></label>
+                <input onBlur={handleFocusEnd} onFocus={handleFocusStart} id="password" name="password" className="w-full outline-none" type={isVisiblePassword ? "text": "password"} placeholder={placeholders.passwordPlaceholder}/>
             </div>
             <motion.button whileTap={{ scale: 0.95 }} className="px-4 py-3 rounded-xl outline-none font-bold text-white bg-blue-600" type="submit">
                 {placeholders.signupButton}

@@ -27,7 +27,7 @@ const AiChatbotPage = async ({ params }: {params: {lang: "en" | "en-US" | "fr" |
     return (
         <section className="flex flex-row h-screen">
             <ConversationProvider>
-                <AISidebar sidebar={chatbot.sidebar} />
+                <AISidebar user={session.user} sidebar={chatbot.sidebar} />
                 <section className="flex-1 h-screen flex flex-col px-10 md:px-20 pt-28 pb-8">
                     <Body userImage={session && session.user ? session.user.image as string : null} body={chatbot.body}/>
                     <QuestionBar placeholder={chatbot.placeholder}/>

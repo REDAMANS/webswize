@@ -6,10 +6,16 @@ import { BsChevronRight } from 'react-icons/bs';
 import { useSession } from 'next-auth/react';
 import { Session } from 'next-auth';
 import Image from 'next/image';
-import { BiUser, BiLogOut} from 'react-icons/bi';
+import { BiLogOut } from 'react-icons/bi';
 import AuthButtons from '../auth/AuthButtons';
 
-const Links = ({ links }: { links: {name: string, href: string}[] }) => {
+const Links = ({ links, auth }: 
+    { 
+        links: {
+        name: string, 
+        href: string}[],
+        auth: string[],
+    }) => {
 
     const { data, status }: {
         data: Session | null,
@@ -20,15 +26,15 @@ const Links = ({ links }: { links: {name: string, href: string}[] }) => {
         .replace(/\/en|\/en-US|\/fr|\/fr-FR/, '/')
         .replace("//", "/")];
 
-    const handleClick = (list?: string, link?: boolean) => {
+    const handleClick = (list?: string) => {
         if(list){
             const ul = document.getElementById(list) as HTMLUListElement;
             if(ul.classList.contains("h-0")){
                 ul.classList.remove("h-0")
-                ul.classList.add("h-[104px]")
+                ul.classList.add(list === "sublist" ? "h-[104px]" : "h-[52px]")
             }else {
                 ul.classList.add("h-0")
-                ul.classList.remove("h-[104px]")
+                ul.classList.remove(list === "sublist" ? "h-[104px]" : "h-[52px]")
             }
         }else {
             const ul1 = document.getElementById("sublist") as HTMLUListElement;
@@ -36,7 +42,7 @@ const Links = ({ links }: { links: {name: string, href: string}[] }) => {
             ul1.classList.add("h-0")
             ul1.classList.remove("h-[104px]")
             ul2.classList.add("h-0")
-            ul2.classList.remove("h-[104px]")
+            ul2.classList.remove("h-[52px]")
             return;
         }
     }
@@ -66,7 +72,7 @@ const Links = ({ links }: { links: {name: string, href: string}[] }) => {
                                 </>
                                 :
                             <Link 
-                                    onClick={() => handleClick("",true)}
+                                    onClick={() => handleClick()}
                                     className={pathname === link.href ? `text-[#1C4CC9] font-semibold` : ""} 
                                     href={link.href}
                                 >
@@ -82,20 +88,16 @@ const Links = ({ links }: { links: {name: string, href: string}[] }) => {
                     <div className='relative'>
                         <Image onClick={() => handleClick("user-list")} className='rounded-full cursor-pointer' alt={data?.user?.name || "Profile Picture"} src={data?.user?.image || "/assets/user.svg"} width={30} height={30} />
                         <ul id="user-list" className='absolute overflow-y-hidden whitespace-nowrap right-0 font-light top-10 transition-[height] h-0 flex-col rounded-xl shadow-lg bg-white'>
-                            <li className='cursor-pointer py-4 px-5 flex flex-row gap-2 text-black hover:text-blue-600 transition-colors items-center justify-between'>
-                                <BiUser />
-                                <span>My Profile</span>
-                            </li>
                             <li className='cursor-pointer py-4 px-5 text-black hover:text-blue-600 transition-colors items-center justify-between'>
                                 <button className='flex flex-row items-center gap-2' onClick={() => signOut()}>
                                     <BiLogOut />
-                                    Sign out
+                                    <p>{auth[2]}</p>
                                 </button>
                             </li>
                         </ul>
                     </div>
                     :
-                    <AuthButtons pathname={pathname} />
+                    <AuthButtons buttons={auth} pathname={pathname} />
                 }
             </div>
         </div>

@@ -6,7 +6,7 @@ import {
     AiOutlineWhatsApp, 
     AiOutlineMail, 
     AiOutlinePhone } from 'react-icons/ai';
-    
+
 export const mediaList = [
     {
         name: "Facebook",

@@ -7,7 +7,7 @@ import AuthProvider from "../Services/ai/AuthProvider";
 
 type Navbar = {
     links: {name: string, href: string}[],
-    authLinks: {name: string, href: string}[]
+    auth: string[]
 }
 
 const Header = ({ navbar }: { navbar: Navbar }) => {
@@ -19,7 +19,7 @@ const Header = ({ navbar }: { navbar: Navbar }) => {
                     <Image priority className="h-auto" src="/assets/logo/logo.svg" alt="logo" width={80} height={80} />
                 </div>
                 <AuthProvider>
-                    <Links links={navbar.links} />
+                    <Links auth={navbar.auth} links={navbar.links} />
                     <SidebarProvider>
                         <Sidebar links={navbar.links} />
                         <SidebarButton />

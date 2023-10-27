@@ -4,6 +4,10 @@ import Link from "next/link";
 import { BsChevronRight } from "react-icons/bs";
 import { getDictionary } from "@/lib/dictionaries";
 import { Metadata } from "next";
+import options from "@/app/api/auth/[...nextauth]/options";
+import { getServerSession, Session } from "next-auth";
+import { redirect } from "next/navigation";
+
 
 export const metadata: Metadata = {
     title: "Webswize | Text to Image",
@@ -29,6 +33,12 @@ export async function generateStaticParams() {
   }  
 
 const ImageGeneratorPage = async ({ params }: {params: {lang: "en" | "en-US" | "fr" | "fr-FR"}}) => {
+
+    const session: Session | null = await getServerSession(options);
+
+    if(!session) {
+        redirect("http://localhost:3000/api/auth/signin?callbackUrl=/image-generator");
+    }
 
     const { servicespage: { pages: { ai: { page: { imageGenerator } } } } } = await getDictionary(params.lang);
 

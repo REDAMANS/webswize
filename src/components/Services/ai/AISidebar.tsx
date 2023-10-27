@@ -5,7 +5,7 @@ import { ConversationContext } from "@/context/ConversationContext";
 import { AiOutlinePlus, AiOutlineDelete, AiOutlineClose } from "react-icons/ai"
 import AOS from "@/components/AOS";
 
-const AISidebar = ({sidebar}: 
+const AISidebar = ({sidebar, user}: 
     {
         sidebar: {
             myConvs: string, 
@@ -13,7 +13,8 @@ const AISidebar = ({sidebar}:
             buttons: {add: string, name: string, delete: string},
             placeholder: string,
             add: string
-        }
+        },
+        user: any
     }) => {
 
     const nameRef = useRef<HTMLInputElement>(null);
@@ -90,6 +91,10 @@ const AISidebar = ({sidebar}:
             <div className="flex flex-row items-center gap-4 mt-20 md:mt-0">
                 <Image priority className="h-auto" src="/assets/logo/logo.svg" alt="logo" width={80} height={80} />
                 <p className="text-3xl font-black tracking-wider">Chat<span className="text-blue-700">Bot</span></p>
+            </div>
+            <div className="flex flex-row items-center gap-2">
+                <Image className="rounded-full" src={user.image || "/assets/user.svg"} alt={user} width={30} height={30} />
+                <p className="font-semibold">{user.name}</p>
             </div>
             <p className="text-lg font-semibold">{sidebar.myConvs}</p>
             <div className="flex-1 flex flex-col w-full overflow-y-scroll no-scrollbar">

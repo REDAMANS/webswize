@@ -286,7 +286,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .credentials-input {
-    /* transition: box-shadow .2s;
-    box-shadow: inset 0px 0px 4px rgb(212, 212, 212); */
     border: 1px solid rgb(209, 209, 209);
+}
+
+.user-link p {
+    transition: transform .15s;
+    transform: scale(0);
+}
+
+.user-link:hover p {
+    transform: scale(100%);
 }

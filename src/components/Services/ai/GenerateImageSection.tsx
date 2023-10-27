@@ -4,14 +4,12 @@ import { useState, useEffect } from "react";
 import {motion} from 'framer-motion'
 import { BiSolidDownload } from 'react-icons/bi'
 import { useSearchParams } from "next/navigation";
+import { ImSpinner2 } from "react-icons/im"
 
 const ImageLoading = () => {
     return (
-        <div className="w-full md:w-[50%] flex items-center justify-center aspect-square bg-gray-300">
-            <div className='w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center relative animate-spin'>
-                <div className="absolute rotate-45 w-10 h-10 top-1/2 bg-gray-300"></div>
-                <div className="w-11 h-11 rounded-full bg-gray-300"></div>
-            </div>
+        <div className="w-full md:w-[50%] flex items-center text-5xl justify-center aspect-square rounded-2xl bg-slate-200">
+            <ImSpinner2 className="animate-spin text-blue-500" />
         </div>
     )
 }
@@ -40,11 +38,7 @@ const GenerateImageSection = ({ generateImageSection }: { generateImageSection: 
         setIsLoading(true);
         setImageName(prompt.replace(/ /g, "-").toLowerCase());
 
-        const res = await fetch(`${
-            process.env.NEXT_PUBLIC_NODE_ENV === 'development' ?
-            "http://localhost:3000/api/text-to-image"
-            : "https://webswize.vercel.app/api/text-to-image"
-        }`, {
+        const res = await fetch("/api/text-to-image", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -52,8 +46,8 @@ const GenerateImageSection = ({ generateImageSection }: { generateImageSection: 
             body: JSON.stringify({prompt})
         });
 
-        const { url }: { url: string } = await res.json();
-        setImageUrl(url);
+        const imageBlob: Blob = await res.blob();
+        setImageUrl(URL.createObjectURL(imageBlob));
 
         setIsLoading(false);
     }

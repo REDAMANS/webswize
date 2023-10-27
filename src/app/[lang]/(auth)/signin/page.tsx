@@ -5,6 +5,7 @@ import OAuthButton from "@/components/auth/OAuthButton";
 import { redirect } from "next/navigation";
 import SignInForm from "@/components/auth/SignInForm";
 import { getDictionary } from "@/lib/dictionaries";
+import { cookies } from "next/headers"
 
 export async function generateStaticParams() {
     return [
@@ -24,7 +25,10 @@ export async function generateStaticParams() {
   }  
 
 
-const SignInPage = async ({ params }: {params: {lang: "en" | "en-US" | "fr" | "fr-FR"}}) => {
+const SignInPage = async ({ params }: {
+  params: {lang: "en" | "en-US" | "fr" | "fr-FR"}}) => {
+
+    const csrfToken = cookies().get("next-auth.csrf-token")?.value.split("|")[0] as string;
 
     const { authPages } = await getDictionary(params.lang);
     const session = await getServerSession(options);
@@ -36,7 +40,7 @@ const SignInPage = async ({ params }: {params: {lang: "en" | "en-US" | "fr" | "f
 
     return (
         <section>        
-                <SignInForm placeholders={{
+                <SignInForm csrfToken={csrfToken} placeholders={{
                   usernamePlaceholder: authPages.usernamePlaceholder,
                   passwordPlaceholder: authPages.passwordPlaceholder,
                   signInButton: authPages.signInButton,
