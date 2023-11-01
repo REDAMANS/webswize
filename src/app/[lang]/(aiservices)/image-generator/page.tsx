@@ -36,9 +36,7 @@ const ImageGeneratorPage = async ({ params }: {params: {lang: "en" | "en-US" | "
 
     const session: Session | null = await getServerSession(options);
 
-    if(!session) {
-        redirect("http://localhost:3000/api/auth/signin?callbackUrl=/image-generator");
-    }
+    if(!session) redirect("/signin?callbackUrl=/image-generator");
 
     const { servicespage: { pages: { ai: { page: { imageGenerator } } } } } = await getDictionary(params.lang);
 

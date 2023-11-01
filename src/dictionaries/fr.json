@@ -262,6 +262,21 @@
         }
     },
     "authPages": {
+        "errorMessages": [
+            {
+                "cause": "OAuthSignin",
+                "message": "Impossible d'enregistrer l'utilisateur, veuillez réessayer plus tard"
+        
+            },
+            {
+                "cause": "OAuthCallback",
+                "message": "Impossible d'enregistrer l'utilisateur, veuillez réessayer plus tard"
+            },
+            {
+                "cause": "CredentialsSignin",
+                "message": "Cet utilisateur n'existe pas"
+            }
+        ],
         "emailPlaceholder": "Email",
         "usernamePlaceholder": "Nom d'utilisateur",
         "passwordPlaceholder": "Mot de passe",

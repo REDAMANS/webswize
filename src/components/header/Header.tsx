@@ -3,7 +3,7 @@ import SidebarButton from "./SidebarButton";
 import SidebarProvider from "@/context/SidebarContext";
 import Sidebar from "./Sidebar";
 import Image from "next/image";
-import AuthProvider from "../Services/ai/AuthProvider";
+import AuthProvider from "../User/AuthProvider";
 
 type Navbar = {
     links: {name: string, href: string}[],

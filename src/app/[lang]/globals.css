@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .custom-button::before {
-    @apply content-[""] z-[-.5] bg-white absolute top-0 rounded-sm left-0 h-full w-0 transition-[width] duration-200;
+    @apply content-[""] z-[-.5] bg-white absolute top-0 rounded-lg left-0 h-full w-0 transition-[width] duration-200;
 }
 
 .custom-button:hover::before {

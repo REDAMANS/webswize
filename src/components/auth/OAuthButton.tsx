@@ -3,6 +3,7 @@ import { signIn } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
 
 const OAuthButton = ({ provider, method }: { provider: any, method: string }) => {
+
     const providerImages = [
         {
             name: "Google",

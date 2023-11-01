@@ -1,12 +1,15 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { BiUser, BiLockAlt, BiLogoGmail } from "react-icons/bi";
 import { signIn } from "next-auth/react";
 import { motion } from "framer-motion";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const SignUpForm = ({ placeholders }: { placeholders: any }) => {
+
+    const searchParams = useSearchParams();
+    const callbackUrl = searchParams.get("callbackUrl") as string;
 
     const [isVisiblePassword, setIsVisiblePassword] = useState<boolean>(false);
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -22,9 +25,7 @@ const SignUpForm = ({ placeholders }: { placeholders: any }) => {
             setErrorMessage("Please enter all fields !");
             return;
         }
-        const response = await fetch(process.env.NEXT_PUBLIC_NODE_ENV === 'development' ?
-        "http://localhost:3000/api/auth/register"
-        : "https://webswize.vercel.app/api/auth/register", {
+        const response = await fetch("/api/auth/register", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -37,7 +38,8 @@ const SignUpForm = ({ placeholders }: { placeholders: any }) => {
             return;
         }
 
-        signIn();
+        if(callbackUrl)signIn(undefined, { callbackUrl });
+        else signIn();
     }
 
     const handleFocusStart = () => {
@@ -78,7 +80,10 @@ const SignUpForm = ({ placeholders }: { placeholders: any }) => {
             <motion.button whileTap={{ scale: 0.95 }} className="px-4 py-3 rounded-xl outline-none font-bold text-white bg-blue-600" type="submit">
                 {placeholders.signupButton}
             </motion.button>
-            <Link className="text-sm text-gray-900 hover:text-blue-600 transition-colors hover:underline" href="/signin">{placeholders.signInBackupText}</Link>
+            <button 
+                className="text-sm text-gray-900 hover:text-blue-600 transition-colors hover:underline" 
+                onClick={() => signIn(undefined, { callbackUrl })}
+            >{placeholders.signInBackupText}</button>
         </form>
     );
 }

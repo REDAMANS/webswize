@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import StyledButton from "../StyledButton";
 
 const ServiceBox = ({ name, description, imgUrl, link, buttonText }: 
     { 
@@ -16,7 +17,9 @@ const ServiceBox = ({ name, description, imgUrl, link, buttonText }:
             </div>
             <h2 className="text-lg md:text-xl mb-2">{name}</h2>
             <p className="description-text mb-4">{description}</p>
-            <Link className="mt-auto px-4 py-3 rounded-xl bg-blue-600 text-white font-semibold" href={link}>{buttonText}</Link>
+            <StyledButton link={link}>
+                {buttonText}
+            </StyledButton>
         </li>
     );
 }

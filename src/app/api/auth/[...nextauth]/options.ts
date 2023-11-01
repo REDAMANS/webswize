@@ -43,7 +43,7 @@ const options: NextAuthOptions = {
         })
     ],
     pages: {
-        signIn: "/signin",
+        signIn: "/signin"
     },
     callbacks: {
         async signIn({ user, account, profile, email, credentials }) {

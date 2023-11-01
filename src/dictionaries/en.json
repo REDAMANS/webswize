@@ -261,6 +261,21 @@
         }
     },
     "authPages": {
+        "errorMessages": [
+            {
+                "cause": "OAuthSignin",
+                "message": "Could not register user, please try again later"
+        
+            },
+            {
+                "cause": "OAuthCallback",
+                "message": "Could not register user, please try again later"
+            },
+            {
+                "cause": "CredentialsSignin",
+                "message": "This user does not exist"
+            }
+        ],
         "emailPlaceholder": "Email",
         "usernamePlaceholder": "Username",
         "passwordPlaceholder": "Password",

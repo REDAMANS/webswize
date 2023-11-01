@@ -5,6 +5,11 @@ import { getServerSession } from "next-auth";
 import options from "@/app/api/auth/[...nextauth]/options";
 import SignUpForm from "@/components/auth/SignUpForm";
 import { getDictionary } from "@/lib/dictionaries";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Webswize | Sign up"
+}
 
 export async function generateStaticParams() {
     return [
