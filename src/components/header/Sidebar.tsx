@@ -9,7 +9,7 @@ import { useSession } from "next-auth/react";
 const Sidebar = ({links}: {links: {name: string, href: string}[]}) => {
     const { isSidebarOpen } = useContext(SidebarContext);
 
-    const { data, status } = useSession();
+    const { status } = useSession();
     
     const [isServiceOpen, setIsServiceOpen] = useState<boolean>(false);
 
@@ -46,14 +46,9 @@ const Sidebar = ({links}: {links: {name: string, href: string}[]}) => {
                     ))}
                     {
                         status === "authenticated" ?
-                        <>
-                            <motion.li transition={{ delay: links.length*0.1 }} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 50 }} className="opacity-0 text-right pr-8 pl-16 py-3">    
-                                My profile
-                            </motion.li>
-                            <motion.li transition={{ delay: links.length*0.1 }} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 50 }} className="opacity-0 text-right pr-8 pl-16 py-3">
-                                <button onClick={() => signOut()}>Sign out</button>
-                            </motion.li>
-                        </>
+                        <motion.li transition={{ delay: links.length*0.1 }} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 50 }} className="opacity-0 text-right pr-8 pl-16 py-3">
+                            <button onClick={() => signOut()}>Sign out</button>
+                        </motion.li>
                         :
                         <>
                             <motion.li transition={{ delay: links.length*0.1 }} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 50 }} className="opacity-0 text-right pr-8 pl-16 py-3">
