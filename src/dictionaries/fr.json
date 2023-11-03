@@ -201,13 +201,13 @@
                         {
                             "name": "AI Chatbot", 
                             "description": "Basé sur GPT 3.5, notre chatbot génère des réponses à vos questions", 
-                            "imgUrl": "chatbot.jpg", 
+                            "imgUrl": "chatbot.png", 
                             "link": "/chatbot"
                         },
                         {
                             "name": "Suppression de l'arrière-plan", 
                             "description": "Un outil d'IA simple et efficace pour la suppression de l'arrière-plan", 
-                            "imgUrl": "nobg.png",
+                            "imgUrl": "removebg.svg",
                             "link": "/removebg"
                         },
                         {
@@ -215,6 +215,12 @@
                             "description": "Convertit les invites textuelles en images générées par l'IA",
                             "imgUrl": "image-generator.svg",
                             "link": "/image-generator"
+                        },
+                        {
+                            "name": "Traducteur",
+                            "description": "Un outil de traduction efficace avec de nombreuses langues différentes",
+                            "imgUrl": "translator.png",
+                            "link": "/translator"
                         }
                     ]
                 },
