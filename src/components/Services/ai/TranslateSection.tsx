@@ -10,7 +10,7 @@ type Language = {
     name: string;
 }
 
-const TranslateSection = () => {
+const TranslateSection = ({ translateSection }: { translateSection: any }) => {
 
     const [ availableLanguages, setAvailableLanguages ] = useState<Language[]>([]);
     const [ translatedText, setTraslatedText ] = useState<string | null>(null);
@@ -83,7 +83,7 @@ const TranslateSection = () => {
                     <select onChange={(e) => {
                         router.push(pathname + '?' + createQueryString("source_language", e.target.value))
                     }} defaultValue="select-language" className='px-4 py-3 outline-none border'>
-                        <option className='px-4 py-3' value="select-language" disabled>Select language</option>
+                        <option className='px-4 py-3' value="select-language" disabled>{translateSection.selectLanguage}</option>
                         {
                             availableLanguages.map((lang: { name: string, code: string }, i) => (
                                 <option className='px-4 py-3' key={i} value={lang.code}>
@@ -93,17 +93,17 @@ const TranslateSection = () => {
                         }
                     </select>
                     <div className="bg-white w-full border h-[250px]">
-                        <textarea name="text" className='p-4 text-lg w-full resize-none h-full outline-none'/>
+                        <textarea placeholder={translateSection.textAreaPlaceholder} name="text" className='p-4 text-lg w-full resize-none h-full outline-none'/>
                     </div>
                 </div>
-                <button type="submit" className="px-4 py-4 h-max flex items-center justify-center text-xl text-white bg-blue-600 rounded-2xl">
+                <button aria-label="Translate" type="submit" className="px-4 py-4 h-max flex items-center justify-center text-xl text-white bg-blue-600 rounded-2xl">
                     <LiaExchangeAltSolid />
                 </button>
                 <div className='flex flex-col gap-2 flex-1 w-full'>
                     <select onChange={(e) => {
                         router.push(pathname + '?' + createQueryString("target_language", e.target.value))
                     }} defaultValue="select-language" className='px-4 py-3 outline-none border'>
-                        <option className='px-4 py-3' value="select-language" disabled>Select language</option>
+                        <option className='px-4 py-3' value="select-language" disabled>{translateSection.selectLanguage}</option>
                         {
                             availableLanguages.map((lang, i) => (
                                 <option className='px-4 py-3' key={i} value={lang.code}>

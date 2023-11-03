@@ -5,8 +5,11 @@ import { BsChevronRight, BsTranslate } from "react-icons/bs";
 import TranslateSection from "@/components/Services/ai/TranslateSection";
 import options from "@/app/api/auth/[...nextauth]/options";
 import { getServerSession } from "next-auth";
+import { getDictionary } from "@/lib/dictionaries";
 
-const TranslatePage = async () => {
+const TranslatePage = async ({ params }: { params: { lang: "en" | "en-US" | "fr" | "fr-FR" } }) => {
+
+    const { servicespage: { pages: { ai: { page: { translator } } } } } = await getDictionary(params.lang);
 
     const session = await getServerSession(options);
 
@@ -21,11 +24,11 @@ const TranslatePage = async () => {
                     <div className="flex flex-row md:gap-10 lg:gap-16 items-center flex-shrink">
                         <Image className="h-auto w-[50px] md:w-[80px]" src="/assets/logo/logo.svg" alt="logo" width={80} height={80} />
                     </div>
-                    <p className="text-lg sm:text-3xl font-black text-black flex items-center gap-2"><span className='text-blue-600'><BsTranslate/></span> Translator</p>
-                    <Link className="ml-auto flex flex-row gap-4 items-center" href="/services/ai-tools"><p className='hidden sm:block'>Other ai tools</p><BsChevronRight/></Link>
+                    <p className="text-lg sm:text-3xl font-black text-black flex items-center gap-2"><span className='text-blue-600'><BsTranslate/></span> {translator.title}</p>
+                    <Link className="ml-auto flex flex-row gap-4 items-center" href="/services/ai-tools"><p className='hidden sm:block'>{translator.otherAiTools}</p><BsChevronRight/></Link>
                 </nav>
             </header>
-            <TranslateSection />
+            <TranslateSection translateSection={translator.translateSection} />
         </section>
     );
 }

@@ -261,6 +261,14 @@
                             "generateButton" : "Générer",
                             "saveButton" : "Enregistrer l'image"
                         }
+                    },
+                    "translator": {
+                        "title": "Traducteur",
+                        "otherAiTools": "Autres outils d'IA",
+                        "translateSection": {
+                            "selectLanguage": "Sélectionnez la langue",
+                            "textAreaPlaceholder": "Ecrivez quelque chose..."
+                        }
                     }
 
                 }
